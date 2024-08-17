@@ -1,0 +1,25 @@
+{
+  "name": "community-map-theme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "wp-scripts start src/index.js",
+    "dev": "wp-scripts start",
+    "devFast": "wp-scripts start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@wordpress/icons": "^7.0.1",
+    "@wordpress/scripts": "*"
+  },
+  "dependencies": {
+    "simple-lightbox": "^2.1.0",
+    "leaflet": "^1.9.3",
+    "leaflet-draw": "^1.0.4",
+    "leaflet.markercluster": "^1.5.3",
+    "leaflet.markercluster.layersupport": "^2.0.1"
+  }
+}
