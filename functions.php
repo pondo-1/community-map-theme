@@ -6,27 +6,20 @@
 
 if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
-// Dependencies, 
-function check_required_plugin()
-{
-  // Specify the required plugin by its folder and main file
-  $required_plugin = 'advanced-custom-fields-pro/acf.php';
+define('THEMEPATH', get_template_directory());
+define('FUNCTIONSPATH', THEMEPATH . '/functions/');
 
-  // Check if the plugin is active
-  if (!is_plugin_active($required_plugin)) {
-    // Display a warning message in the admin area
-    add_action('admin_notices', 'show_plugin_warning');
-  }
-}
-add_action('admin_init', 'check_required_plugin');
+// initial settings 
+require_once(FUNCTIONSPATH . 'dep_check.php');
+//Custom admin menu page, Karte taxonomie
+require_once(FUNCTIONSPATH . 'admin_menu.php');
+// Geocode, Taxonomie für Map -> maptax
+require_once(FUNCTIONSPATH . 'post_meta_setting.php');
 
-function show_plugin_warning()
-{
-  // Customize your warning message
-  echo '<div class="notice notice-error is-dismissible">
-           <p><strong>Warning:</strong> This theme requires plugin <em>advanced custom fields pro</em>. But that is not installed or activated. Please install and activate the plugin to ensure proper functionality of the theme.</p>
-       </div>';
-}
+// View 
+// HTMl Structure(Template), Leaflet Javascript, Data für Leaflet and List
+// leaflet
+require_once(FUNCTIONSPATH . 'leaflet.php');
 
 // Initial settings/ Admin / Acf
 // Save the Categories(icon, color, text)/ main color / Logo / 
@@ -35,5 +28,21 @@ function show_plugin_warning()
 class CommunityMap
 {
   private $categories_string = "";
-  function __construct() {}
+  function __construct()
+  {
+    add_action('wp_enqueue_scripts', [$this, 'theme_files']);
+  }
+
+  // Enqueue style and js
+  function theme_files()
+  {
+    //front end
+    // wp_enqueue_style('theme_main_styles', get_theme_file_uri('/build/style-index.css'));
+    // wp_enqueue_style('theme_main_styles_2', get_theme_file_uri('/build/index.css'));
+
+    // Javascript need to be loaded in footer: last variable need to be true
+    wp_enqueue_script('theme_js', get_template_directory_uri() . '/build/index.js', array('jquery'), '', true);
+  }
 }
+
+new CommunityMap();
