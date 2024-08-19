@@ -130,7 +130,7 @@ class Themesetting
   function add_taxonomy_custom_columns($columns)
   {
     $columns['icon'] = __('Icon', 'your-text-domain');
-    $columns['color'] = __('Color', 'your-text-domain');
+    // $columns['color'] = __('Color', 'your-text-domain');
     return $columns;
   }
 
@@ -144,14 +144,15 @@ class Themesetting
       } else {
         $content = __('No icon set', 'your-text-domain');
       }
-    } elseif ($column_name == 'color') {
-      $color = get_term_meta($term_id, 'taxonomy-color', true);
-      if ($color) {
-        $content = '<div style="width: 40px; height: 20px; background-color:' . esc_attr($color) . ';"></div>';
-      } else {
-        $content = __('No color set', 'your-text-domain');
-      }
     }
+    // elseif ($column_name == 'color') {
+    //   $color = get_term_meta($term_id, 'taxonomy-color', true);
+    //   if ($color) {
+    //     $content = '<div style="width: 40px; height: 20px; background-color:' . esc_attr($color) . ';"></div>';
+    //   } else {
+    //     $content = __('No color set', 'your-text-domain');
+    //   }
+    // }
     return $content;
   }
 
@@ -167,11 +168,11 @@ class Themesetting
       <button class="button taxonomy-icon-upload-button"><?php _e('Upload Icon', 'your-text-domain'); ?></button>
       <p class="description"><?php _e('Select an icon from the media library.', 'your-text-domain'); ?></p>
     </div>
-    <div class="form-field">
+    <!-- <div class="form-field">
       <label for="taxonomy-color"><?php _e('Color', 'your-text-domain'); ?></label>
       <input type="color" name="taxonomy-color" id="taxonomy-color" value="#000000">
       <p class="description"><?php _e('Select the color for this taxonomy.', 'your-text-domain'); ?></p>
-    </div>
+    </div> -->
   <?php
   }
 
@@ -179,7 +180,7 @@ class Themesetting
   function edit_taxonomy_custom_fields($term, $taxonomy)
   {
     $icon = get_term_meta($term->term_id, 'taxonomy-icon', true);
-    $color = get_term_meta($term->term_id, 'taxonomy-color', true);
+    // $color = get_term_meta($term->term_id, 'taxonomy-color', true);
   ?>
     <tr class="form-field">
       <th scope="row"><label for="taxonomy-icon"><?php _e('Icon', 'your-text-domain'); ?></label></th>
@@ -189,13 +190,13 @@ class Themesetting
         <p class="description"><?php _e('Select an icon from the media library.', 'your-text-domain'); ?></p>
       </td>
     </tr>
-    <tr class="form-field">
+    <!-- <tr class="form-field">
       <th scope="row"><label for="taxonomy-color"><?php _e('Color', 'your-text-domain'); ?></label></th>
       <td>
         <input type="color" name="taxonomy-color" id="taxonomy-color" value="<?php echo esc_attr($color); ?>">
         <p class="description"><?php _e('Select the color for this taxonomy.', 'your-text-domain'); ?></p>
       </td>
-    </tr>
+    </tr> -->
 <?php
   }
 
@@ -204,9 +205,9 @@ class Themesetting
     if (isset($_POST['taxonomy-icon'])) {
       update_term_meta($term_id, 'taxonomy-icon', esc_url($_POST['taxonomy-icon']));
     }
-    if (isset($_POST['taxonomy-color'])) {
-      update_term_meta($term_id, 'taxonomy-color', sanitize_hex_color($_POST['taxonomy-color']));
-    }
+    // if (isset($_POST['taxonomy-color'])) {
+    //   update_term_meta($term_id, 'taxonomy-color', sanitize_hex_color($_POST['taxonomy-color']));
+    // }
   }
 }
 
