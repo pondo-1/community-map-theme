@@ -16,12 +16,17 @@ require_once(FUNCTIONSPATH . 'dev.php');
 require_once(FUNCTIONSPATH . 'dep_check.php');
 //Custom admin menu page, Karte taxonomie
 require_once(FUNCTIONSPATH . 'admin_menu.php');
-// Geocode, Taxonomie für Map -> maptax
+
+// Data Handling 
+// -- Geocode, Taxonomie für Map -> maptax
 require_once(FUNCTIONSPATH . 'post_meta_setting.php');
+// -- API 
+
 
 // View 
-// HTMl Structure(Template), Leaflet Javascript, Data für Leaflet and List
-// leaflet
+
+// -- HTMl Structure(Template), Leaflet Javascript, Data für Leaflet and List
+// -- leaflet
 require_once(FUNCTIONSPATH . 'leaflet.php');
 /* Disable WordPress Admin Bar for all users */
 

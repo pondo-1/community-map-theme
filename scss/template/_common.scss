@@ -1,9 +1,11 @@
-/* Media Querries */
-.main {
+// If it has map
+.mapapp {
   display: grid;
   grid-template-rows: 100%;
+  grid-template-columns: 70% 30%;
   position: relative;
   overflow-y: hidden;
+  height: 100%;
   .map-block-wrapper {
     width: 100%;
     .menu.top ul {
@@ -11,21 +13,21 @@
       margin: 0;
     }
   }
-}
-@media screen and (max-width: 980px) {
-  .main {
+
+  @media screen and (max-width: 980px) {
     display: flex;
     flex-direction: column;
-  }
-  .map-block-wrapper {
-    height: 550px;
-    max-height: 85vh;
-    order: 2;
-    position: unset;
-    .menu.top {
-      background-color: rgba(128, 128, 128, 0.1);
-      order: 1;
+
+    .map-block-wrapper {
+      height: 550px;
+      max-height: 85vh;
+      order: 2;
       position: unset;
+      .menu.top {
+        background-color: rgba(128, 128, 128, 0.1);
+        order: 1;
+        position: unset;
+      }
     }
   }
 }
