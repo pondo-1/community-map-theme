@@ -1,7 +1,7 @@
-// function initializeMap(info_json) {
-function initializeMap() {
+function initializeMap(info_json) {
+  // function initializeMap() {
   var main_map_options = {
-    center: [49.652799076693725, 9.94738655529318],
+    center: info_json.map_center,
     zoomSnap: 0.1,
     zoom: 12.5,
     zoomControl: false,

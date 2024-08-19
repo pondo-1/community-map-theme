@@ -8,12 +8,15 @@
 if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 define('THEMEPATH', get_template_directory());
+define('THEMENAME', wp_get_theme()->get_stylesheet());
 define('FUNCTIONSPATH', THEMEPATH . '/functions/');
 
 // dev -> After dev it need to be deleted
 require_once(FUNCTIONSPATH . 'dev.php');
 // initial settings 
 require_once(FUNCTIONSPATH . 'dep_check.php');
+
+
 //Custom admin menu page, Karte taxonomie
 require_once(FUNCTIONSPATH . 'admin_menu.php');
 
@@ -21,7 +24,7 @@ require_once(FUNCTIONSPATH . 'admin_menu.php');
 // -- Geocode, Taxonomie für Map -> maptax
 require_once(FUNCTIONSPATH . 'post_meta_setting.php');
 // -- API 
-
+require_once(FUNCTIONSPATH . 'custom_api_endpoint.php');
 
 // View 
 
