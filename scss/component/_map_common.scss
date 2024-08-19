@@ -1,0 +1,179 @@
+.map-block-wrapper {
+  height: 100%;
+  position: relative;
+
+  .menu.top {
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+
+    ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0px 50px;
+    }
+  }
+}
+
+.leaflet-bottom.leaflet-right {
+  width: 100%;
+}
+
+.leaflet-control-zoom {
+  margin-bottom: 40px;
+  margin-right: 40px;
+  border-radius: 8px;
+}
+
+.leaflet-control-zoom.leaflet-bar a {
+  width: 45px;
+  height: 45px;
+  font-size: 40px;
+  line-height: 40px;
+}
+
+.leaflet-touch .leaflet-control-zoom-in,
+.leaflet-touch .leaflet-control-zoom-out {
+  font-size: 40px;
+  line-height: 40px;
+}
+
+.leaflet-touch .leaflet-bar a:first-child {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.leaflet-touch .leaflet-bar a:last-child {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.leaflet-container .leaflet-control-attribution {
+  margin: 0 auto 0 15px;
+  background-color: rgba(255, 255, 255, 0);
+  right: auto;
+  left: 0;
+  position: absolute;
+  bottom: 2px;
+}
+
+.leaflet-container .leaflet-control-attribution a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: #000;
+}
+
+.leaflet-container .leaflet-bottom.leaflet-right::after {
+  height: 20px;
+  width: 90px;
+  background-size: contain;
+  content: "";
+  // background-image: url("/wp-content/plugins/ILEK-Map-App/icons/mapbox-logo-black.svg");
+  display: inline-block;
+  background-color: none;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 5px 5px 2px 5px;
+}
+
+.map_block {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+
+/*Map Popup Default Media*/
+
+.leaflet-popup {
+  padding: 7.5px;
+  border: 3px;
+  width: 450px;
+  max-width: 90vw;
+  margin: 20px 0;
+}
+
+.leaflet-popup-content {
+  display: flex;
+  flex-direction: row;
+  width: 400px !important;
+  max-width: 90vw;
+  position: relative;
+  padding: 10px;
+  margin: 0;
+}
+
+.leaflet-popup-content img {
+  width: 100px;
+  height: auto;
+  padding-right: 10px;
+  align-self: center;
+  display: block;
+}
+
+.text_wrapper {
+  flex-direction: column;
+  max-width: 390px;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+.popup_title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--d_text);
+}
+
+.popupcategory {
+  display: none;
+}
+
+.leaflet-popup p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.1em;
+  padding-top: 5px;
+  font-weight: 400;
+}
+
+.leaflet-popup .popup_button {
+  padding: 0;
+  font-size: 18px;
+  display: block;
+  border: none;
+  grid-column: 2/3;
+  grid-row: 3/4;
+  border: none;
+  position: relative;
+  margin: 15px 0 15px 15px;
+  font-weight: 600;
+}
+
+.leaflet-popup .popup_button:hover,
+.leaflet-popup .popup_button:active {
+  background-color: #fff;
+  color: var(--d_text);
+  opacity: 0.75;
+}
+
+.leaflet-popup .popup_button::after {
+  left: -25px;
+  right: auto;
+  background-size: 60%;
+  bottom: -5px;
+  padding: 0;
+  top: auto;
+}
+
+// .leaflet-popup .popup_button:hover::after,
+// .leaflet-popup .popup_button:hover::after {
+//   background-image: url(/wp-content/plugins/ILEK-Map-App/icons/right-svgrepo-com.svg);
+// }

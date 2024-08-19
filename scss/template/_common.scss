@@ -1,0 +1,31 @@
+/* Media Querries */
+.main {
+  display: grid;
+  grid-template-rows: 100%;
+  position: relative;
+  overflow-y: hidden;
+  .map-block-wrapper {
+    width: 100%;
+    .menu.top ul {
+      padding: 8px 16px;
+      margin: 0;
+    }
+  }
+}
+@media screen and (max-width: 980px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  .map-block-wrapper {
+    height: 550px;
+    max-height: 85vh;
+    order: 2;
+    position: unset;
+    .menu.top {
+      background-color: rgba(128, 128, 128, 0.1);
+      order: 1;
+      position: unset;
+    }
+  }
+}
