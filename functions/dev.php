@@ -23,10 +23,10 @@ class Dev_custom_button
   public function add_admin_menu()
   {
     add_menu_page(
-      'Import Map Taxonomy',         // Page title
-      'Import Map Taxonomy',         // Menu title
+      'DEV',         // Page title
+      'DEV',         // Menu title
       'manage_options',              // Capability
-      'import_markertax_submenu',       // Submenu slug
+      'dev',       // Submenu slug
       [$this, 'custom_buttons'],  // Function to display the submenu page content
       '',
       62
@@ -38,14 +38,21 @@ class Dev_custom_button
 ?>
     <div class="wrap">
       <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
-      Markers
+
       <form method="post" action="">
+        Markers
         <input type="hidden" name="cba_custom_action" value="generates_markers">
-        <?php submit_button('Preview Posts to Delete'); ?>
+        <?php submit_button('generates 20 markers'); ?>
       </form>
       <br>
-      Map markers categories
+
       <form method="post" action="">
+        <?php submit_button('Delete All markers', 'secondary', 'delete_all_markers'); ?>
+      </form>
+      <br>
+
+      <form method="post" action="">
+        Map markers categories
         <?php submit_button('Import Map Taxonomy', 'primary', 'import_markertax'); ?>
         <?php submit_button('Delete All Map Taxonomies', 'secondary', 'delete_markertax'); ?>
       </form>
@@ -55,14 +62,86 @@ class Dev_custom_button
     // Handle the actions based on the button clicked
     if (isset($_POST['cba_custom_action'])) {
       if ($_POST['cba_custom_action'] === 'generates_markers') {
-        $this->generates_markers();
+        $this->generate_random_marker_posts();
       }
+    } elseif (isset($_POST['delete_all_markers'])) {
+      $this->delete_all_markers();
     }
   }
 
-  public function generates_markers()
+  function generate_random_marker_posts()
   {
-    // Generate 10 post with post_type="marker" with longitute and latitude in the range of -- and take a one of the taxonomie from "markertax"
+    // Number of posts to generate
+    $number_of_posts = 20;
+
+    // Range for latitude and longitude
+
+    $min_longitude = get_option('min_longitude');
+    $max_longitude = get_option('max_longitude');
+    $min_latitude = get_option('min_latitude');
+    $max_latitude = get_option('max_latitude');
+
+    // Available taxonomy terms (replace with your actual terms)
+    $taxonomy_key = 'markertax';
+    $available_terms = get_terms(array(
+      'taxonomy' => $taxonomy_key,
+      'hide_empty' => false,
+    ));
+
+    for ($i = 0; $i < $number_of_posts; $i++) {
+      // Generate a random title (2-3 words)
+      $title = wp_generate_password(rand(8, 15), false);
+
+      // Generate random latitude and longitude
+      $latitude = rand($min_latitude * 10000, $max_latitude * 10000) / 10000;
+      $longitude = rand($min_longitude * 10000, $max_longitude * 10000) / 10000;
+
+      // Select a random taxonomy term
+      if (!empty($available_terms) && !is_wp_error($available_terms)) {
+        $random_term = $available_terms[array_rand($available_terms)];
+      }
+
+      // Create the post
+      $post_id = wp_insert_post(array(
+        'post_title'    => $title,
+        'post_type'     => 'marker',
+        'post_status'   => 'publish',
+      ));
+
+      // Add post meta data (geocode)
+      if ($post_id) {
+        update_post_meta($post_id, 'latitude', $latitude);
+        update_post_meta($post_id, 'longitude', $longitude);
+
+        // Assign the taxonomy term
+        if (isset($random_term)) {
+          wp_set_object_terms($post_id, $random_term->term_id, $taxonomy_key);
+        }
+      }
+    }
+  }
+  public function delete_all_markers()
+  {
+    global $wpdb;
+    $result_posts = $wpdb->query(
+      "
+            DELETE a,b,c
+            FROM {$wpdb->posts} a
+            LEFT JOIN {$wpdb->term_relationships} b ON (a.ID = b.object_id)
+            LEFT JOIN {$wpdb->postmeta} c ON (a.ID = c.post_id)
+            WHERE a.post_type = 'marker';
+      "
+    );
+    $wpdb->show_errors();
+    $wpdb->print_error();
+
+    // Check if the query was successful
+    if ($result_posts !== false) {
+      echo '<div class="notice notice-success"><p>Custom code executed successfully! Rows affected: ' . ($result_posts) . '</p></div>';
+      echo var_dump($wpdb->last_error);
+    } else {
+      echo '<div class="notice notice-error"><p>An error occurred while executing the custom code.</p></div>';
+    }
   }
 
   public function handle_import_button()

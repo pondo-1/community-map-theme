@@ -194,7 +194,7 @@ class Post_meta_setting
   {
     switch ($name) {
       case 'geocode':
-        $geocode = get_post_meta($post_id, 'latitude', true) . '<br>' . get_post_meta($post_id, 'longitude', true);
+        $geocode = get_post_meta($post_id, 'longitude', true) . '<br>' . get_post_meta($post_id, 'latitude', true);
         echo $geocode;
         break;
       case 'valid':
