@@ -1,10 +1,4 @@
 <?php
-// npm install leaflet
-//   npm i leaflet.markercluster
-//   npm i leaflet.markercluster.layersupport
-//   npm i leaflet-draw
-
-
 if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 define('THEMEPATH', get_template_directory());
@@ -13,21 +7,19 @@ define('FUNCTIONSPATH', THEMEPATH . '/functions/');
 
 // dev -> After dev it need to be deleted
 require_once(FUNCTIONSPATH . 'dev.php');
-// initial settings 
+// dependency & Essential check, Acf pro plugin check 
 require_once(FUNCTIONSPATH . 'dep_check.php');
 
-
-//Custom admin menu page, Karte taxonomie
+//Custom admin menu page
 require_once(FUNCTIONSPATH . 'admin_menu.php');
 
 // Data Handling 
-// -- Geocode, Taxonomie für Map -> maptax
-require_once(FUNCTIONSPATH . 'post_meta_setting.php');
+// -- Prepare cpt(mappoints), , Karte taxonomie(markertax)  & Admin columns -> Data  & View 
+require_once(FUNCTIONSPATH . 'cpt_post_meta_init.php');
 // -- API 
 require_once(FUNCTIONSPATH . 'custom_api_endpoint.php');
 
 // View 
-
 // -- HTMl Structure(Template), Leaflet Javascript, Data für Leaflet and List
 // -- leaflet
 require_once(FUNCTIONSPATH . 'leaflet.php');

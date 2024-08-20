@@ -11,10 +11,10 @@ class Dev_custom_button
   }
 
   //   $term_id = $term->term_id; // Replace with actual term ID
-  // $svg_file = get_term_meta($term_id, 'maptax_icon', true);
+  // $svg_file = get_term_meta($term_id, 'markertax_icon', true);
 
   // if ($svg_file) {
-  //     $svg_url = get_template_directory_uri() . '/assets/maptax/' . $svg_file;
+  //     $svg_url = get_template_directory_uri() . '/assets/markertax/' . $svg_file;
   //     echo '<img src="' . esc_url($svg_url) . '" alt="' . esc_attr($term->name) . '">';
   // }
 
@@ -24,7 +24,7 @@ class Dev_custom_button
       'Import Map Taxonomy',         // Page title
       'Import Map Taxonomy',         // Menu title
       'manage_options',              // Capability
-      'import_maptax_submenu',       // Submenu slug
+      'import_markertax_submenu',       // Submenu slug
       [$this, 'render_import_page'],  // Function to display the submenu page content
       '',
       62
@@ -37,8 +37,8 @@ class Dev_custom_button
     <div class="wrap">
       <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
       <form method="post" action="">
-        <?php submit_button('Import Map Taxonomy', 'primary', 'import_maptax'); ?>
-        <?php submit_button('Delete All Map Taxonomies', 'secondary', 'delete_maptax'); ?>
+        <?php submit_button('Import Map Taxonomy', 'primary', 'import_markertax'); ?>
+        <?php submit_button('Delete All Map Taxonomies', 'secondary', 'delete_markertax'); ?>
       </form>
     </div>
 <?php
@@ -46,19 +46,19 @@ class Dev_custom_button
 
   public function handle_import_button()
   {
-    if (isset($_POST['import_maptax'])) {
-      $file_path = get_template_directory() . '/assets/maptax/maptax.txt';
+    if (isset($_POST['import_markertax'])) {
+      $file_path = get_template_directory() . '/assets/markertax/markertax.txt';
 
       if (file_exists($file_path)) {
-        $this->import_maptax_terms($file_path);
-        $this->attach_svg_to_maptax_terms();
+        $this->import_markertax_terms($file_path);
+        $this->attach_svg_to_markertax_terms();
 
         add_action('admin_notices', function () {
           echo '<div class="notice notice-success is-dismissible"><p>Map Taxonomy terms and SVG icons have been imported successfully.</p></div>';
         });
       } else {
         add_action('admin_notices', function () {
-          echo '<div class="notice notice-error is-dismissible"><p>Error: The maptax.txt file was not found. Please ensure it is located in the /assets/maptax/ directory.</p></div>';
+          echo '<div class="notice notice-error is-dismissible"><p>Error: The markertax.txt file was not found. Please ensure it is located in the /assets/markertax/ directory.</p></div>';
         });
       }
     }
@@ -66,8 +66,8 @@ class Dev_custom_button
 
   public function handle_delete_button()
   {
-    if (isset($_POST['delete_maptax'])) {
-      $this->delete_maptax_terms();
+    if (isset($_POST['delete_markertax'])) {
+      $this->delete_markertax_terms();
 
       add_action('admin_notices', function () {
         echo '<div class="notice notice-warning is-dismissible"><p>All Map Taxonomy terms and their metadata have been deleted.</p></div>';
@@ -76,7 +76,7 @@ class Dev_custom_button
   }
 
   // Your existing functions to read file, create taxonomy, import terms, and attach SVGs
-  public function read_maptax_file($file_path)
+  public function read_markertax_file($file_path)
   {
     if (file_exists($file_path)) {
       $terms = file($file_path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
@@ -87,7 +87,7 @@ class Dev_custom_button
   }
 
 
-  // function create_maptax_taxonomy()
+  // function create_markertax_taxonomy()
   // {
   //   $labels = array(
   //     'name'              => _x('Map Taxonomies', 'taxonomy general name', 'textdomain'),
@@ -107,27 +107,27 @@ class Dev_custom_button
   //     'show_ui'           => true,
   //     'show_admin_column' => true,
   //     'query_var'         => true,
-  //     'rewrite'           => array('slug' => 'maptax'),
+  //     'rewrite'           => array('slug' => 'markertax'),
   //   );
 
-  //   register_taxonomy('maptax', array('post'), $args);
+  //   register_taxonomy('markertax', array('post'), $args);
   // }
 
 
-  public function import_maptax_terms($file_path)
+  public function import_markertax_terms($file_path)
   {
-    $terms = $this->read_maptax_file($file_path);
+    $terms = $this->read_markertax_file($file_path);
     foreach ($terms as $term) {
-      if (!term_exists($term, 'maptax')) {
-        wp_insert_term($term, 'maptax');
+      if (!term_exists($term, 'markertax')) {
+        wp_insert_term($term, 'markertax');
       }
     }
   }
 
-  public function attach_svg_to_maptax_terms()
+  public function attach_svg_to_markertax_terms()
   {
     $terms = get_terms(array(
-      'taxonomy' => 'maptax',
+      'taxonomy' => 'markertax',
       'hide_empty' => false,
     ));
 
@@ -135,26 +135,26 @@ class Dev_custom_button
       $term_name = $term->name;
       // $svg_file = sanitize_title($term_name) . '.svg';
       $svg_file = $term_name . '.svg';
-      $svg_path = get_template_directory_uri() . '/assets/maptax/' . rawurlencode($svg_file);
+      $svg_path = get_template_directory_uri() . '/assets/markertax/' . rawurlencode($svg_file);
 
       update_term_meta($term->term_id, 'taxonomy-icon', $svg_path);
     }
   }
 
-  public function delete_maptax_terms()
+  public function delete_markertax_terms()
   {
-    // Logic to delete all "maptax" terms and their metadata
+    // Logic to delete all "markertax" terms and their metadata
     $terms = get_terms(array(
-      'taxonomy' => 'maptax',
+      'taxonomy' => 'markertax',
       'hide_empty' => false,
     ));
 
     foreach ($terms as $term) {
       // Delete the term
-      wp_delete_term($term->term_id, 'maptax');
+      wp_delete_term($term->term_id, 'markertax');
 
       // Optionally, delete associated metadata if stored separately
-      delete_term_meta($term->term_id, 'maptax_icon');
+      delete_term_meta($term->term_id, 'markertax_icon');
     }
   }
 }
