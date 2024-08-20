@@ -6,6 +6,8 @@ class Dev_custom_button
   public function __construct()
   {
     add_action('admin_menu', [$this, 'add_admin_menu']);
+
+    // Import map marker categories, which is in /assets/markertax
     add_action('admin_init', [$this, 'handle_import_button']);
     add_action('admin_init', [$this, 'handle_delete_button']);
   }
@@ -25,23 +27,42 @@ class Dev_custom_button
       'Import Map Taxonomy',         // Menu title
       'manage_options',              // Capability
       'import_markertax_submenu',       // Submenu slug
-      [$this, 'render_import_page'],  // Function to display the submenu page content
+      [$this, 'custom_buttons'],  // Function to display the submenu page content
       '',
       62
     );
   }
 
-  public function render_import_page()
+  public function custom_buttons()
   {
 ?>
     <div class="wrap">
       <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
+      Markers
+      <form method="post" action="">
+        <input type="hidden" name="cba_custom_action" value="generates_markers">
+        <?php submit_button('Preview Posts to Delete'); ?>
+      </form>
+      <br>
+      Map markers categories
       <form method="post" action="">
         <?php submit_button('Import Map Taxonomy', 'primary', 'import_markertax'); ?>
         <?php submit_button('Delete All Map Taxonomies', 'secondary', 'delete_markertax'); ?>
       </form>
     </div>
 <?php
+
+    // Handle the actions based on the button clicked
+    if (isset($_POST['cba_custom_action'])) {
+      if ($_POST['cba_custom_action'] === 'generates_markers') {
+        $this->generates_markers();
+      }
+    }
+  }
+
+  public function generates_markers()
+  {
+    // Generate 10 post with post_type="marker" with longitute and latitude in the range of -- and take a one of the taxonomie from "markertax"
   }
 
   public function handle_import_button()

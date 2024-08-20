@@ -35,15 +35,15 @@ class Post_meta_setting
   {
     $args = array(
       'labels' => array(
-        'name' => __('Markers'),
-        'singular_name' => __('Marker'),
-        'add_new_item' => __('Add New Marker'),
-        'edit_item' => __('Edit Marker'),
-        'new_item' => __('New Marker'),
-        'view_item' => __('View Marker'),
-        'search_items' => __('Search Markers'),
-        'not_found' => __('No Markers found'),
-        'not_found_in_trash' => __('No Markers found in Trash'),
+        'name' => __('Markers', 'textdomain'),
+        'singular_name' => __('Marker', 'textdomain'),
+        'add_new_item' => __('Add New Marker', 'textdomain'),
+        'edit_item' => __('Edit Marker', 'textdomain'),
+        'new_item' => __('New Marker', 'textdomain'),
+        'view_item' => __('View Marker', 'textdomain'),
+        'search_items' => __('Search Markers', 'textdomain'),
+        'not_found' => __('No Markers found', 'textdomain'),
+        'not_found_in_trash' => __('No Markers found in Trash', 'textdomain'),
       ),
       'public' => true,
       'show_in_menu' => true,
@@ -64,15 +64,15 @@ class Post_meta_setting
   {
     // Labels for the taxonomy
     $labels = array(
-      'name'              => __('Kategorien'),
-      'singular_name'     => __('Kategorie'),
-      'search_items'      => __('Search Kategorien'),
-      'all_items'         => __('All Kategorien'),
-      'edit_item'         => __('Edit Kategorie'),
-      'update_item'       => __('Update Kategorie'),
-      'add_new_item'      => __('Add New Kategorie'),
-      'new_item_name'     => __('New Kategorie Name'),
-      'menu_name'         => __('Kategorie'),
+      'name'              => __('Kategorien', 'textdomain'),
+      'singular_name'     => __('Kategorie', 'textdomain'),
+      'search_items'      => __('Search Kategorien', 'textdomain'),
+      'all_items'         => __('All Kategorien', 'textdomain'),
+      'edit_item'         => __('Edit Kategorie', 'textdomain'),
+      'update_item'       => __('Update Kategorie', 'textdomain'),
+      'add_new_item'      => __('Add New Kategorie', 'textdomain'),
+      'new_item_name'     => __('New Kategorie Name', 'textdomain'),
+      'menu_name'         => __('Kategorie', 'textdomain'),
     );
 
     // Register the taxonomy
