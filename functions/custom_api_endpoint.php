@@ -51,43 +51,41 @@ class Infojson_API extends RestAPI_Base
   {
     $map_center_geo = array_map("floatval", explode(',', esc_attr(get_option('map_center_point'))));
 
-    $info_array = array(
-      'map_center' => $map_center_geo,
-    );
-    return $info_array;
+    $map_info = [
+      "center"        => array_map("floatval", explode(',', esc_attr(get_option('map_center_point')))),
+      "center_long"   => esc_attr(get_option('map_center_long')),
+      "center_lati"   => esc_attr(get_option('map_center_lati')),
+      "radius"        => esc_attr(get_option('map_radius')),
+      "min_longitude" => esc_attr(get_option('min_longitude')),
+      "max_longitude" => esc_attr(get_option('max_longitude')),
+      "min_latitude"  => esc_attr(get_option('min_latitude')),
+      "max_latitude"  => esc_attr(get_option('max_latitude'))
+    ];
+
+    $terms = get_terms(array(
+      'taxonomy' => 'markertax',
+      'hide_empty' => false, // Show all terms, even those without posts
+    ));
+
+    // Initialize an empty array to hold the formatted terms
+    $marker_category = [];
+
+    // Loop through each term and format it
+    foreach ($terms as $term) {
+      $marker_category[] = array(
+        'name' => $term->name,
+        'icon' => get_term_meta($term->term_id, 'taxonomy-icon', true), // Assuming you store the icon URL in term meta
+        'slug' => $term->slug,
+      );
+    }
+
+    $final_array = [
+      "map" => $map_info,
+      "marker_category" => $marker_category
+    ];
+
+    return $final_array;
   }
 }
 
 new Infojson_API(); // endpoint: /wp-json/community-map-theme/infojson
-
-
-//-------------- Rest API ---------------------//
-////// Rest API /wp-json/ILEK-Map-App/infojson
-
-
-// public function infojson_generator()
-// {
-//   //$info_array=array();
-//   $plugin_folder_name = reset(explode('/', str_replace(WP_PLUGIN_DIR . '/', '', __DIR__)));
-//   $path_of_icons =  './wp-content/plugins/' . $plugin_folder_name . '/icons';
-//   $icon_files = array_diff(scandir($path_of_icons), array('.', '..'));
-
-//   // if we need to make a custom section for center 
-//   // $longi = "50.15489468904496";
-//   // settype ($longi, "float");
-//   // $lati = "9.629545376420513";
-//   // settype ($lati, "float");
-
-//   $map_center_geo = array_map("floatval", explode(',', esc_attr(get_option('sad_map_center_point'))));
-//   $myarray = $this->category_shortname_array;
-
-//   $info_array = array(
-//     'map_center' => $map_center_geo,
-//     'icons_directory' => $path_of_icons,
-//     //'icons'=> $icon_files,
-//     'icons' => $myarray
-//     //'geo_code'=>$geo_code
-//   );
-//   return $info_array;
-// }
-// //////end-------------------------------- Rest API /wp-json/ILEK-Map-App/infojson

@@ -1,9 +1,29 @@
+- make geojson to display the markers
+  - make geojson
+  - load in frontend
+  - display with kategorie icon
+  - take care the popup
+- prüf the cluster, group, zoom in functions
+
 - mapapp_init.js use : /wp-json/ILEK-Map-App/geojson & /wp-json/ILEK-Map-App/infojson
   "ILEK-Map-APP" : need to be dynamic -> theme name
 
 - Save Map center value in infojson -> use it
 
-Map Setting Options
+# Basic Structure
+
+## General
+
+- Benutzer Kann Marker(post_type = marker) erstellen
+- Je Marker(post) hat Meta(post_meta -> name) "longitude" "latitude" -> Erstellen Pin in Map
+- Marker Post type hat eigene Taxonome, Kategory gennat.
+  - Es sieht aus wie original Kategory aber in Program nicht
+  - term-> name : markertax
+  - Je Kategory Element hat einen Icon
+- Je Marker hat einen Kategory
+- In Map wurde die Pins mit Kategorie-Icon bezeichnen
+
+# Map Setting Options
 
 - registered with : update_option
 - call with : esc_attr(get_option())

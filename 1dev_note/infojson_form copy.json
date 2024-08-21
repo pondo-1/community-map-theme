@@ -1,0 +1,49 @@
+{
+  "map_center": [49.652799076693725, 9.9473865552931802],
+  "icons_directory": "./wp-content/plugins/ILEK-Map-App/icons",
+  "icons": {
+    "Point of Interest": "kommunen",
+    "Schulen": "schulen",
+    "Kindertagesst\u00e4tten": "kindertagesstaetten",
+    "Medizinische Einrichtungen": "medizinische_einrichtungen",
+    "Soziale Einrichtungen": "soziale_einrichtungen",
+    "Einzelhandel des t\u00e4glichen Bedarfs": "nahversorgungseinrichtungen",
+    "Gastronomische Einrichtungen": "gastronomische_einrichtungen",
+    "Beherbergungsbetriebe": "beherbergungsbetriebe",
+    "Kulturweg": "sehenswuerdigkeiten",
+    "ILE-Projekte": "ile-projekte",
+    "Regionalbudget-Projekte": "regionalbudget-projekte",
+    "Verfahren der l\u00e4ndlichen Entwicklung": "verfahren_der_laendlichen_entwicklung"
+  },
+}
+
+// "/wp-json/community-map-theme/infojson"
+{
+  "map": {
+    "center": [49.652799076693725, 9.9473865552931802],
+    "center_long": "value",
+    "center_lati": "value",
+    "radius": "value",
+    "min_longitude": "value",
+    "max_longitude": "value",
+    "min_latitude": "value",
+    "max_latitude": "value"
+  },
+  "marker_category": [
+    {
+      "name": "cat1",
+      "icon": "icon_url",
+      "slug": "slug"
+    },
+    {
+      "name": "cat1",
+      "icon": "icon_url",
+      "slug": "slug"
+    },
+    {
+      "name": "cat1",
+      "icon": "icon_url",
+      "slug": "slug"
+    }
+  ]
+}

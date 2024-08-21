@@ -1,0 +1,75 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 2255,
+      "properties": {
+        "name": "Norma",
+        "post_id": 2255,
+        "url": "http://localhost:10028/norma/",
+        "date": "Juli 19, 2024",
+        "author": "l.weis",
+        "thumbnail_url": false,
+        "excerpt": ""
+      },
+      "taxonomy": {
+        "category": {
+          "term_id": 99,
+          "name": "Einzelhandel des täglichen Bedarfs",
+          "slug": "nahversorgungseinrichtungen",
+          "shortname": "nahversorgungseinrichtungen",
+          "icon_name": "nahversorgungseinrichtungen.svg"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.06226957, 49.66880133]
+      },
+      "route": [""],
+      "meta_list": {
+        "_edit_lock": ["1723898781:12"],
+        "_edit_last": ["12"],
+        "_pingme": ["1"],
+        "_encloseme": ["1"],
+        "latitude": ["49.66880133"],
+        "longitude": ["10.06226957"],
+        "route": [""]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 2253,
+      "properties": {
+        "name": "Pizzeria Maininsel",
+        "post_id": 2253,
+        "url": "http://localhost:10028/pizzeria-maininsel/",
+        "date": "Juli 19, 2024",
+        "author": "l.weis",
+        "thumbnail_url": false,
+        "excerpt": ""
+      },
+      "taxonomy": {
+        "category": {
+          "term_id": 90,
+          "name": "Gastronomische Einrichtungen",
+          "slug": "gastronomische_einrichtungen",
+          "shortname": "gastronomische_einrichtungen",
+          "icon_name": "gastronomische_einrichtungen.svg"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.06987095, 49.66877008]
+      },
+      "route": [""],
+      "meta_list": {
+        "_edit_lock": ["1721398105:12"],
+        "_edit_last": ["12"],
+        "latitude": ["49.66877008"],
+        "longitude": ["10.06987095"],
+        "route": [""]
+      }
+    }
+  ]
+}
