@@ -12,13 +12,6 @@ class Dev_custom_button
     add_action('admin_init', [$this, 'handle_delete_button']);
   }
 
-  //   $term_id = $term->term_id; // Replace with actual term ID
-  // $svg_file = get_term_meta($term_id, 'markertax_icon', true);
-
-  // if ($svg_file) {
-  //     $svg_url = get_template_directory_uri() . '/assets/markertax/' . $svg_file;
-  //     echo '<img src="' . esc_url($svg_url) . '" alt="' . esc_attr($term->name) . '">';
-  // }
 
   public function add_admin_menu()
   {
@@ -58,6 +51,21 @@ class Dev_custom_button
       </form>
     </div>
 <?php
+
+    $post_type_query = new WP_Query(array(
+      'post_type' => 'marker',
+      'posts_per_page' => -1
+    ));
+
+    $i = 0;
+
+    while ($post_type_query->have_posts() && $i == 0) {
+      $post_type_query->the_post();
+      $i++;
+
+      var_dump(get_post_meta(get_the_ID(), $key = "latitude", true));
+      var_dump(get_the_ID());
+    }
 
     // Handle the actions based on the button clicked
     if (isset($_POST['cba_custom_action'])) {

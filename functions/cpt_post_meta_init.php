@@ -49,7 +49,7 @@ class Post_meta_setting
       'show_in_menu' => true,
       'supports' => array('title', 'editor', 'thumbnail', 'custom-fields'),
       'has_archive' => true,
-      'rewrite' => array('slug' => 'points'),
+      'rewrite' => array('slug' => 'marker'),
       'show_in_rest' => false, // Disable the block editor (Gutenberg)
       'taxonomies' => array(), // Only use the custom taxonomy 'markertax'
 
@@ -64,15 +64,15 @@ class Post_meta_setting
   {
     // Labels for the taxonomy
     $labels = array(
-      'name'              => __('Kategorien', 'textdomain'),
-      'singular_name'     => __('Kategorie', 'textdomain'),
+      'name'              => __('Marker Kategorien', 'textdomain'),
+      'singular_name'     => __('Marker Kategorie', 'textdomain'),
       'search_items'      => __('Search Kategorien', 'textdomain'),
       'all_items'         => __('All Kategorien', 'textdomain'),
       'edit_item'         => __('Edit Kategorie', 'textdomain'),
       'update_item'       => __('Update Kategorie', 'textdomain'),
       'add_new_item'      => __('Add New Kategorie', 'textdomain'),
       'new_item_name'     => __('New Kategorie Name', 'textdomain'),
-      'menu_name'         => __('Kategorie', 'textdomain'),
+      'menu_name'         => __('Marker Kategorie', 'textdomain'),
     );
 
     // Register the taxonomy

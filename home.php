@@ -47,42 +47,17 @@
       <h2 class="category">Kategorie</h2>
       <button class="all">Select all</button>
       <button class="none">Deselect all</button>
-      <div class="single_category_wrapper"><input class="cat_checkbox" type="checkbox" id="kommunen" value="kommunen" category_name="Point of Interest" name="kategory_filter" checked="true">
-        <label class="cat_label" for="kommunen"><img class="cat_icon" src="/wp-content/plugins/ILEK-Map-App/icons/kommunen.svg"><span class="cat_name">Point of Interest</span></label>
-      </div>
-      <div class="single_category_wrapper"><input class="cat_checkbox" type="checkbox" id="schulen" value="schulen" category_name="Schulen" name="kategory_filter" checked="true">
-        <label class="cat_label" for="schulen"><img class="cat_icon" src="/wp-content/plugins/ILEK-Map-App/icons/schulen.svg"><span class="cat_name">Schulen</span></label>
-      </div>
-      <div class="single_category_wrapper"><input class="cat_checkbox" type="checkbox" id="kindertagesstaetten" value="kindertagesstaetten" category_name="Kindertagesstätten" name="kategory_filter" checked="true">
-        <label class="cat_label" for="kindertagesstaetten"><img class="cat_icon" src="/wp-content/plugins/ILEK-Map-App/icons/kindertagesstaetten.svg"><span class="cat_name">Kindertagesstätten</span></label>
-      </div>
-      <div class="single_category_wrapper"><input class="cat_checkbox" type="checkbox" id="medizinische_einrichtungen" value="medizinische_einrichtungen" category_name="Medizinische Einrichtungen" name="kategory_filter" checked="true">
-        <label class="cat_label" for="medizinische_einrichtungen"><img class="cat_icon" src="/wp-content/plugins/ILEK-Map-App/icons/medizinische_einrichtungen.svg"><span class="cat_name">Medizinische Einrichtungen</span></label>
-      </div>
-      <div class="single_category_wrapper"><input class="cat_checkbox" type="checkbox" id="soziale_einrichtungen" value="soziale_einrichtungen" category_name="Soziale Einrichtungen" name="kategory_filter" checked="true">
-        <label class="cat_label" for="soziale_einrichtungen"><img class="cat_icon" src="/wp-content/plugins/ILEK-Map-App/icons/soziale_einrichtungen.svg"><span class="cat_name">Soziale Einrichtungen</span></label>
-      </div>
-      <div class="single_category_wrapper"><input class="cat_checkbox" type="checkbox" id="nahversorgungseinrichtungen" value="nahversorgungseinrichtungen" category_name="Einzelhandel des täglichen Bedarfs" name="kategory_filter" checked="true">
-        <label class="cat_label" for="nahversorgungseinrichtungen"><img class="cat_icon" src="/wp-content/plugins/ILEK-Map-App/icons/nahversorgungseinrichtungen.svg"><span class="cat_name">Einzelhandel des täglichen Bedarfs</span></label>
-      </div>
-      <div class="single_category_wrapper"><input class="cat_checkbox" type="checkbox" id="gastronomische_einrichtungen" value="gastronomische_einrichtungen" category_name="Gastronomische Einrichtungen" name="kategory_filter" checked="true">
-        <label class="cat_label" for="gastronomische_einrichtungen"><img class="cat_icon" src="/wp-content/plugins/ILEK-Map-App/icons/gastronomische_einrichtungen.svg"><span class="cat_name">Gastronomische Einrichtungen</span></label>
-      </div>
-      <div class="single_category_wrapper"><input class="cat_checkbox" type="checkbox" id="beherbergungsbetriebe" value="beherbergungsbetriebe" category_name="Beherbergungsbetriebe" name="kategory_filter" checked="true">
-        <label class="cat_label" for="beherbergungsbetriebe"><img class="cat_icon" src="/wp-content/plugins/ILEK-Map-App/icons/beherbergungsbetriebe.svg"><span class="cat_name">Beherbergungsbetriebe</span></label>
-      </div>
-      <div class="single_category_wrapper"><input class="cat_checkbox" type="checkbox" id="sehenswuerdigkeiten" value="sehenswuerdigkeiten" category_name="Kulturweg" name="kategory_filter" checked="true">
-        <label class="cat_label" for="sehenswuerdigkeiten"><img class="cat_icon" src="/wp-content/plugins/ILEK-Map-App/icons/sehenswuerdigkeiten.svg"><span class="cat_name">Kulturweg</span></label>
-      </div>
-      <div class="single_category_wrapper"><input class="cat_checkbox" type="checkbox" id="ile-projekte" value="ile-projekte" category_name="ILE-Projekte" name="kategory_filter" checked="true">
-        <label class="cat_label" for="ile-projekte"><img class="cat_icon" src="/wp-content/plugins/ILEK-Map-App/icons/ile-projekte.svg"><span class="cat_name">ILE-Projekte</span></label>
-      </div>
-      <div class="single_category_wrapper"><input class="cat_checkbox" type="checkbox" id="regionalbudget-projekte" value="regionalbudget-projekte" category_name="Regionalbudget-Projekte" name="kategory_filter" checked="true">
-        <label class="cat_label" for="regionalbudget-projekte"><img class="cat_icon" src="/wp-content/plugins/ILEK-Map-App/icons/regionalbudget-projekte.svg"><span class="cat_name">Regionalbudget-Projekte</span></label>
-      </div>
-      <div class="single_category_wrapper"><input class="cat_checkbox" type="checkbox" id="verfahren_der_laendlichen_entwicklung" value="verfahren_der_laendlichen_entwicklung" category_name="Verfahren der ländlichen Entwicklung" name="kategory_filter" checked="true">
-        <label class="cat_label" for="verfahren_der_laendlichen_entwicklung"><img class="cat_icon" src="/wp-content/plugins/ILEK-Map-App/icons/verfahren_der_laendlichen_entwicklung.svg"><span class="cat_name">Verfahren der ländlichen Entwicklung</span></label>
-      </div>
+      <?php
+      $terms = get_terms(array(
+        'taxonomy' => 'markertax',
+        'hide_empty' => false,
+      ));
+      ?>
+      <?php foreach ($terms as $term) : ?>
+        <div class="single_category_wrapper"><input class="cat_checkbox" type="checkbox" id="<?php echo $term->slug ?>" value="<?php echo $term->slug ?>" category_name="<?php echo $term->name ?>" name="kategory_filter" checked="true">
+          <label class="cat_label" for="<?php echo $term->slug ?>"><img class="cat_icon" src="<?php echo get_term_meta($term->term_id, 'taxonomy-icon', true) ?>"><span class="cat_name"><?php echo $term->name ?></span></label>
+        </div>
+      <?php endforeach ?>
     </div> <!-- closing div id checkboxes  -->
 
     <div class="sort_options_block">

@@ -4,14 +4,14 @@ async function fetchJSON(endpoint) {
 }
 
 async function initializeMapApp() {
-  // const geojsonEndpoint = "/wp-json/community-map-theme/geojson";
+  const geojsonEndpoint = "/wp-json/community-map-theme/geojson";
   const infojsonEndpoint = "/wp-json/community-map-theme/infojson";
 
-  // const [jsonWithGeocode, infoJson] = await Promise.all([
-  //   fetchGeoJSON(geojsonEndpoint),
-  //   fetchJSON(infojsonEndpoint),
-  // ]);
-  const infoJson = await fetchJSON(infojsonEndpoint);
+  const [jsonWithGeocode, infoJson] = await Promise.all([
+    fetchJSON(geojsonEndpoint),
+    fetchJSON(infojsonEndpoint),
+  ]);
+  // const infoJson = await fetchJSON(infojsonEndpoint);
   const map = initializeMap(infoJson);
   handleScreenResize(map);
   setupZoomControl(map);
@@ -26,20 +26,28 @@ async function initializeMapApp() {
   //   groupAll,
   //   map
   // );
+  populateMarkers(
+    jsonWithGeocode,
+    categoryIconArray,
+    categoryLayergroupArray,
+    groupAll
+  );
 
-  // mcgLayerSupportGroupAuto.checkIn(groupAll);
-  // groupAll.addTo(map);
+  mcgLayerSupportGroupAuto.checkIn(groupAll);
+  groupAll.addTo(map);
 
-  // saveLayerIdInHtml(groupAll);
-  // buildLink(map, groupAll);
-  // setupSorting();
-  // setupCategoryFilter(
-  //   mcgLayerSupportGroupAuto,
-  //   groupAll,
-  //   categoryLayergroupArray
-  // );
+  // only for main, Homepage, Filter and Search
+  populateMarkersList(jsonWithGeocode);
+  setupSorting();
+  setupCategoryFilter(
+    mcgLayerSupportGroupAuto,
+    groupAll,
+    categoryLayergroupArray
+  );
   // setupSearch(map, groupAll, saveLayerIdInHtml, buildLink);
-  // map.invalidateSize(); // Fix Chrome bug
+  saveLayerIdInHtml(groupAll);
+  buildLink(map, groupAll);
+  map.invalidateSize(); // Fix Chrome bug
 }
 
 function handleScreenResize(map) {
@@ -74,11 +82,15 @@ function setupCategories(infoJson) {
   const categoryLayergroupArray = {};
   const groupAll = L.layerGroup();
 
-  Object.entries(infoJson.marker_category).forEach(([name, icon_url, slug]) => {
+  Object.entries(infoJson.marker_category).forEach((element) => {
+    let name = element[1]["name"];
+    let icon_url = element[1]["icon"];
+    let slug = element[1]["slug"];
     const optionArray = {
       iconUrl: icon_url,
       iconSize: [40, 40],
     };
+
     categoryIconArray[name] = L.icon(optionArray);
     categoryLayergroupArray[name] = L.layerGroup();
   });
@@ -89,7 +101,8 @@ function createListItem({
   post_id,
   title,
   category_name,
-  category_shortname,
+  category_slug,
+  category_icon_url,
   url,
   date,
   author,
@@ -97,12 +110,12 @@ function createListItem({
   excerpt,
 }) {
   return `
-    <div class="datenbank_single_entry map_link_point category_${category_shortname}" id="map_id_${post_id}" category="${category_shortname}" date="${date}" author="${author}">
+    <div class="datenbank_single_entry map_link_point category_${category_slug}" id="map_id_${post_id}" category="${category_slug}" date="${date}" author="${author}">
       <div class="entry_title">${title}</div>
       <div class="entry_date">${date}</div>
       <div class="entry_author">${author}</div>
       <div class="entry_category">
-        <img src="/wp-content/plugins/ILEK-Map-App/icons/${category_shortname}.svg"/>
+        <img src="${category_icon_url}"/>
         ${category_name}
       </div>
       <a class="dn button main-page-button" href="${url}">Eintrag ansehen</a>
@@ -118,7 +131,7 @@ function populateMarkersAndList(
 ) {
   jsonWithGeocode.features.forEach((feature) => {
     const category = feature.taxonomy.category.name;
-    const categoryShortname = feature.taxonomy.category.shortname;
+    const categorySlug = feature.taxonomy.category.slug;
 
     const datenbankList = document.querySelector("#datenbank_list");
     datenbankList.insertAdjacentHTML(
@@ -127,7 +140,8 @@ function populateMarkersAndList(
         post_id: feature.id,
         title: feature.properties.name,
         category_name: category,
-        category_shortname: categoryShortname,
+        category_slug: categorySlug,
+        category_icon_url: feature.taxonomy.category.icon_url,
         url: feature.properties.url,
         date: feature.properties.date,
         author: feature.properties.author,
@@ -139,6 +153,42 @@ function populateMarkersAndList(
     const marker = createMarker(feature, categoryIconArray[category]);
     marker.addTo(categoryLayergroupArray[category]);
     marker.addTo(groupAll);
+  });
+}
+
+function populateMarkers(
+  jsonWithGeocode,
+  categoryIconArray,
+  categoryLayergroupArray,
+  groupAll
+) {
+  jsonWithGeocode.features.forEach((feature) => {
+    const category = feature.taxonomy.category.name;
+    const marker = createMarker(feature, categoryIconArray[category]);
+
+    marker.addTo(categoryLayergroupArray[category]);
+    marker.addTo(groupAll);
+  });
+}
+
+function populateMarkersList(jsonWithGeocode) {
+  jsonWithGeocode.features.forEach((feature) => {
+    const List_container = document.querySelector("#datenbank_list");
+    List_container.insertAdjacentHTML(
+      "beforeend",
+      createListItem({
+        post_id: feature.id,
+        title: feature.properties.name,
+        category_name: feature.taxonomy.category.name,
+        category_slug: feature.taxonomy.category.slug,
+        category_icon_url: feature.taxonomy.category.icon_url,
+        url: feature.properties.url,
+        date: feature.properties.date,
+        author: feature.properties.author,
+        thumbnail_url: feature.properties.thumbnail_url,
+        excerpt: feature.properties.excerpt,
+      })
+    );
   });
 }
 
@@ -245,10 +295,10 @@ function setupCategoryFilter(
   groupAll,
   categoryLayergroupArray
 ) {
-  document.querySelectorAll(":checkbox").forEach((checkbox) => {
+  document.querySelectorAll(".cat_checkbox").forEach((checkbox) => {
     checkbox.addEventListener("change", () => {
       mcgLayerSupportGroupAuto.removeLayer(groupAll);
-      document.querySelectorAll(":checkbox").forEach((checkbox) => {
+      document.querySelectorAll(".cat_checkbox").forEach((checkbox) => {
         const targetClass = `category_${checkbox.value}`;
         const currentCategory = document.getElementsByClassName(targetClass);
 
