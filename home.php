@@ -78,8 +78,8 @@
     </div>
 
     <!-- <div id="livesearch"></div> -->
-    <div class="datenbank_list_block">
-      <div class="datenbank_list" id="datenbank_list">
+    <div class="marker_list_wrapper">
+      <div class="marker_list" id="datenbank_list">
       </div>
     </div>
 

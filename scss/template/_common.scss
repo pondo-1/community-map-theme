@@ -1,5 +1,10 @@
 // If it has map
-
+.logo {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 500;
+  width: 100%;
+}
 .mapapp {
   display: grid;
   grid-template-rows: 100%;
@@ -29,5 +34,9 @@
         order: 1;
       }
     }
+  }
+  .legal {
+    position: static;
+    order: 4;
   }
 }

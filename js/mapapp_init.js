@@ -95,12 +95,12 @@ function setupCluster(map) {
   class="prime" fill="#009CDE"
   stroke="#FFFFFF"
   stroke-width="0.5"
-  stroke-linecap="round"
+  stroke-linecap="round"custom-cluster-marker
   stroke-linejoin="round"
 >
   <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
 </svg><div class="count">${count}</div>`,
-        className: "custom-cluster-marker  custom-cluster",
+        className: "custom-cluster-marker custom-cluster",
         iconSize: L.point(60, 60), // size of the icon
       });
     },

@@ -94,6 +94,90 @@
       justify-content: space-between;
       align-items: center;
       margin-top: 20px;
+
+      span {
+        min-width: 105px;
+      }
+      #main_page_list_sort_options {
+        padding: 15px;
+        color: var(--d_text);
+        font-weight: 500;
+        box-shadow: 1px 1px 2px 0px var(--l_grey);
+        margin-left: 15px;
+        font-size: 15px;
+        background-color: #fff;
+        border: none;
+        width: 345px;
+      }
+    }
+
+    .marker_list {
+      &_wrapper {
+        box-shadow: inset 0px 0px 1px 1px gray;
+      }
+      .datenbank_single_entry {
+        padding: 22.5px 45px 0 45px;
+        cursor: pointer;
+        background-color: #fff;
+      }
+
+      .entry_author,
+      .entry_date {
+        display: none;
+      }
+
+      .datenbank_single_entry:nth-child(odd) {
+        background-color: rgba(0, 156, 222, 0.1);
+        padding-bottom: 0;
+      }
+      .datenbank_single_entry .entry_category {
+        border-bottom: 2px dashed gray;
+        padding-bottom: 22.5px;
+      }
+
+      .datenbank_list .entry_title {
+        font-size: 17px;
+        line-height: 25px;
+        font-weight: 600;
+      }
+
+      .entry_category img {
+        width: 20px;
+        height: 20px;
+        position: relative;
+        top: 5px;
+        margin-right: 7.5px;
+      }
+
+      .datenbank_single_entry.marked {
+        background-color: var(--d_blue);
+        color: #fff;
+        padding-bottom: 30px;
+        cursor: default;
+      }
+
+      .datenbank_single_entry.marked .entry_category {
+        border: none;
+        padding-bottom: 7.5px;
+      }
+
+      .datenbank_single_entry.marked .button {
+        border-color: #fff;
+        background-color: blue;
+        color: #fff;
+      }
+
+      .datenbank_single_entry.marked .button:hover,
+      .datenbank_single_entry.marked .button:active {
+        opacity: 0.7;
+      }
+
+      .dn.button.main-page-button {
+        display: none;
+        &.db {
+          display: block;
+        }
+      }
     }
 
     @media screen and (max-width: 980px) {
@@ -105,6 +189,64 @@
       overflow-y: auto;
       min-width: 250px;
       box-shadow: none;
+    }
+  }
+
+  /* Media Querries */
+  @media screen and (max-width: 980px) {
+    .kulturdatenbank .sidebar {
+      min-width: 250px;
+    }
+
+    .category_filter_section {
+      padding-top: 15px;
+    }
+
+    .category_filter_section .category {
+      font-weight: 500;
+    }
+
+    .single_category_wrapper {
+      width: max-content;
+    }
+
+    .kulturdatenbank .sidebar .sort_options_block {
+      justify-content: flex-start;
+      padding-left: 5px;
+    }
+
+    .kulturdatenbank #main_page_list_sort_options {
+      background-color: #fff;
+      width: 185px;
+    }
+
+    .search {
+      margin-left: 5px;
+      margin-right: 5px;
+      width: 96%;
+      box-sizing: border-box;
+    }
+  }
+
+  @media screen and (max-width: 440px) {
+    .category_filter_section {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    .datenbank_single_entry {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .cat_label {
+      font-size: 16px;
+    }
+
+    .sort_options_block {
+      padding: 15px;
+      width: 100%;
+      justify-content: center;
     }
   }
 }

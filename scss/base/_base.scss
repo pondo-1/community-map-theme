@@ -1,6 +1,3 @@
-$mapappAssets: "~/assets/mapapp/";
-// $logo-img: '#{$assetPath}logo.png';
-
 * {
   box-sizing: border-box;
   font-family: "Barlow";
@@ -20,5 +17,6 @@ ol {
 }
 
 a {
-  color: var(--d_blue);
+  color: $primary_color;
+  text-decoration: none;
 }

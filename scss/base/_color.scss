@@ -2,8 +2,12 @@
 // Hellgrün:
 // Orange:
 $darkgreen: #0c8a2d;
-$brightgreen: #96bf0d;
+$lightgreen: #96bf0d;
 $orange: #f29400;
+
+$primary_color: $darkgreen;
+$secondary_color: $lightgreen;
+$accent_color: $orange;
 
 .primary {
   &--fill {
