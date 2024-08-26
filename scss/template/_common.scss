@@ -1,4 +1,5 @@
 // If it has map
+
 .mapapp {
   display: grid;
   grid-template-rows: 100%;
@@ -6,7 +7,7 @@
   position: relative;
   overflow-y: hidden;
   height: 100%;
-  .map-block-wrapper {
+  .map-block {
     width: 100%;
     .menu.top ul {
       padding: 8px 16px;
@@ -15,18 +16,17 @@
   }
 
   @media screen and (max-width: 980px) {
+    height: unset;
     display: flex;
     flex-direction: column;
 
-    .map-block-wrapper {
+    .map-block {
       height: 550px;
       max-height: 85vh;
-      order: 2;
       position: unset;
       .menu.top {
         background-color: rgba(128, 128, 128, 0.1);
         order: 1;
-        position: unset;
       }
     }
   }

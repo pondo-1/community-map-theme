@@ -1,0 +1,15 @@
+// Dunkelgrün:
+// Hellgrün:
+// Orange:
+$darkgreen: #0c8a2d;
+$brightgreen: #96bf0d;
+$orange: #f29400;
+
+.primary {
+  &--fill {
+    fill: $darkgreen;
+  }
+  &--stroke {
+    stroke: $darkgreen;
+  }
+}

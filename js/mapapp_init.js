@@ -69,8 +69,41 @@ function setupZoomControl(map) {
 }
 
 function setupCluster(map) {
+  // const mcgLayerSupportGroupAuto = L.markerClusterGroup.layerSupport({
+  //   maxClusterRadius: (mapZoom) => (mapZoom > 15 ? 5 : 40),
+  // });
   const mcgLayerSupportGroupAuto = L.markerClusterGroup.layerSupport({
     maxClusterRadius: (mapZoom) => (mapZoom > 15 ? 5 : 40),
+    iconCreateFunction: function (cluster) {
+      // Example custom cluster icon using a div
+      const count = cluster.getChildCount();
+      let size = "small"; // Default size
+
+      // if (count > 50) {
+      //   size = "large";
+      // } else if (count > 10) {
+      //   size = "medium";
+      // }
+
+      return L.divIcon({
+        html: `<?xml version="1.0" encoding="utf-8"?>
+<svg class="primary--fill" 
+  xmlns="http://www.w3.org/2000/svg"
+  width="25"
+  height="25"
+  viewBox="1.3 1 21.3 21"
+  class="prime" fill="#009CDE"
+  stroke="#FFFFFF"
+  stroke-width="0.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+</svg><div class="count">${count}</div>`,
+        className: "custom-cluster-marker  custom-cluster",
+        iconSize: L.point(60, 60), // size of the icon
+      });
+    },
   });
 
   mcgLayerSupportGroupAuto.addTo(map);
