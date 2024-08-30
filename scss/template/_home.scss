@@ -17,159 +17,130 @@
 
     background-color: rgba(128, 128, 128, 0.1);
 
-    .category_filter_section,
-    .sort_options_block,
-    .search {
-      flex: 0 1 auto;
-    }
-    .datenbank_list {
-      overflow-y: auto;
-      flex: 1 1 auto;
-    }
-
-    .category {
-      margin: 0;
-      font-size: 28px;
-      font-weight: 600;
-      color: var(--d_blue);
-      font-family: "Barlow";
-      padding-bottom: 10px;
-    }
-
-    .category_filter_section {
+    .category_filter {
       padding: 30px 45px 15px 45px;
       margin: 0;
-    }
-
-    .single_category_wrapper {
       display: flex;
-      align-items: center;
-      align-content: center;
-      cursor: pointer;
-    }
+      flex-direction: column;
+      row-gap: 20px;
+      &--title {
+        margin: 0;
+        font-size: 28px;
+        font-weight: 600;
+        padding-bottom: 10px;
+      }
+      &--button {
+        display: flex;
+        column-gap: 5%;
+        button {
+          position: relative;
+        }
+      }
+      &--list {
+        display: flex;
+        flex-direction: column;
 
-    .cat_checkbox {
-      width: 25px;
-      height: 25px;
-    }
+        row-gap: 0.5rem;
+        .single_category_wrapper {
+          display: flex;
+          align-items: center;
+          align-content: center;
+          row-gap: 0.5rem;
+          .cat_checkbox {
+            width: 25px;
+            height: 25px;
+            flex-shrink: 0;
+          }
+          .cat_label {
+            margin-left: 7.5px;
+            display: flex;
+            cursor: pointer;
+            align-items: center;
 
-    .cat_checkbox[checked="true"]::before {
-      width: 25px;
-      height: 25px;
-      background-color: var(--d_blue);
-    }
-
-    .cat_label {
-      font-size: 18px;
-      align-self: stretch;
-      width: 100%;
-      padding: 7.5px 0;
-      position: relative;
-      margin-left: 7.5px;
-      display: flex;
-      cursor: pointer;
-    }
-
-    .cat_label:hover,
-    .cat_label:active {
-      opacity: 0.75;
-    }
-
-    .cat_icon {
-      width: 30px;
-      display: block;
-      margin-right: 7.5px;
-    }
-
-    .cat_name {
-      text-decoration: underline dotted 2px var(--d_text);
-      text-underline-offset: 6px;
+            &:hover,
+            &:active {
+              opacity: 0.75;
+            }
+          }
+          .cat_icon {
+            width: 30px;
+            display: block;
+            margin-right: 7.5px;
+          }
+        }
+      }
     }
 
     .sort_options_block {
       padding: 15px 10%;
-      color: var(--l_grey);
       font-size: 15px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      margin-top: 20px;
-
       span {
-        min-width: 105px;
+        margin-right: 5px;
       }
+
       #main_page_list_sort_options {
+        flex-grow: 1;
         padding: 15px;
-        color: var(--d_text);
         font-weight: 500;
-        box-shadow: 1px 1px 2px 0px var(--l_grey);
-        margin-left: 15px;
-        font-size: 15px;
         background-color: #fff;
         border: none;
-        width: 345px;
       }
     }
 
     .marker_list {
-      &_wrapper {
-        box-shadow: inset 0px 0px 1px 1px gray;
-      }
-      .datenbank_single_entry {
+      cursor: pointer;
+      .marker--entry {
         padding: 22.5px 45px 0 45px;
-        cursor: pointer;
         background-color: #fff;
-      }
+        &:nth-child(odd) {
+          background-color: rgba($secondary_color, 0.05);
+        }
 
-      .entry_author,
-      .entry_date {
-        display: none;
-      }
+        .entry {
+          &_title {
+            font-size: 17px;
+            line-height: 25px;
+            font-weight: 600;
+          }
+          &_author,
+          &_date {
+            display: none;
+          }
+          &_category {
+            border-bottom: 2px dashed gray;
+            padding-bottom: 22.5px;
+            img {
+              width: 20px;
+              height: 20px;
+              position: relative;
+              top: 5px;
+              margin-right: 7.5px;
+            }
+          }
+        }
 
-      .datenbank_single_entry:nth-child(odd) {
-        background-color: rgba(0, 156, 222, 0.1);
-        padding-bottom: 0;
-      }
-      .datenbank_single_entry .entry_category {
-        border-bottom: 2px dashed gray;
-        padding-bottom: 22.5px;
-      }
+        &.marked {
+          background-color: rgba($accent_color, 0.9);
+          color: #fff;
+          padding-bottom: 30px;
+          cursor: default;
 
-      .datenbank_list .entry_title {
-        font-size: 17px;
-        line-height: 25px;
-        font-weight: 600;
-      }
+          .entry_category {
+            border: none;
+            padding-bottom: 7.5px;
+          }
 
-      .entry_category img {
-        width: 20px;
-        height: 20px;
-        position: relative;
-        top: 5px;
-        margin-right: 7.5px;
-      }
-
-      .datenbank_single_entry.marked {
-        background-color: var(--d_blue);
-        color: #fff;
-        padding-bottom: 30px;
-        cursor: default;
-      }
-
-      .datenbank_single_entry.marked .entry_category {
-        border: none;
-        padding-bottom: 7.5px;
-      }
-
-      .datenbank_single_entry.marked .button {
-        border-color: #fff;
-        background-color: blue;
-        color: #fff;
-      }
-
-      .datenbank_single_entry.marked .button:hover,
-      .datenbank_single_entry.marked .button:active {
-        opacity: 0.7;
+          .button {
+            border-color: #fff;
+            color: #fff;
+          }
+          &:hover,
+          &:active {
+            opacity: 0.7;
+          }
+        }
       }
 
       .dn.button.main-page-button {
@@ -234,15 +205,10 @@
       padding-right: 5px;
     }
 
-    .datenbank_single_entry {
+    .marker--entry {
       padding-left: 10px;
       padding-right: 10px;
     }
-
-    .cat_label {
-      font-size: 16px;
-    }
-
     .sort_options_block {
       padding: 15px;
       width: 100%;

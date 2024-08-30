@@ -48,3 +48,10 @@ Theme/functions/dev.php
 - Import All Marker category and delete
 - Generate Posts(post_type = marker) randomly 20
   generate 20 random posts of a custom post type marker in WordPress, with random titles, geocodes, and a randomly selected taxonomy term
+
+# Two different Icon Art
+
+1. Static
+   selector: .icon
+2. Dynamic by color selection in Theme Setting
+   selector: .theme-icon, .primary or .primary--fill

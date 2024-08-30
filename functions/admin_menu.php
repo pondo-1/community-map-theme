@@ -23,6 +23,7 @@ class Themesetting
   }
   public function render_admin_page()
   {
+
     // Default value for the geocode (latitude,longitude)
     $default_geocenter = '50.15489468904496, 9.629545376420513'; // 
     $default_georadius = 10;
@@ -91,6 +92,20 @@ class Themesetting
               }
               ?>
             </td>
+          </tr>
+          <tr>
+            <th>Info</th>
+            <td> change the website title (Map App top left text) <a href="http://localhost:10059/wp-admin/options-general.php">here</a>
+            </td>
+          </tr>
+          <tr>
+            <th>Color</th>
+            <td>primary(category logos, title text color), secondary, highlight
+            </td>
+          </tr>
+          <tr>
+            <th>Media Ja oder Nein</th>
+            <td>Selection</td>
           </tr>
         </table>
         <?php submit_button(__('Save Settings', 'textdomain')); ?>

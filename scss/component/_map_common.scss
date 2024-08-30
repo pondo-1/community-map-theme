@@ -99,7 +99,7 @@
         height: 100%;
         width: 100%;
       }
-      .count {
+      .cluster-count {
         display: inline-block;
         position: absolute;
         top: 56%;
@@ -181,6 +181,8 @@
       }
     }
   }
+
+
 }
 
 .leaflet-popup .popup_button::after {

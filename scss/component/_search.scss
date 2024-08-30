@@ -1,0 +1,38 @@
+// live search
+.search {
+  #livesearch {
+    display: none;
+  }
+  &_wrapper {
+    width: 80%;
+    position: relative;
+    margin: 15px 10%;
+  }
+  &Term {
+    border: none;
+    padding: 5px 15px;
+    height: 65px;
+    border-radius: 5px;
+    outline: none;
+    color: var(--d_text);
+    box-shadow: inset 0px 0px 1px 1px var(--l_grey);
+    width: 100%;
+    font-weight: 400;
+    font-size: 16px;
+  }
+  &Button {
+    position: absolute;
+    transform: translate(0%, -50%);
+    right: 0px;
+    top: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+
+    &:hover,
+    &:active {
+      background-color: #fff;
+      opacity: 0.7;
+    }
+  }
+}

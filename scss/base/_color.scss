@@ -1,6 +1,7 @@
 // Dunkelgrün:
 // Hellgrün:
 // Orange:
+$text_color_black: #000000;
 $darkgreen: #0c8a2d;
 $lightgreen: #96bf0d;
 $orange: #f29400;
@@ -10,10 +11,11 @@ $secondary_color: $lightgreen;
 $accent_color: $orange;
 
 .primary {
+  color: $primary_color;
   &--fill {
-    fill: $darkgreen;
+    fill: $primary_color;
   }
   &--stroke {
-    stroke: $darkgreen;
+    stroke: $primary_color;
   }
 }

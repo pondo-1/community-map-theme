@@ -24,14 +24,17 @@
     height: unset;
     display: flex;
     flex-direction: column;
-
     .map-block {
-      height: 550px;
       max-height: 85vh;
       position: unset;
       .menu.top {
         background-color: rgba(128, 128, 128, 0.1);
         order: 1;
+        margin: 0px;
+        position: unset;
+      }
+      #main_page_map {
+        height: 550px;
       }
     }
   }
