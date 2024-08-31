@@ -23,6 +23,7 @@ require_once(FUNCTIONSPATH . 'custom_api_endpoint.php');
 // -- HTMl Structure(Template), Leaflet Javascript, Data für Leaflet and List
 // -- leaflet
 require_once(FUNCTIONSPATH . 'leaflet.php');
+require_once(FUNCTIONSPATH . 'marker_list.php');
 /* Disable WordPress Admin Bar for all users */
 
 // Initial settings/ Admin / Acf

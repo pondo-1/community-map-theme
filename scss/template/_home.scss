@@ -94,7 +94,7 @@
       .marker--entry {
         padding: 22.5px 45px 0 45px;
         background-color: #fff;
-        &:nth-child(odd) {
+        &.bg {
           background-color: rgba($secondary_color, 0.05);
         }
 

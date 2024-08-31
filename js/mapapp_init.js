@@ -4,6 +4,7 @@ async function fetchJSON(endpoint) {
 }
 
 async function initializeMapApp() {
+  // do if there is map app
   const geojsonEndpoint = "/wp-json/community-map-theme/geojson";
   const infojsonEndpoint = "/wp-json/community-map-theme/infojson";
 
@@ -37,7 +38,6 @@ async function initializeMapApp() {
   groupAll.addTo(map);
 
   // only for main, Homepage, Filter and Search
-  populateMarkersList(jsonWithGeocode);
   setupSorting();
   setupCategoryFilter(
     mcgLayerSupportGroupAuto,
@@ -122,31 +122,6 @@ function setupCategories(infoJson) {
   return { categoryIconArray, categoryLayergroupArray, groupAll };
 }
 
-function createListItem({
-  post_id,
-  title,
-  category_name,
-  category_slug,
-  category_icon_url,
-  url,
-  date,
-  author,
-  thumbnail_url,
-  excerpt,
-}) {
-  return `
-    <div class="marker--entry map_link_point category_${category_slug}" id="map_id_${post_id}" category="${category_slug}" date="${date}" author="${author}">
-      <div class="entry_title">${title}</div>
-      <div class="entry_date">${date}</div>
-      <div class="entry_author">${author}</div>
-      <div class="entry_category">
-        <img src="${category_icon_url}"/>
-        ${category_name}
-      </div>
-      <a class="dn button main-page-button" href="${url}">Eintrag ansehen</a>
-    </div>`;
-}
-
 function populateMarkersAndList(
   jsonWithGeocode,
   categoryIconArray,
@@ -159,21 +134,6 @@ function populateMarkersAndList(
     const categorySlug = feature.taxonomy.category.slug;
 
     const datenbankList = document.querySelector("#marker_list");
-    datenbankList.insertAdjacentHTML(
-      "beforeend",
-      createListItem({
-        post_id: feature.id,
-        title: feature.properties.name,
-        category_name: category,
-        category_slug: categorySlug,
-        category_icon_url: feature.taxonomy.category.icon_url,
-        url: feature.properties.url,
-        date: feature.properties.date,
-        author: feature.properties.author,
-        thumbnail_url: feature.properties.thumbnail_url,
-        excerpt: feature.properties.excerpt,
-      })
-    );
 
     const marker = createMarker(feature, categoryIconArray[category]);
     marker.addTo(categoryLayergroupArray[category]);
@@ -193,27 +153,6 @@ function populateMarkers(
 
     marker.addTo(categoryLayergroupArray[category]);
     marker.addTo(groupAll);
-  });
-}
-
-function populateMarkersList(jsonWithGeocode) {
-  jsonWithGeocode.features.forEach((feature) => {
-    const List_container = document.querySelector("#marker_list");
-    List_container.insertAdjacentHTML(
-      "beforeend",
-      createListItem({
-        post_id: feature.id,
-        title: feature.properties.name,
-        category_name: feature.taxonomy.category.name,
-        category_slug: feature.taxonomy.category.slug,
-        category_icon_url: feature.taxonomy.category.icon_url,
-        url: feature.properties.url,
-        date: feature.properties.date,
-        author: feature.properties.author,
-        thumbnail_url: feature.properties.thumbnail_url,
-        excerpt: feature.properties.excerpt,
-      })
-    );
   });
 }
 
