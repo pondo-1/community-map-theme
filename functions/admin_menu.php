@@ -38,7 +38,7 @@ class Themesetting
       $geocenter = $this->sanitize_geocode($_POST['map_center_point']);
       if ($geocenter) {
         update_option('map_center_point', $geocenter);
-        list($long, $lati) = explode(', ', $geocenter);
+        list($lati, $long) = explode(', ', $geocenter);
         update_option('map_center_long', $long);
         update_option('map_center_lati', $lati);
 
@@ -75,7 +75,7 @@ class Themesetting
             <th scope="row"><?php echo __('Map Center Geocode', 'textdomain'); ?></th>
             <td>
               <p>input need to be seperated by comma(,): You can get this value from google map easily</p>
-              <p>longitude, latitude </p>
+              <p>latitude, longitude</p>
               <p>default : 50.15489468904496, 9.629545376420513</p>
               <input type="text" name="map_center_point" value="<?php echo $geocenter; ?>" class="regular-text" />
               <p class="description"><?php echo __('Enter the geocode for the map center point.', 'textdomain'); ?></p>

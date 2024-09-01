@@ -23,12 +23,61 @@ class Post_meta_setting
     add_filter('manage_markertax_custom_column', [$this, 'populate_taxonomy_custom_columns'], 10, 3); // Replace 'genre' with your taxonomy slug
 
 
+    add_theme_support('post-thumbnails', array('post', 'marker'));
+
+    //////////------------Meta data for new Post page----------------// 
+    add_action('add_meta_boxes', array($this, 'standort_boxes'));
+    add_action('save_post', array($this, 'save_standort_box'));
+
 
     //////------------Amdin Post list columns ----------------//
     /////////------- Add custom column, to see if the post has a right Geocode
     add_filter('manage_posts_columns',                      array($this, 'custom_posts_table_head'));
     add_action('manage_posts_custom_column',                array($this, 'plugin_custom_column'), 10, 2);
   }
+
+
+  function standort_boxes_display_callback($post)
+  {
+    include FUNCTIONSPATH . 'admin_geo_metabox.php';
+  }
+
+  function standort_boxes()
+  {
+    add_meta_box(
+      'standort', // name
+      __('Standort: geographische Koordinaten'), //display text 
+      array($this, 'standort_boxes_display_callback'), // call back function  
+      'marker'
+    );
+  }
+
+  function save_standort_box($post_id)
+  {
+    //don't autosave lat/long
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+
+    if ($parent_id = wp_is_post_revision($post_id)) {
+      $post_id = $parent_id;
+    }
+
+    // show at/long in form if already exists (when editing existing post)
+    $fields = [
+      'latitude',
+      'longitude',
+    ];
+    foreach ($fields as $field) {
+      if (array_key_exists($field, $_POST)) {
+        update_post_meta($post_id, $field, sanitize_text_field($_POST[$field]));
+      }
+    }
+  }
+
+  //////////end------------Meta data for new Post page----------------// 
+
+
+
+
   function remove_default_post_type()
   {
     remove_menu_page('edit.php');
@@ -56,7 +105,7 @@ class Post_meta_setting
       'supports' => array('title', 'editor', 'thumbnail', 'custom-fields'),
       'has_archive' => true,
       'rewrite' => array('slug' => 'marker'),
-      'show_in_rest' => false, // Disable the block editor (Gutenberg)
+      'show_in_rest' => true, // Disable/able the block editor (Gutenberg)
       'taxonomies' => array(), // Only use the custom taxonomy 'markertax'
 
     );

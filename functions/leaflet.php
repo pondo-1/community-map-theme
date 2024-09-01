@@ -7,6 +7,11 @@ class Leaflet_setting
     // Add Leaflet dependency for frontend
     add_action('wp_enqueue_scripts', [$this, 'leaflet_dependency'], 20, 1);
     add_action('wp_enqueue_scripts', [$this, 'leaflet_frontend'], 20, 1);
+
+    //////////------------Geocode searching for new Post page----------------//
+    ////////// for Admin page/ backend dependecy admin_enqueue_scripts, for Frontend dependency wp_enqueue_scripts
+    add_action('admin_enqueue_scripts', [$this, 'leaflet_dependency'], 10, 1);
+    add_action('admin_enqueue_scripts', [$this, 'metabox_javascript'], 10, 1);
   }
 
   function leaflet_dependency()
@@ -26,6 +31,17 @@ class Leaflet_setting
     wp_enqueue_script('map_init',                         get_template_directory_uri() . '/js/map_init.js', array(), false, true);
     wp_enqueue_script('mapapp_init',                         get_template_directory_uri() . '/js/mapapp_init.js', array('map_init'), false, true);
     wp_enqueue_script('mapapp_single-marker',                         get_template_directory_uri() . '/js/mapapp_single-marker.js', array('map_init', 'mapapp_init'), false, true);
+  }
+
+  function metabox_javascript($hook_suffix)
+  {
+    global $post_type;
+    // only call the function for adding coorodinates in Backend, when editing posts
+    if ('post.php' == $hook_suffix || 'post-new.php' == $hook_suffix) {
+      if ($post_type == 'marker') {
+        wp_enqueue_script('admin-map',                         get_template_directory_uri() . '/js/admin_map_metabox.js', array('leaflet-draw-js'), false, true);
+      }
+    }
   }
 }
 

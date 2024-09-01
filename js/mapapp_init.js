@@ -20,7 +20,7 @@ async function initializeMapApp() {
   const { categoryIconArray, categoryLayergroupArray, groupAll } =
     setupCategories(infoJson);
 
-  populateMarkers(
+  const markers = populateMarkers(
     jsonWithGeocode,
     categoryIconArray,
     categoryLayergroupArray,
@@ -40,10 +40,14 @@ async function initializeMapApp() {
   // setupSearch(map, groupAll, saveLayerIdInHtml, buildLink);
   saveLayerIdInHtml(groupAll);
   buildLink(map, groupAll);
-  map.invalidateSize(); // Fix Chrome bug
+  map.invalidateSize(); // Fix Chrome bugo
 
+  // Only for home
+  var allmarekrs = new L.featureGroup(markers);
+  map.fitBounds(allmarekrs.getBounds(), { padding: [50, 50], maxZoom: 14 });
+
+  // only for single-marker
   var current_postid = document.body.getAttribute("data-post-id");
-  console.log("Current Post ID:", current_postid);
   if (current_postid) {
     let route_json = has_route_json(current_postid, jsonWithGeocode);
     let this_marker = find_marker_by_post_id(map, groupAll, current_postid);
@@ -56,7 +60,7 @@ async function initializeMapApp() {
     }
     this_marker.openPopup();
     map.on("zoomend", function (e) {
-      console.log(e.target.getZoom());
+      // console.log(e.target.getZoom());
     });
   }
 }
@@ -183,38 +187,22 @@ function setupCategories(infoJson) {
   return { categoryIconArray, categoryLayergroupArray, groupAll };
 }
 
-function populateMarkersAndList(
-  jsonWithGeocode,
-  categoryIconArray,
-  categoryLayergroupArray,
-  groupAll,
-  map
-) {
-  jsonWithGeocode.features.forEach((feature) => {
-    const category = feature.taxonomy.category.name;
-    const categorySlug = feature.taxonomy.category.slug;
-
-    const datenbankList = document.querySelector("#marker_list");
-
-    const marker = createMarker(feature, categoryIconArray[category]);
-    marker.addTo(categoryLayergroupArray[category]);
-    marker.addTo(groupAll);
-  });
-}
-
 function populateMarkers(
   jsonWithGeocode,
   categoryIconArray,
   categoryLayergroupArray,
   groupAll
 ) {
+  const markers = [];
   jsonWithGeocode.features.forEach((feature) => {
     const category = feature.taxonomy.category.name;
     const marker = createMarker(feature, categoryIconArray[category]);
 
     marker.addTo(categoryLayergroupArray[category]);
     marker.addTo(groupAll);
+    markers.push(marker);
   });
+  return markers;
 }
 
 function createMarker(feature, icon) {
@@ -234,7 +222,7 @@ function createMarker(feature, icon) {
     </div>`;
 
   return L.marker(
-    [feature.geometry.coordinates[1], feature.geometry.coordinates[0]],
+    [feature.geometry.coordinates[0], feature.geometry.coordinates[1]],
     { icon, name: feature.properties.name, post_id: feature.properties.post_id }
   ).bindPopup(popupText);
 }
