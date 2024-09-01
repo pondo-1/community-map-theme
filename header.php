@@ -24,8 +24,9 @@
 </head>
 
 
-<body <?php body_class();
-      ?>>
+<body
+  <?php body_class(); ?>
+  <?php if (get_post_type() == 'marker') : ?> data-post-id="<?php echo get_the_ID(); ?>" <?php endif; ?>>
 
   <?php
   wp_body_open(); //do_action( 'wp_body_open' ); ex add_action( 'wp_body_open', 'google_tags_manager_body_open_scripts' );

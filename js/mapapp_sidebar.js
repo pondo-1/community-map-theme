@@ -4,7 +4,7 @@ class CheckboxHandler {
   }
 
   init() {
-    if (document.querySelector(".mapapp .sidebar")) {
+    if (document.querySelector(".home .mapapp .sidebar")) {
       this.initListStyle();
       this.addEventListeners();
     }
@@ -96,7 +96,7 @@ class SortFnHandler {
   }
 
   init() {
-    if (document.querySelector(".mapapp .sidebar")) {
+    if (document.querySelector(".home .mapapp .sidebar")) {
       this.addEventListeners();
     }
   }

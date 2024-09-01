@@ -20,13 +20,6 @@ async function initializeMapApp() {
   const { categoryIconArray, categoryLayergroupArray, groupAll } =
     setupCategories(infoJson);
 
-  // populateMarkersAndList(
-  //   jsonWithGeocode,
-  //   categoryIconArray,
-  //   categoryLayergroupArray,
-  //   groupAll,
-  //   map
-  // );
   populateMarkers(
     jsonWithGeocode,
     categoryIconArray,
@@ -48,6 +41,74 @@ async function initializeMapApp() {
   saveLayerIdInHtml(groupAll);
   buildLink(map, groupAll);
   map.invalidateSize(); // Fix Chrome bug
+
+  var current_postid = document.body.getAttribute("data-post-id");
+  console.log("Current Post ID:", current_postid);
+  if (current_postid) {
+    let route_json = has_route_json(current_postid, jsonWithGeocode);
+    let this_marker = find_marker_by_post_id(map, groupAll, current_postid);
+
+    if (route_json) {
+      let drawnroute = L.geoJson(route_json).addTo(map);
+      map.fitBounds(drawnroute.getBounds(), { padding: [100, 100] });
+    } else {
+      zoom_in_to_marker(map, this_marker);
+    }
+    this_marker.openPopup();
+    map.on("zoomend", function (e) {
+      console.log(e.target.getZoom());
+    });
+  }
+}
+
+function has_route_json(current_postid, jsonWithGeocode) {
+  jsonWithGeocode.features.forEach((feature) => {
+    if (feature.id == current_postid && !(feature.route.length == 0)) {
+      let route_json = JSON.parse(decodeURIComponent(feature.route[0]));
+      return route_json;
+    } else return null;
+  });
+}
+
+function find_marker_by_post_id(map, markers, post_id) {
+  var this_post_marker;
+  markers.eachLayer((marker) => {
+    if (post_id == marker["options"]["post_id"]) {
+      marker["options"]["zIndexOffset"] = 99;
+      var map_id = markers.getLayerId(marker);
+      var marker = markers.getLayer(map_id);
+      let popuptext =
+        '<div class="hier_bin_ich"><div class="popup_title">' +
+        marker["options"]["name"] +
+        "</div></div>";
+
+      let customicon = L.divIcon({
+        className: "here-bin-ich",
+        iconSize: [60, 60],
+        html:
+          '<img src="' +
+          marker["options"]["icon"]["options"]["iconUrl"] +
+          '" style ="filter: drop-shadow(#124054 0px 0px 15px);">',
+      });
+
+      let bigIcon = L.icon({
+        iconUrl: marker["options"]["icon"]["options"]["iconUrl"],
+        iconSize: [60, 60],
+      });
+
+      marker.setIcon(customicon);
+      //marker.setIcon(bigIcon);
+      marker.bindPopup(popuptext);
+      this_post_marker = marker;
+    }
+  });
+  return this_post_marker;
+}
+
+function zoom_in_to_marker(map, marker) {
+  var markerBounds = L.latLngBounds([marker.getLatLng()]);
+  map.fitBounds(markerBounds);
+  map.setZoom(16);
 }
 
 function handleScreenResize(map) {
@@ -211,49 +272,6 @@ function buildLink(map, markers) {
   );
 }
 
-// function setupSorting() {
-//   document
-//     .getElementById("main_page_list_sort_options")
-//     .addEventListener("change", (event) => {
-//       sortList(event.target.value);
-//     });
-// }
-
-function sortList(option) {
-  const list = document.getElementById("marker_list");
-  let switching = true;
-
-  while (switching) {
-    switching = false;
-    const items = document.getElementsByClassName("marker--entry");
-
-    for (let i = 0; i < items.length - 1; i++) {
-      let shouldSwitch = false;
-      let check;
-
-      if (option == 0) {
-        check =
-          new Date(items[i].getAttribute("date")) <
-          new Date(items[i + 1].getAttribute("date"));
-      } else if (option == 1) {
-        check =
-          items[i].innerHTML.toLowerCase() >
-          items[i + 1].innerHTML.toLowerCase();
-      } else if (option == 2) {
-        check =
-          items[i].getAttribute("author").toLowerCase() >
-          items[i + 1].getAttribute("author").toLowerCase();
-      }
-
-      if (check) {
-        items[i].parentNode.insertBefore(items[i + 1], items[i]);
-        switching = true;
-        break;
-      }
-    }
-  }
-}
-
 function setupCategoryFilter(
   mcgLayerSupportGroupAuto,
   groupAll,
@@ -267,16 +285,9 @@ function setupCategoryFilter(
         const currentCategory = document.getElementsByClassName(targetClass);
 
         if (checkbox.checked) {
-          // Array.from(currentCategory).forEach(
-          //   (el) => (el.style.display = "block")
-          // );
           const categoryName = checkbox.getAttribute("category_name");
           const group = categoryLayergroupArray[categoryName];
           mcgLayerSupportGroupAuto.addLayer(group);
-        } else {
-          // Array.from(currentCategory).forEach(
-          //   (el) => (el.style.display = "none")
-          // );
         }
       });
     });

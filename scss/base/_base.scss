@@ -11,6 +11,22 @@ main {
 body {
   margin: 0;
 }
+
+p {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 32px;
+  color: var(--d_text);
+  strong {
+    font-weight: 600;
+  }
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 34px;
+}
+
 ul,
 ol {
   list-style: none;
@@ -19,4 +35,12 @@ ol {
 a {
   color: $primary_color;
   text-decoration: none;
+  &:hover,
+  &:active {
+    opacity: 0.75;
+  }
+}
+svg {
+  height: 100%;
+  width: 100%;
 }

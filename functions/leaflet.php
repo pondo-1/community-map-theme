@@ -25,6 +25,7 @@ class Leaflet_setting
   {
     wp_enqueue_script('map_init',                         get_template_directory_uri() . '/js/map_init.js', array(), false, true);
     wp_enqueue_script('mapapp_init',                         get_template_directory_uri() . '/js/mapapp_init.js', array('map_init'), false, true);
+    wp_enqueue_script('mapapp_single-marker',                         get_template_directory_uri() . '/js/mapapp_single-marker.js', array('map_init', 'mapapp_init'), false, true);
   }
 }
 

@@ -108,6 +108,7 @@
         font-size: 20px;
         color: white;
       }
+
       // popup
       .leaflet-popup-pane {
         .leaflet-popup {
@@ -178,11 +179,31 @@
             }
           }
         }
+        .leaflet-popup-close-button {
+          &::before {
+            content: "";
+            background-image: url("#{$mapappAssets}static_icon_x.svg");
+            display: flex;
+            background-position: center center;
+            background-size: 60%;
+            background-repeat: no-repeat;
+            position: relative;
+            left: 0px;
+            background-color: #fff;
+            border-radius: 50px;
+            box-shadow: 0 0 2px 1px gray;
+            width: 24px;
+            height: 24px;
+          }
+
+          // hide default x
+          span {
+            display: none;
+          }
+        }
       }
     }
   }
-
-
 }
 
 .leaflet-popup .popup_button::after {

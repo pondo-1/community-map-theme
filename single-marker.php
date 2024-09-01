@@ -25,14 +25,25 @@
     <div class="main_map_block map_block" id="main_page_map"></div>
   </div>
 
-  <div class="content">
+  <div class="content sidebar">
 
     <div class="scrolldown_wrapper"><a href="#content_start" aria-label="scrolldown"><span class="scrolldown icon"></span></a></div>
     <div id="content_start" class="post_content_block">
       <div class="post_content">
-        <a aria-label="zurück" href="/" class="close"><span class="close close_icon"></span></a>
+        <a aria-label="zurück" href="/" class="close"><span class="close close_icon"><?php echo file_get_contents(get_template_directory_uri() . '/assets/mapapp/icon_x.svg'); ?></span></a>
         <h1><?php echo  get_the_title(); ?></h1>
-        <!-- //    <div class="just_checkin">  -->
+        <div class="entry_category">
+
+          <?php
+          $post_id = get_the_ID();
+          $terms = get_the_terms($post_id, 'markertax');
+          $category_name = $terms ? $terms[0]->name : '';
+          $category_icon_url = $terms ? get_term_meta($terms[0]->term_id, 'taxonomy-icon', true) : '';
+
+          ?>
+          <img src="<?php echo $category_icon_url ?>" /><b><?php echo $category_name; ?></b>
+          <span><?php echo get_the_date(); ?></span>
+        </div>
         <?php
         //echo get_the_content();
         the_content()
@@ -46,8 +57,10 @@
                                           $string = 'Eintrag erstellt von ' .  $author . ' am ' . $date . '.';
                                           echo $string; ?>
           </p>
-          <a href="whatsapp://send?text=Ein Beitrag aus der Kulturdatenbank Sinngrund, den ich teilen möchte: <?php echo get_permalink() ?>" class="button share mobile">Eintrag teilen per WhatsApp</a>
-          <a href="mailto:?subject=Eintrag der Kulturdatenbank Sinngrund&amp;body=Ein Beitrag aus der Kulturdatenbank Sinngrund, den ich teilen möchte: <?php echo get_permalink() ?>" class="button share desktop">Eintrag teilen per Email</a>
+
+          <a class="share mobile" href="whatsapp://send?text=Ein Beitrag aus der Kulturdatenbank Sinngrund, den ich teilen möchte: <?php echo get_permalink() ?>">Eintrag teilen per WhatsApp</a>
+          <a class="share desktop" href="mailto:?subject=Eintrag der Kulturdatenbank Sinngrund&amp;body=Ein Beitrag aus der Kulturdatenbank Sinngrund, den ich teilen möchte: <?php echo get_permalink() ?>">Eintrag teilen per Email</a>
+          share icon
         </div>
         <?php //echo do_shortcode('[gravityform id="4" title="true"]'); 
         ?>

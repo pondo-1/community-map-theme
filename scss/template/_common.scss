@@ -5,6 +5,7 @@
   font-weight: 500;
   width: 100%;
 }
+
 .mapapp {
   display: grid;
   grid-template-rows: 100%;
@@ -17,6 +18,30 @@
     .menu.top ul {
       padding: 8px 16px;
       margin: 0;
+    }
+  }
+  .sidebar {
+    margin: 0;
+
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    background-color: rgba(128, 128, 128, 0.1);
+  }
+  .legal ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: flex-end;
+    li {
+      padding: 5px 30px;
+      line-height: 1em;
+      font-size: 14px;
+      color: #000;
     }
   }
 

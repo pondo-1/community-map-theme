@@ -5,7 +5,8 @@ class Post_meta_setting
   public function __construct()
   {
     add_action('init', array($this, 'create_marker_post_type'));
-
+    // Hide default Beitrag
+    add_action('admin_menu', [$this, 'remove_default_post_type']);
     // Add Map Taxonomie
     add_action('init', [$this, 'create_map_taxonomy']);
 
@@ -28,6 +29,10 @@ class Post_meta_setting
     add_filter('manage_posts_columns',                      array($this, 'custom_posts_table_head'));
     add_action('manage_posts_custom_column',                array($this, 'plugin_custom_column'), 10, 2);
   }
+  function remove_default_post_type()
+  {
+    remove_menu_page('edit.php');
+  }
 
 
 
@@ -47,6 +52,7 @@ class Post_meta_setting
       ),
       'public' => true,
       'show_in_menu' => true,
+      'menu_position' => 5,
       'supports' => array('title', 'editor', 'thumbnail', 'custom-fields'),
       'has_archive' => true,
       'rewrite' => array('slug' => 'marker'),
