@@ -96,6 +96,9 @@ class Dev_custom_button
       'hide_empty' => false,
     ));
 
+    $end_date = time();  // Current time
+    $start_date = strtotime("-3 months", $end_date); // Time three months ago
+
     for ($i = 0; $i < $number_of_posts; $i++) {
       // Generate a random title (2-3 words)
       $title = wp_generate_password(rand(8, 15), false);
@@ -109,11 +112,16 @@ class Dev_custom_button
         $random_term = $available_terms[array_rand($available_terms)];
       }
 
+      $rand_timestamp = mt_rand($start_date, $end_date);
+      $random_date = date('Y-m-d H:i:s', $rand_timestamp);
+
+
       // Create the post
       $post_id = wp_insert_post(array(
         'post_title'    => $title,
         'post_type'     => 'marker',
         'post_status'   => 'publish',
+        'post_date'     => $random_date // Set the random post date
       ));
 
       // Add post meta data (geocode)

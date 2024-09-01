@@ -38,7 +38,7 @@ async function initializeMapApp() {
   groupAll.addTo(map);
 
   // only for main, Homepage, Filter and Search
-  setupSorting();
+  // setupSorting();
   setupCategoryFilter(
     mcgLayerSupportGroupAuto,
     groupAll,
@@ -211,13 +211,13 @@ function buildLink(map, markers) {
   );
 }
 
-function setupSorting() {
-  document
-    .getElementById("main_page_list_sort_options")
-    .addEventListener("change", (event) => {
-      sortList(event.target.value);
-    });
-}
+// function setupSorting() {
+//   document
+//     .getElementById("main_page_list_sort_options")
+//     .addEventListener("change", (event) => {
+//       sortList(event.target.value);
+//     });
+// }
 
 function sortList(option) {
   const list = document.getElementById("marker_list");
@@ -267,16 +267,16 @@ function setupCategoryFilter(
         const currentCategory = document.getElementsByClassName(targetClass);
 
         if (checkbox.checked) {
-          Array.from(currentCategory).forEach(
-            (el) => (el.style.display = "block")
-          );
+          // Array.from(currentCategory).forEach(
+          //   (el) => (el.style.display = "block")
+          // );
           const categoryName = checkbox.getAttribute("category_name");
           const group = categoryLayergroupArray[categoryName];
           mcgLayerSupportGroupAuto.addLayer(group);
         } else {
-          Array.from(currentCategory).forEach(
-            (el) => (el.style.display = "none")
-          );
+          // Array.from(currentCategory).forEach(
+          //   (el) => (el.style.display = "none")
+          // );
         }
       });
     });

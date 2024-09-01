@@ -80,7 +80,7 @@
         margin-right: 5px;
       }
 
-      #main_page_list_sort_options {
+      #list_sort_options {
         flex-grow: 1;
         padding: 15px;
         font-weight: 500;
@@ -94,8 +94,8 @@
       .marker--entry {
         padding: 22.5px 45px 0 45px;
         background-color: #fff;
-        &.bg {
-          background-color: rgba($secondary_color, 0.05);
+        &:not(.show) {
+          display: none;
         }
 
         .entry {
@@ -186,7 +186,7 @@
       padding-left: 5px;
     }
 
-    .kulturdatenbank #main_page_list_sort_options {
+    .kulturdatenbank #list_sort_options {
       background-color: #fff;
       width: 185px;
     }

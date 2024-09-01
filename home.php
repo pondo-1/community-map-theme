@@ -60,7 +60,7 @@
 
     <div class="sort_options_block">
       <span>Sortieren nach</span>
-      <select name="sort_options" id="main_page_list_sort_options">
+      <select name="sort_options" id="list_sort_options">
         <option value="0" selected="">Aktuellste zuerst</option>
         <option value="1">Alpabetisch nach Title</option>
         <!-- <option value="2">Alpabetisch nach Autor</option> -->

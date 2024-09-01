@@ -7,5 +7,6 @@
 ?>
 
 <?php get_header(); ?>
-<?php the_content(); ?>
+---- No template ----
+<?php get_the_content(); ?>
 <?php get_footer(); ?>
