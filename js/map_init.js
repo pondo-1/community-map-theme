@@ -7,7 +7,7 @@ function initializeMap(info_json) {
     zoomControl: false,
   };
 
-  const map = L.map("main_page_map", main_map_options);
+  const map = L.map("mapapp_map", main_map_options);
   L.tileLayer(
     "https://api.mapbox.com/styles/v1/{id}/tiles/256/{z}/{x}/{y}?access_token={accessToken}",
     {
@@ -22,4 +22,38 @@ function initializeMap(info_json) {
   ).addTo(map);
 
   return map;
+}
+
+async function fetchJSON(endpoint) {
+  const response = await fetch(endpoint);
+  return await response.json();
+}
+
+async function initializeMapApp_forAll() {
+  const infojsonEndpoint = "/wp-json/community-map-theme/infojson";
+
+  // const infoJson = await Promise(fetchJSON(infojsonEndpoint));
+  const infoJson = await fetchJSON(infojsonEndpoint);
+  const map = initializeMap(infoJson);
+  handleScreenResize(map);
+  setupZoomControl(map);
+  return map;
+}
+
+function setupZoomControl(map) {
+  L.control
+    .zoom({
+      position: "bottomright",
+    })
+    .addTo(map);
+}
+
+function handleScreenResize(map) {
+  function myFunction(screenWidth) {
+    const position = screenWidth.matches ? "topright" : "bottomright";
+    map.attributionControl.setPosition(position);
+  }
+
+  const screenWidth = window.matchMedia("(max-width: 980px)");
+  myFunction(screenWidth);
 }

@@ -22,7 +22,7 @@
         </a>
       </li>
     </ul>
-    <div class="main_map_block map_block" id="main_page_map"></div>
+    <div class="main_map_block map_block" id="mapapp_map"></div>
   </div>
 
   <div class="content sidebar">

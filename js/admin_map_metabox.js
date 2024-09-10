@@ -1,98 +1,76 @@
-// Metabox map initialize
-function map_init(div_id) {
-  // Allowed Coordinates
+document.addEventListener("DOMContentLoaded", function () {
+  // Check if the body element has the specific classes
 
-  let startlat = 49.652799076693725;
-  let startlon = 9.94738655529318;
-
-  let options = {
-    center: [startlat, startlon],
-    zoom: 12,
-  };
-  let map = L.map(div_id, options);
-  L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
-    attribution: "OSM",
-  }).addTo(map);
-  return map;
-}
-
-//----------------route_map------------------------
-var route_map = map_init("route_map");
-
-var drawnItems = L.featureGroup();
-route_map.addLayer(drawnItems);
-
-//get saved route geodata
-var node = document.getElementById("sad_route");
-
-if (node.value) {
-  //check if saved data is valid
-  let route_json = JSON.parse(decodeURIComponent(node.value));
-  drawnItems = L.geoJson(route_json).addTo(route_map);
-  route_map.addLayer(drawnItems);
-  show_geojson(route_json); // show current geojson
-}
-
-var drawControl = new L.Control.Draw({
-  position: "topright",
-  draw: {
-    circle: false,
-    circlemarker: false,
-    polygon: false,
-    rectangle: false,
-    marker: false,
-  },
-  edit: {
-    featureGroup: drawnItems,
-  },
+  adminMapApp();
 });
 
-route_map.addControl(drawControl);
-
-route_map.on(L.Draw.Event.CREATED, function (e) {
-  drawnItems.addLayer(e.layer);
-  save_and_show_json();
-});
-route_map.on(L.Draw.Event.EDITED, function (e) {
-  save_and_show_json();
-});
-
-function show_geojson(geojson_data) {
-  var geodata = geojson_data.features[0].geometry.coordinates;
-  let string = "";
-  geodata.forEach((coordinate) => {
-    string = string + "[" + coordinate[1] + " " + coordinate[0] + "]" + "<br>";
-  });
-  document.querySelector("#content_sinn").innerHTML = "";
-  document
-    .querySelector("#content_sinn")
-    .insertAdjacentHTML("afterbegin", "[Latitude, Longitude]<br>" + string);
+function adminMapApp() {
+  const map = initializeMapApp_forAll();
 }
+function adminMapSetting() {
+  var myMarker = L.marker([startlat, startlon], {
+    title: "Coordinates",
+    alt: "Coordinates",
+    draggable: true,
+  })
+    .addTo(map)
+    .on("dragend", function () {
+      var lat = myMarker.getLatLng().lat.toFixed(8);
+      var lon = myMarker.getLatLng().lng.toFixed(8);
+      document.getElementById("lat").value = lat;
+      document.getElementById("lon").value = lon;
+      myMarker.bindPopup("Lat " + lat + "<br />Lon " + lon).openPopup();
+    });
 
-function save_and_show_json() {
-  // Extract GeoJson from featureGroup
-  var geojson_data = drawnItems.toGeoJSON();
-  console.log(geojson_data.features.length);
-  show_geojson(geojson_data);
-  //save to meta value
-  document.getElementById("sad_route").value = encodeURIComponent(
-    JSON.stringify(geojson_data)
-  );
+  function chooseAddr(lat1, lng1) {
+    myMarker.closePopup();
+    map.setView([lat1, lng1], 18);
+    myMarker.setLatLng([lat1, lng1]);
+    lat = lat1.toFixed(8);
+    lon = lng1.toFixed(8);
+    document.getElementById("lat").value = lat;
+    document.getElementById("lon").value = lon;
+    myMarker.bindPopup("Lat " + lat + "<br />Lon " + lon).openPopup();
+  }
+
+  function myFunction(arr) {
+    var out = "<br />";
+    var i;
+
+    if (arr.length > 0) {
+      for (i = 0; i < arr.length; i++) {
+        out +=
+          "<div class='address' title='Show Location and Coordinates' onclick='chooseAddr(" +
+          arr[i].lat +
+          ", " +
+          arr[i].lon +
+          ");return false;'>" +
+          arr[i].display_name +
+          "</div>";
+      }
+      document.getElementById("results").innerHTML = out;
+    } else {
+      document.getElementById("results").innerHTML = "Sorry, no results...";
+    }
+  }
+
+  function addr_search() {
+    var inp = document.getElementById("addr");
+    var xmlhttp = new XMLHttpRequest();
+    var url =
+      "https://nominatim.openstreetmap.org/search?format=json&limit=3&q=" +
+      inp.value;
+    xmlhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        var myArr = JSON.parse(this.responseText);
+        myFunction(myArr);
+      }
+    };
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+  }
+
+  setTimeout(function () {
+    map.invalidateSize();
+  }, 1000);
 }
-
-document.getElementById("export").onclick = function (e) {
-  // Extract GeoJson from featureGroup
-  var data = drawnItems.toGeoJSON();
-  var convertedData =
-    "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data));
-  document
-    .getElementById("export")
-    .setAttribute("href", "data:" + convertedData);
-  document.getElementById("export").setAttribute("download", "data.geojson");
-};
-
-setTimeout(function () {
-  route_map.invalidateSize();
-}, 1500);
-
-//end----------------route_map------------------------

@@ -9,8 +9,7 @@ define('FUNCTIONSPATH', THEMEPATH . '/functions/');
 require_once(FUNCTIONSPATH . 'dev.php');
 // dependency & Essential check, Acf pro plugin check 
 require_once(FUNCTIONSPATH . 'dep_check.php');
-
-//Custom admin menu page
+//Custom admin menu page 
 require_once(FUNCTIONSPATH . 'admin_menu.php');
 
 // Data Handling 
@@ -21,9 +20,14 @@ require_once(FUNCTIONSPATH . 'custom_api_endpoint.php');
 
 // View 
 // -- HTMl Structure(Template), Leaflet Javascript, Data für Leaflet and List
-// -- leaflet
+// admin template for the metabox 
+require_once(FUNCTIONSPATH . 'admin_map_metabox_prep.php');
+
+// Enque leaflet for front & Backend, where it needs
 require_once(FUNCTIONSPATH . 'leaflet.php');
 require_once(FUNCTIONSPATH . 'marker_list.php');
+
+
 /* Disable WordPress Admin Bar for all users */
 
 // Initial settings/ Admin / Acf

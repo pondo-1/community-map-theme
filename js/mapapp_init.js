@@ -14,8 +14,8 @@ async function initializeMapApp() {
   ]);
   // const infoJson = await fetchJSON(infojsonEndpoint);
   const map = initializeMap(infoJson);
-  handleScreenResize(map);
   setupZoomControl(map);
+  handleScreenResize(map);
   const mcgLayerSupportGroupAuto = await setupCluster(map);
   const { categoryIconArray, categoryLayergroupArray, groupAll } =
     setupCategories(infoJson);
@@ -123,14 +123,6 @@ function handleScreenResize(map) {
 
   const screenWidth = window.matchMedia("(max-width: 980px)");
   myFunction(screenWidth);
-}
-
-function setupZoomControl(map) {
-  L.control
-    .zoom({
-      position: "bottomright",
-    })
-    .addTo(map);
 }
 
 async function fetchSVG(url) {
