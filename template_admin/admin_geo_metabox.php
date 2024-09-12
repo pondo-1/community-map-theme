@@ -53,13 +53,18 @@
       Geben sie die Koordinaten direkt ein. <br>
     </li>
   </ol>
+  <?php
+  // Check geocode meta exist, if not print map center 
+  $lat = get_post_meta(get_the_ID(), 'latitude', true) ?  get_post_meta(get_the_ID(), 'latitude', true) : get_option('map_center_lati',  true);
+  $lon = get_post_meta(get_the_ID(), 'logitude', true) ?  get_post_meta(get_the_ID(), 'longitude', true) : get_option('map_center_long',  true);
+  ?>
   <div class="metadata_save_here">
     <div><b>Breitengrad</b><input id="latitude" type="text" name="latitude" size=12
-        value="<?php echo esc_attr(get_post_meta(get_the_ID(), 'latitude', true)); ?>">
+        value="<?php echo $lat; ?>">
     </div>
     <div>
       <b>Längengrad</b><input id="longitude" type="text" name="longitude" size=12
-        value="<?php echo esc_attr(get_post_meta(get_the_ID(), 'longitude', true)); ?>">
+        value="<?php echo $lon; ?>">
     </div>
   </div>
   <br>
@@ -85,103 +90,58 @@
 
 
 <script type="text/javascript">
-  // function save_geocode_metadata() {
-  //   document.getElementById("longitude").value = document.getElementById("lon").value;
-  //   document.getElementById("latitude").value = document.getElementById("lat").value;
-  // }
+  function save_geocode_metadata() {
+    document.getElementById("longitude").value =
+      document.getElementById("lon").value;
+    document.getElementById("latitude").value =
+      document.getElementById("lat").value;
+  }
 
+  function addr_search() {
+    var inp = document.getElementById("addr");
+    var xmlhttp = new XMLHttpRequest();
+    var url =
+      "https://nominatim.openstreetmap.org/search?format=json&limit=3&q=" +
+      inp.value;
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        var myArr = JSON.parse(this.responseText);
+        myFunction(myArr);
+      }
+    };
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+  }
 
-  // // Sinngrund
-  // let saved_longi = document.getElementById("longitude").value;
-  // let saved_lati = document.getElementById("latitude").value;
-  // var startlon;
-  // var startlat;
+  function chooseAddr(lat1, lng1) {
+    myMarker.closePopup();
+    map.setView([lat1, lng1], 18);
+    myMarker.setLatLng([lat1, lng1]);
+    lat = lat1.toFixed(8);
+    lon = lng1.toFixed(8);
+    document.getElementById("lat").value = lat;
+    document.getElementById("lon").value = lon;
+    myMarker.bindPopup("Lat " + lat + "<br />Lon " + lon).openPopup();
+  }
 
-  // //Change Center of Map in Backend
+  function myFunction(arr) {
+    var out = "<br />";
+    var i;
 
-  // if (saved_longi.length == 0) {
-  //   startlat = 49.652799076693725;
-  //   startlon = 9.94738655529318;
-  // } else {
-  //   startlon = saved_longi;
-  //   startlat = saved_lati;
-  // }
-
-
-  // var options = {
-  //   center: [startlat, startlon],
-  //   zoom: 12
-  // }
-
-
-
-  // document.getElementById('lat').value = startlat;
-  // document.getElementById('lon').value = startlon;
-
-
-  // var map = L.map('map', options);
-  // var nzoom = 16;
-
-  // L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-  //   attribution: 'OSM'
-  // }).addTo(map);
-
-  // var myMarker = L.marker([startlat, startlon], {
-  //   title: "Coordinates",
-  //   alt: "Coordinates",
-  //   draggable: true
-  // }).addTo(map).on('dragend', function() {
-  //   var lat = myMarker.getLatLng().lat.toFixed(8);
-  //   var lon = myMarker.getLatLng().lng.toFixed(8);
-  //   document.getElementById('lat').value = lat;
-  //   document.getElementById('lon').value = lon;
-  //   myMarker.bindPopup("Lat " + lat + "<br />Lon " + lon).openPopup();
-  // });
-
-  // function chooseAddr(lat1, lng1) {
-  //   myMarker.closePopup();
-  //   map.setView([lat1, lng1], 18);
-  //   myMarker.setLatLng([lat1, lng1]);
-  //   lat = lat1.toFixed(8);
-  //   lon = lng1.toFixed(8);
-  //   document.getElementById('lat').value = lat;
-  //   document.getElementById('lon').value = lon;
-  //   myMarker.bindPopup("Lat " + lat + "<br />Lon " + lon).openPopup();
-  // }
-
-  // function myFunction(arr) {
-  //   var out = "<br />";
-  //   var i;
-
-  //   if (arr.length > 0) {
-  //     for (i = 0; i < arr.length; i++) {
-  //       out += "<div class='address' title='Show Location and Coordinates' onclick='chooseAddr(" + arr[i].lat +
-  //         ", " +
-  //         arr[i].lon + ");return false;'>" + arr[i].display_name + "</div>";
-  //     }
-  //     document.getElementById('results').innerHTML = out;
-  //   } else {
-  //     document.getElementById('results').innerHTML = "Sorry, no results...";
-  //   }
-
-  // }
-
-  // function addr_search() {
-  //   var inp = document.getElementById("addr");
-  //   var xmlhttp = new XMLHttpRequest();
-  //   var url = "https://nominatim.openstreetmap.org/search?format=json&limit=3&q=" + inp.value;
-  //   xmlhttp.onreadystatechange = function() {
-  //     if (this.readyState == 4 && this.status == 200) {
-  //       var myArr = JSON.parse(this.responseText);
-  //       myFunction(myArr);
-  //     }
-  //   };
-  //   xmlhttp.open("GET", url, true);
-  //   xmlhttp.send();
-  // }
-
-
-  // setTimeout(function() {
-  //   map.invalidateSize();
-  // }, 1000);
+    if (arr.length > 0) {
+      for (i = 0; i < arr.length; i++) {
+        out +=
+          "<div class='address' title='Show Location and Coordinates' onclick='chooseAddr(" +
+          arr[i].lat +
+          ", " +
+          arr[i].lon +
+          ");return false;'>" +
+          arr[i].display_name +
+          "</div>";
+      }
+      document.getElementById("results").innerHTML = out;
+    } else {
+      document.getElementById("results").innerHTML = "Sorry, no results...";
+    }
+  }
 </script>

@@ -57,10 +57,10 @@ class Themesetting
     }
 
     // Retrieve the current value of the geocode
-    $geocenter = esc_attr(get_option('map_center_point',  $default_geocenter));
-    $georadius = esc_attr(get_option('map_radius',  $default_georadius));
-    $long = esc_attr(get_option('map_center_long',  $default_georadius));
-    $lati = esc_attr(get_option('map_center_lati',  $default_georadius));
+    $geocenter = esc_attr(get_option('map_center_point',  true));
+    $georadius = esc_attr(get_option('map_radius',  true));
+    $long = esc_attr(get_option('map_center_long',  true));
+    $lati = esc_attr(get_option('map_center_lati',  true));
     $geocode_range = $this->get_geocoderange($long, $lati, $georadius);
     foreach ($geocode_range as $key => $value) {
       update_option($key,  $value);

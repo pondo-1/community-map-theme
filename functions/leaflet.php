@@ -32,12 +32,12 @@ class Leaflet_setting
 
   function map_initialize()
   {
-    wp_enqueue_script('map_init',                         get_template_directory_uri() . '/js/map_init.js', array(), false, true);
+    wp_enqueue_script('map_init',                         get_template_directory_uri() . '/js/map_init.js', array('leaflet-marker-cluster-js'), false, true);
   }
+
   function leaflet_frontend()
   {
-    wp_enqueue_script('mapapp_init',                         get_template_directory_uri() . '/js/mapapp_init.js', array('map_init'), false, true);
-    wp_enqueue_script('mapapp_single-marker',                         get_template_directory_uri() . '/js/mapapp_single-marker.js', array('mapapp_init'), false, true);
+    wp_enqueue_script('mapapp_frontend',                         get_template_directory_uri() . '/js/mapapp_frontend.js', array('map_init'), false, true);
   }
 
   function metabox_javascript($hook_suffix)

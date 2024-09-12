@@ -8,6 +8,9 @@
       line-height: 1.5em;
       text-shadow: 0px 0px 2px #fff;
     }
+    .leaflet-popup:has(.hier_bin_ich) {
+      pointer-events: none;
+    }
     .leaflet-popup-content-wrapper:has(.hier_bin_ich) {
       background-color: rgba(255, 255, 255, 0);
       box-shadow: none;
@@ -21,11 +24,12 @@
 
       .hier_bin_ich {
         width: 100%;
+        pointer-events: none;
         .popup_title {
           margin: 0 auto;
           width: max-content;
           position: relative;
-          left: 10px;
+          // left: 10px;
         }
       }
     }

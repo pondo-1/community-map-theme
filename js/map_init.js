@@ -32,7 +32,6 @@ async function fetchJSON(endpoint) {
 async function initializeMapApp_forAll() {
   const infojsonEndpoint = "/wp-json/community-map-theme/infojson";
 
-  // const infoJson = await Promise(fetchJSON(infojsonEndpoint));
   const infoJson = await fetchJSON(infojsonEndpoint);
   const map = initializeMap(infoJson);
   handleScreenResize(map);
@@ -41,6 +40,7 @@ async function initializeMapApp_forAll() {
 }
 
 function setupZoomControl(map) {
+  console.log(L.control);
   L.control
     .zoom({
       position: "bottomright",

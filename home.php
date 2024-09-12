@@ -106,7 +106,7 @@
             $url = get_permalink();
 
             // Create HTML structure
-            $html .= '<div class="marker--entry map_link_point category_' . esc_attr($category_slug) . '" id="map_id_' . esc_attr($post_id) . '" category="' . esc_attr($category_slug) . '" date="' . esc_attr($date) . '" author="' . esc_attr($author) . '">';
+            $html .= '<div class="show marker--entry map_link_point category_' . esc_attr($category_slug) . '" id="map_id_' . esc_attr($post_id) . '" category="' . esc_attr($category_slug) . '" date="' . esc_attr($date) . '" author="' . esc_attr($author) . '">';
             $html .= '<div class="entry_title">' . esc_html($title) . '</div>';
             $html .= '<div class="entry_date">' . esc_html($date) . '</div>';
             $html .= '<div class="entry_author">' . esc_html($author) . '</div>';
