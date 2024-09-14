@@ -1,7 +1,9 @@
 <?
+add_action('admin_init', 'check_required_plugin');
 // Dependencies, 
 function check_required_plugin()
 {
+
   // Specify the required plugin by its folder and main file
   $required_plugin = 'advanced-custom-fields-pro/acf.php';
 
@@ -9,11 +11,9 @@ function check_required_plugin()
   if (!is_plugin_active($required_plugin)) {
     // Display a warning message in the admin area
     add_action('admin_notices', 'show_plugin_warning');
-  } else {
     add_filter('acf/settings/save_json', 'my_acf_json_save_point');
   }
 }
-add_action('admin_init', 'check_required_plugin');
 
 function show_plugin_warning()
 {
@@ -25,5 +25,5 @@ function show_plugin_warning()
 
 function my_acf_json_save_point($path)
 {
-  return get_stylesheet_directory() . 'assets/acf';
+  return get_stylesheet_directory() . '/test';
 }
