@@ -1,0 +1,57 @@
+// /* Postioning close button */
+// .popup_wrapper #d-close-button {
+//   margin: 0;
+//   padding: 0;
+//   width: 32px;
+//   height: 32px;
+
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   transform: translate(30%, -30%);
+
+//   background-color: #fff;
+//   border-radius: 50%;
+//   box-shadow: 0 0 5px 1px var(--l_grey);
+//   z-index: 9;
+
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// .popup_wrapper #d-close-button:hover,
+// .popup_wrapper #d-close-button:active {
+//   background-color: #808080;
+// }
+
+// .popup_wrapper #d-close-button .close_x_mark {
+//   height: 50%;
+//   width: 50%;
+//   background-image: url("/wp-content/plugins/ILEK-Map-App/icons/close-black.svg");
+// }
+
+// .popup_wrapper.hide_info {
+//   display: none;
+// }
+
+.popup_wrapper.show {
+  height: 100%;
+  background-color: rgba(128, 128, 128, 0.8);
+  position: fixed;
+  z-index: 1010;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup.info {
+  max-width: 1200px;
+  background-color: #fff;
+  display: block;
+  position: relative;
+  margin: 5%;
+}

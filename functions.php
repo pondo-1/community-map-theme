@@ -23,10 +23,12 @@ require_once(FUNCTIONSPATH . 'custom_api_endpoint.php');
 // admin template for the metabox 
 require_once(FUNCTIONSPATH . 'admin_map_metabox_prep.php');
 
-// Enque leaflet for front & Backend, where it needs
+// -- Enque leaflet for front & Backend, where it needs
 require_once(FUNCTIONSPATH . 'leaflet.php');
 require_once(FUNCTIONSPATH . 'marker_list.php');
 
+// -- Welcome popup 
+require_once(FUNCTIONSPATH . 'welcome_popup.php');
 
 /* Disable WordPress Admin Bar for all users */
 

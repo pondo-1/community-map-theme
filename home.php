@@ -125,17 +125,6 @@
         wp_reset_postdata(); // Reset the post data to avoid conflicts elsewhere
         echo $html;
         ?>
-        <!-- only the javascript part need to be printed with javascript -->
-        <!-- <div class="marker--entry map_link_point category_ile-projekt" id="map_id_96" echo ="ile-projekt" date="22. August 2024" author="Okto" value="131">
-          <div class="entry_title">W1pYdiGhEG5SrL</div>
-          <div class="entry_date">22. August 2024</div>
-          <div class="entry_author">Okto</div>
-          <div class="entry_category">
-            <img src="http://localhost:10059/wp-content/themes/community-map-theme/assets/markertax/ILE-Projekt.svg">
-            ILE-Projekt
-          </div>
-          <a class="dn button main-page-button" href="http://localhost:10059/marker/w1pydigheg5srl/">Eintrag ansehen</a>
-        </div> -->
       </div>
     </div>
 

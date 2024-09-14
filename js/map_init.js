@@ -40,7 +40,6 @@ async function initializeMapApp_forAll() {
 }
 
 function setupZoomControl(map) {
-  console.log(L.control);
   L.control
     .zoom({
       position: "bottomright",

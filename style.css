@@ -1,6 +1,13 @@
 /*
  Theme Name: Community Map Theme
  Author: PAGE EFFECT
- Version: 
+ Version: 0.9
  Description: 
  */
+
+/* z-index
+ leaflet map  		400
+ leaflet-control-zoom 800
+ leaflet-bottom   1000
+ top menu 		    800
+ popup background 1010 */
