@@ -1,10 +1,10 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
   // leaflet
-  adminMapApp();
+  await adminMapApp();
 });
 
-function adminMapApp() {
-  const map = initializeMapApp_forAll();
+async function adminMapApp() {
+  const map = await initializeMapApp_forAll();
 
   let saved_lati = document.getElementById("latitude").value;
   let saved_longi = document.getElementById("longitude").value;
@@ -34,6 +34,8 @@ function adminMapSetting([startlat, startlon], map) {
       console.log(lat + "" + startlat);
       marker.bindPopup("Lat " + lat + "<br />Lon " + lon).openPopup();
     });
+
+  map.setView(new L.LatLng(startlat, startlon), 12.5);
 
   setTimeout(function () {
     map.invalidateSize();
