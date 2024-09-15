@@ -1,0 +1,23 @@
+{
+    "key": "ui_options_page_66c08dae62a14",
+    "title": "Welcome popup",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "Welcome popup",
+    "menu_slug": "welcome_popup_setting",
+    "parent_slug": "theme_setting",
+    "advanced_configuration": 1,
+    "icon_url": "",
+    "menu_title": "",
+    "position": "",
+    "redirect": false,
+    "description": "",
+    "menu_icon": [],
+    "update_button": "Aktualisieren",
+    "updated_message": "Optionen aktualisiert",
+    "capability": "edit_posts",
+    "data_storage": "options",
+    "post_id": "",
+    "autoload": 0,
+    "modified": 1726401462
+}

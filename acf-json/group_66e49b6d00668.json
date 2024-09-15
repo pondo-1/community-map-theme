@@ -1,13 +1,13 @@
 {
     "key": "group_66e49b6d00668",
-    "title": "Option Seit",
+    "title": "Welcome popup",
     "fields": [
         {
-            "key": "field_66e49b6dd7c52",
-            "label": "welcome text",
-            "name": "welcome_text",
+            "key": "field_66e6cc3363f88",
+            "label": "welcome image",
+            "name": "welcome_image",
             "aria-label": "",
-            "type": "wysiwyg",
+            "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,11 +16,37 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_66e49b6dd7c52",
+            "label": "welcome text",
+            "name": "welcome_text",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Welcome to our website",
             "allow_in_bindings": 0,
             "tabs": "all",
             "toolbar": "full",
-            "media_upload": 1,
+            "media_upload": 0,
             "delay": 0
         }
     ],
@@ -29,7 +55,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "acf_theme_setting"
+                "value": "welcome_popup_setting"
             }
         ]
     ],
@@ -42,5 +68,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726342416
+    "modified": 1726401691
 }

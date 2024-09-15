@@ -1,0 +1,24 @@
+@mixin x_button_at_before($size: 24px) {
+  cursor: pointer;
+  height: fit-content;
+
+  &::before {
+    content: "";
+    width: $size;
+    height: $size;
+    background-image: url("#{$mapappAssets}static_icon_x.svg");
+    display: flex;
+    background-position: center center;
+    background-size: 60%;
+    background-repeat: no-repeat;
+    position: relative;
+    left: 0px;
+    background-color: #fff;
+    border-radius: 50px;
+    box-shadow: 0 0 2px 1px gray;
+    &:hover,
+    &:active {
+      background-color: #808080;
+    }
+  }
+}

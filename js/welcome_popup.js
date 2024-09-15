@@ -7,6 +7,6 @@ jQuery(document).ready(function ($) {
     $(".popup_wrapper").addClass("show");
   });
 
-  console.log(document.cookie.indexOf("KDB_visitor_visit_time="));
-  console.log(document.cookie);
+  // console.log(document.cookie.indexOf("KDB_visitor_visit_time="));
+  // console.log(document.cookie);
 });
