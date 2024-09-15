@@ -3,7 +3,8 @@ jQuery(document).ready(function ($) {
     $(".popup_wrapper").removeClass("show");
   });
 
-  $(".menu.top .info").click(function () {
+  $(".menu.top .info").click(function (event) {
+    event.preventDefault();
     $(".popup_wrapper").addClass("show");
   });
 

@@ -1,4 +1,6 @@
 .popup_wrapper {
+  display: none;
+  font-weight: 600;
   &.show {
     height: 100%;
     background-color: rgba(128, 128, 128, 0.8);
@@ -17,6 +19,27 @@
     display: block;
     position: relative;
     margin: 15%;
+    .before_content {
+      height: 150px;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    .content_wrapper {
+      position: relative;
+      margin: 5%;
+      h2 {
+        font-size: 40px;
+        font-weight: inherit;
+      }
+    }
+    .popup_buttons {
+      display: flex;
+      font-size: 16px;
+      font-weight: inherit;
+    }
   }
   .close.d-button {
     @include x_button_at_before(32px);
@@ -24,25 +47,5 @@
     top: 0px;
     right: 0px;
     transform: translate(40%, -40%);
-  }
-
-  .before_content {
-    height: 150px;
-    img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
-  }
-  .content_wrapper {
-    position: relative;
-    margin: 5%;
-    font-weight: 600;
-    h2 {
-      font-size: 40px;
-    }
-  }
-  .popup_buttons * {
-    font-size: 16px;
   }
 }

@@ -14,4 +14,22 @@ button {
   &:active {
     opacity: 0.75;
   }
+
+  &.right_triangle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 1.5em;
+    font-size: inherit;
+    &::after {
+      content: "";
+      display: inline;
+      width: 1em;
+      height: 1em;
+      margin-left: 0.5em;
+      background-repeat: no-repeat;
+      background-image: url("#{$mapappAssets}static_icon_triangle_right_black.svg");
+      background-size: cover;
+    }
+  }
 }

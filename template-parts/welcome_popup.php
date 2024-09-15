@@ -12,9 +12,11 @@
         <?php echo get_field('welcome_text', 'option'); ?>
       </div>
       <div class="popup_buttons">
-        <a class="button" target="_blank" href="<?php echo site_url("zugang") ?>"><button>Daten bearbeiten</button>
+        <?php
+        ?>
+        <a target="_blank" href="<?php echo site_url("admin"); ?>"><button class="button right_triangle">Daten bearbeiten</button>
         </a>
-        <button class="close button" aria-label="Close">Zur Karte</button>
+        <button class="close button right_triangle" aria-label="Close">Zur Karte </button>
       </div>
     </div>
     <div class="close d-button" id="d-close-button">

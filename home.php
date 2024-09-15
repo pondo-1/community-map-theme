@@ -39,8 +39,8 @@
         Kategorie
       </div>
       <div class="category_filter--button">
-        <button class="all right_tri">Select all</button>
-        <button class="none right_tri">Deselect all</button>
+        <button class="all right_triangle">Select all</button>
+        <button class="none right_triangle">Deselect all</button>
       </div>
       <div class="category_filter--list">
 
