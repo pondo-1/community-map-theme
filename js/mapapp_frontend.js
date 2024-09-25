@@ -286,4 +286,6 @@ function setupSearch(map, groupAll, saveLayerIdInHtml, buildLink) {
   });
 }
 
-document.addEventListener("DOMContentLoaded", initializeMapApp);
+if (document.getElementById("mapapp_map")) {
+  document.addEventListener("DOMContentLoaded", initializeMapApp);
+}

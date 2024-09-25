@@ -1,0 +1,10 @@
+.footer_nav {
+  box-shadow: inset 0px -1px 1px 1px gray;
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    li {
+      padding: 5px 30px;
+    }
+  }
+}

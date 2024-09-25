@@ -6,8 +6,8 @@ class Leaflet_setting
   {
     // Add Leaflet dependency for frontend
     add_action('wp_enqueue_scripts', [$this, 'leaflet_dependency'], 20, 1);
-    add_action('wp_enqueue_scripts', [$this, 'leaflet_frontend'], 20, 1);
     add_action('wp_enqueue_scripts', [$this, 'map_initialize'], 20, 1);
+    add_action('wp_enqueue_scripts', [$this, 'leaflet_frontend'], 20, 1);
 
 
     //////////------------Geocode searching for new Post page----------------//
@@ -37,7 +37,9 @@ class Leaflet_setting
 
   function leaflet_frontend()
   {
-    wp_enqueue_script('mapapp_frontend',                         get_template_directory_uri() . '/js/mapapp_frontend.js', array('map_init'), false, true);
+    if (get_post_type() == 'marker' || is_home()) {
+      wp_enqueue_script('mapapp_frontend',                         get_template_directory_uri() . '/js/mapapp_frontend.js', array('map_init'), false, true);
+    }
   }
 
   function metabox_javascript($hook_suffix)

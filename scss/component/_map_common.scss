@@ -3,35 +3,9 @@
   .map-block {
     height: 100%;
     position: relative;
-
     .menu.top {
       position: absolute;
       z-index: 410;
-      width: 100%;
-
-      list-style: none;
-      pointer-events: none;
-
-      display: flex;
-      align-items: space-between;
-      padding: 10px 40px;
-      justify-content: center;
-      li {
-        pointer-events: auto;
-        &:nth-child(1) {
-          margin-right: auto;
-        }
-        &:nth-child(2) {
-          display: flex;
-          align-items: center;
-
-          a {
-            display: flex;
-            column-gap: 3px;
-            align-items: center;
-          }
-        }
-      }
     }
 
     // Main map, selected by leaflet map selector in map init

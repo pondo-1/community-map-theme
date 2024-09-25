@@ -1,0 +1,30 @@
+.menu.top {
+  width: 100%;
+  padding: 40px 60px;
+  list-style: none;
+  pointer-events: none;
+
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  ul {
+    padding: 8px 16px;
+    margin: 0;
+  }
+  li {
+    pointer-events: auto;
+    &:nth-child(1) {
+      margin-right: auto;
+    }
+    &:nth-child(2) {
+      display: flex;
+      align-items: center;
+
+      a {
+        display: flex;
+        column-gap: 3px;
+        align-items: center;
+      }
+    }
+  }
+}

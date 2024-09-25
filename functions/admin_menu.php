@@ -95,7 +95,7 @@ class Themesetting
           </tr>
           <tr>
             <th>Info</th>
-            <td> change the website title (Map App top left text) <a href="http://localhost:10059/wp-admin/options-general.php">here</a>
+            <td> change the website title (Map App top left text) <a href="/wp-admin/options-general.php">here</a>
             </td>
           </tr>
           <tr>

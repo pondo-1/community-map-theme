@@ -10,6 +10,8 @@ $primary_color: $darkgreen;
 $secondary_color: $lightgreen;
 $accent_color: $orange;
 
+$sitewide_bg_color: rgba(128, 128, 128, 0.1);
+
 .primary {
   color: $primary_color;
   &--fill {

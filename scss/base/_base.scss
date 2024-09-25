@@ -11,6 +11,7 @@ main {
 
 body {
   margin: 0;
+  background-color: $sitewide_bg_color;
 }
 
 p {
@@ -28,8 +29,10 @@ h1 {
 }
 
 ul,
-ol {
+ol,
+li {
   list-style: none;
+  margin: 0;
 }
 
 a {

@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function () {
-  // leaflet
-  await adminMapApp();
+  if (document.getElementById("mapapp_map")) {
+    await adminMapApp();
+  }
 });
 
 async function adminMapApp() {
