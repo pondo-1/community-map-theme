@@ -73,15 +73,13 @@
       </div> <!-- // closeing class post_content -->
     </div> <!-- // closeing class datenbank list block -->
 
-    <div class="legal">
-      <nav class="footer_nav">
-        <ul>
-          <li><a href="/impressum/">Impressum</a></li>
-          <li><a href="/datenschutz">Datenschutzerklärung</a></li>
-        </ul>
+    <nav class="footer_nav">
+      <ul>
+        <li><a href="/impressum/">Impressum</a></li>
+        <li><a href="/datenschutz">Datenschutzerklärung</a></li>
+      </ul>
+    </nav>
 
-      </nav>
-    </div>
   </div>
 
 </div>
