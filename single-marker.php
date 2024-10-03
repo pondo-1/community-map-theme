@@ -9,19 +9,7 @@
 <?php get_header(); ?>
 <div class="mapapp">
   <div class="map-block">
-    <ul class="menu top">
-      <li>
-        <a class="logo" href="/">
-          <h1 class="logo"><span><?php echo bloginfo('title'); ?></span></h1>
-        </a>
-      </li>
-      <li>
-        <a class="info" href="#">
-          <?php echo file_get_contents(get_template_directory_uri() . '/assets/mapapp/icon-info.svg'); ?>
-          Info
-        </a>
-      </li>
-    </ul>
+    <?php get_template_part('template-parts/nav-top'); ?>
     <div class="main_map_block map_block" id="mapapp_map"></div>
   </div>
 

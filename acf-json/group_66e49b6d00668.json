@@ -3,6 +3,27 @@
     "title": "Welcome popup",
     "fields": [
         {
+            "key": "field_66fb0ab3d2d41",
+            "label": "Use Welcome popup",
+            "name": "use_welcome_popup",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No",
+            "ui": 1
+        },
+        {
             "key": "field_66e6cc3363f88",
             "label": "welcome image",
             "name": "welcome_image",
@@ -10,7 +31,15 @@
             "type": "image",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66fb0ab3d2d41",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -36,7 +65,15 @@
             "type": "wysiwyg",
             "instructions": "",
             "required": 1,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66fb0ab3d2d41",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -68,5 +105,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726401691
+    "modified": 1727728520
 }

@@ -28,7 +28,7 @@ require_once(FUNCTIONSPATH . 'leaflet.php');
 require_once(FUNCTIONSPATH . 'marker_list.php');
 
 // -- Welcome popup 
-require_once(FUNCTIONSPATH . 'welcome_popup.php');
+// require_once(FUNCTIONSPATH . '_welcome_popup.php');
 
 /* Disable WordPress Admin Bar for all users */
 
