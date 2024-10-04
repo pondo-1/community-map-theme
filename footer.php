@@ -7,7 +7,8 @@
 ?>
 
 </main><!-- .site-main -->
-<?php get_template_part('template-parts/welcome_popup'); ?>
+<?php //get_template_part('template-parts/_welcome_popup'); 
+?>
 <footer class="footer">
 </footer>
 <?php wp_footer(); ?>
