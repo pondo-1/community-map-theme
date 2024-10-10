@@ -14,7 +14,7 @@ function initializeMap(info_json) {
       maxZoom: 18,
       minZoom: 5,
       attribution:
-        '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> | © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> | <a href="https://www.mapbox.com/map-feedback/">Improve this map</a>',
+        '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> | © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> | <a href="https://www.mapbox.com/map-feedback/">Improve this map</a>',
       id: "pondelek/cl9fbuboj000e14o2xcxw3oom",
       accessToken:
         "pk.eyJ1IjoicG9uZGVsZWsiLCJhIjoiY2w5Zm1tc3h4MGphODNvbzBkM29jdWRlaCJ9.j64kLJQP_RmwAccN1jGKrw",
