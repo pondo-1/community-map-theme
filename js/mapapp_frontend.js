@@ -32,7 +32,6 @@ async function initializeMapApp() {
     groupAll,
     categoryLayergroupArray
   );
-  // setupSearch(map, groupAll, saveLayerIdInHtml, buildLink);
   saveLayerIdInHtml(groupAll);
   buildLink(map, groupAll);
   map.invalidateSize(); // Fix Chrome bugo
@@ -256,33 +255,6 @@ function setupCategoryFilter(
         }
       });
     });
-  });
-}
-
-function setupSearch(map, groupAll, saveLayerIdInHtml, buildLink) {
-  const searchInput = document.getElementById("map_search_input");
-
-  searchInput.addEventListener("input", (event) => {
-    const searchValue = event.target.value.toLowerCase();
-    const allMarkers = [];
-
-    groupAll.eachLayer((layer) => {
-      const markerTitle = layer.options.name.toLowerCase();
-      if (markerTitle.includes(searchValue)) {
-        layer.setOpacity(1);
-        allMarkers.push(layer);
-      } else {
-        layer.setOpacity(0);
-      }
-    });
-
-    if (allMarkers.length === 1) {
-      map.flyTo(allMarkers[0].getLatLng(), 16);
-      allMarkers[0].openPopup();
-    }
-
-    saveLayerIdInHtml(allMarkers);
-    buildLink(map, allMarkers);
   });
 }
 

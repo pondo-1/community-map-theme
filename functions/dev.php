@@ -136,6 +136,8 @@ class Dev_custom_button
       }
     }
   }
+
+  
   public function delete_all_markers()
   {
     global $wpdb;

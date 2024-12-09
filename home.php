@@ -66,7 +66,8 @@
 
     <!-- <div id="livesearch"></div> -->
     <div class="marker_list_wrapper">
-      <div class="marker_list" id="marker_list">
+      <div class="marker_list" id="marker_list"></div>
+      <!-- <div class="marker_list" id="marker_list">
         <?php
         $html = '';
         $args = array(
@@ -114,7 +115,7 @@
         wp_reset_postdata(); // Reset the post data to avoid conflicts elsewhere
         echo $html;
         ?>
-      </div>
+      </div> -->
     </div>
 
     <div class="legal">

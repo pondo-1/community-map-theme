@@ -27,14 +27,6 @@ require_once(FUNCTIONSPATH . 'admin_map_metabox_prep.php');
 require_once(FUNCTIONSPATH . 'leaflet.php');
 require_once(FUNCTIONSPATH . 'marker_list.php');
 
-// -- Welcome popup 
-// require_once(FUNCTIONSPATH . '_welcome_popup.php');
-
-/* Disable WordPress Admin Bar for all users */
-
-// Initial settings/ Admin / Acf
-// Save the Categories(icon, color, text)/ main color / Logo / 
-
 
 class CommunityMap
 {

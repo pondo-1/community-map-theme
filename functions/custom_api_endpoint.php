@@ -33,7 +33,7 @@ class RestAPI_Base
     $this->register_route('/' . $route . '/', array($this, 'generator'));
   }
 
-  public function generator()
+  public function generator($request = null)
   {
     // Implement your logic here
   }
@@ -47,7 +47,7 @@ class Infojson_API extends RestAPI_Base
     add_action('rest_api_init', array($this, 'register_api'));
   }
 
-  public function generator()
+  public function generator($request = null)
   {
     $map_center_geo = array_map("floatval", explode(',', esc_attr(get_option('map_center_point'))));
 
@@ -98,14 +98,41 @@ class Geojson_API extends RestAPI_Base
     add_action('rest_api_init', array($this, 'register_api'));
   }
 
-  public function generator()
+  public function register_api()
   {
+    // Register route with search parameter
+    register_rest_route($this->base, '/geojson', array(
+      'methods' => 'GET',
+      'callback' => array($this, 'generator'),
+      'args' => array(
+        'search' => array(
+          'required' => false,
+          'type' => 'string',
+          'sanitize_callback' => 'sanitize_text_field'
+        )
+      )
+    ));
+  }
+
+
+  public function generator($request = null)
+  {
+    $search_term = $request->get_param('search');
     $final_array = [];
     $features = [];
-    $post_type_query = new WP_Query(array(
+
+    // Modify WP_Query to include search
+    $args = array(
       'post_type' => 'marker',
       'posts_per_page' => -1
-    ));
+    );
+
+    // Add search parameter if provided
+    if (!empty($search_term)) {
+      $args['s'] = $search_term;
+    }
+
+    $post_type_query = new WP_Query($args);
 
     while ($post_type_query->have_posts()) {
       $post_type_query->the_post();
@@ -144,6 +171,7 @@ class Geojson_API extends RestAPI_Base
       ];
     }
 
+    wp_reset_postdata();
 
     $final_array = [
       "type" => "FeatureCollection",
@@ -154,4 +182,4 @@ class Geojson_API extends RestAPI_Base
   }
 }
 
-new Geojson_API(); // endpoint: /wp-json/community-map-theme/infojson
+new Geojson_API(); // endpoint: /wp-json/community-map-theme/geojson
