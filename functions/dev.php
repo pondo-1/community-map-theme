@@ -137,7 +137,7 @@ class Dev_custom_button
     }
   }
 
-  
+
   public function delete_all_markers()
   {
     global $wpdb;
@@ -154,9 +154,8 @@ class Dev_custom_button
     $wpdb->print_error();
 
     // Check if the query was successful
-    if ($result_posts !== false) {
+    if ($result_posts != false && $result_posts != '') {
       echo '<div class="notice notice-success"><p>Custom code executed successfully! Rows affected: ' . ($result_posts) . '</p></div>';
-      echo var_dump($wpdb->last_error);
     } else {
       echo '<div class="notice notice-error"><p>An error occurred while executing the custom code.</p></div>';
     }
