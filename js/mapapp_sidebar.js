@@ -143,59 +143,35 @@ class SortFnHandler {
     }
   }
 
-  /**
-   * Implements bubble sort algorithm to sort list items
-   * Sorts based on selected option from dropdown
-   * Uses different comparison criteria based on sort option
-   */
   addEventListeners() {
-    var sort_option_box, i, switching, b, shouldSwitch, option;
-    sort_option_box = document.getElementById("list_sort_options");
-    sort_option_box.addEventListener("change", (event) => {
-      option = event.target.value;
-      switching = true;
-      /* Make a loop that will continue until
-            no switching has been done: */
-      while (switching) {
-        // start by saying: no switching is done:
-        switching = false;
-        //b = list.getElementsByTagName("LI");
-        b = document.getElementsByClassName("marker--entry");
-        // Loop through all list-items:
-        for (i = 0; i < b.length - 1; i++) {
-          // start by saying there should be no switching:
-          shouldSwitch = false;
-          /* check if the next item should
-                switch place with the current item: */
-          var check;
-          if (option == 0) {
-            let x = new Date(b[i].getAttribute("date"));
-            let y = new Date(b[i + 1].getAttribute("date"));
-            check = x < y;
-          } else if (option == 1) {
-            check =
-              b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase();
-          }
-          if (option == 2) {
-            check =
-              b[i].getAttribute("author").toLowerCase() >
-              b[i + 1].getAttribute("author").toLowerCase();
-          }
-          if (check) {
-            /* if next item is alphabetically
-                  lower than current item, mark as a switch
-                  and break the loop: */
-            shouldSwitch = true;
-            break;
-          }
+    const sortOptionBox = document.getElementById("list_sort_options");
+    sortOptionBox.addEventListener("change", (event) => {
+      const option = parseInt(event.target.value);
+      const markerList = document.getElementById("marker_list");
+      const markers = Array.from(
+        document.getElementsByClassName("marker--entry")
+      );
+
+      markers.sort((a, b) => {
+        switch (option) {
+          case 0: // Date sorting
+            return (
+              new Date(b.getAttribute("date")) -
+              new Date(a.getAttribute("date"))
+            );
+          case 1: // Title sorting
+            return a
+              .querySelector(".entry_title")
+              .textContent.localeCompare(
+                b.querySelector(".entry_title").textContent
+              );
+          default:
+            return 0;
         }
-        if (shouldSwitch) {
-          /* If a switch has been marked, make the switch
-                and mark the switch as done: */
-          b[i].parentNode.insertBefore(b[i + 1], b[i]);
-          switching = true;
-        }
-      }
+      });
+
+      // Reappend sorted elements
+      markers.forEach((marker) => markerList.appendChild(marker));
     });
   }
 }
@@ -258,9 +234,9 @@ class MarkerListHandler {
  * - Name (option 0)
  */
 class SearchHandler {
-  constructor(markerListHandler) {
-    this.searchInput = document.getElementById('search');
-    this.markerListHandler = markerListHandler;
+  constructor() {
+    this.searchInput = document.getElementById("search");
+    this.markerListElement = document.getElementById("marker_list");
     this.timeoutId = null;
     this.init();
   }
@@ -272,22 +248,41 @@ class SearchHandler {
   }
 
   addEventListeners() {
-    this.searchInput.addEventListener('keyup', () => {
-      // Clear previous timeout
+    this.searchInput.addEventListener("keyup", () => {
       if (this.timeoutId) {
         clearTimeout(this.timeoutId);
       }
 
-      // Set new timeout for debouncing
       this.timeoutId = setTimeout(async () => {
         const searchTerm = this.searchInput.value.trim();
-        
+
         try {
-          const response = await fetch(`/wp-json/community-map-theme/geojson${searchTerm ? `?search=${searchTerm}` : ''}`);
+          const response = await fetch(
+            `/wp-json/community-map-theme/geojson${
+              searchTerm ? `?search=${searchTerm}` : ""
+            }`
+          );
           const data = await response.json();
-          this.markerListHandler.renderMarkerList(data.features);
+
+          // Get all marker entries in the list
+          const markerEntries =
+            this.markerListElement.querySelectorAll(".marker--entry");
+
+          // Create a Set of matching IDs from the API response
+          const matchingIds = new Set(
+            data.features.map((feature) => `map_id_${feature.id}`)
+          );
+
+          // Show/hide entries based on ID matches
+          markerEntries.forEach((entry) => {
+            if (matchingIds.has(entry.id)) {
+              entry.style.display = ""; // Show matching entries
+            } else {
+              entry.style.display = "none"; // Hide non-matching entries
+            }
+          });
         } catch (error) {
-          console.error('Search error:', error);
+          console.error("Search error:", error);
         }
       }, 300); // 300ms delay
     });
@@ -299,8 +294,7 @@ class SearchHandler {
  * Creates instances of CheckboxHandler, SortFnHandler, and MarkerListHandler
  */
 document.addEventListener("DOMContentLoaded", () => {
-  const markerListHandler = new MarkerListHandler();
-  new SearchHandler(markerListHandler);
+  new SearchHandler();
   new CheckboxHandler();
   new SortFnHandler();
 });

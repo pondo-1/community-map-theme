@@ -38,7 +38,7 @@ async function initializeMapApp() {
 
   // Only for home
   var allmarekrs = new L.featureGroup(markers);
-  map.fitBounds(allmarekrs.getBounds(), { padding: [50, 50], maxZoom: 14 });
+  map.fitBounds(allmarekrs.getBounds(), { padding: [50, 50], maxZoom: 16 });
 
   // only for single-marker
   var current_postid = document.body.getAttribute("data-post-id");
