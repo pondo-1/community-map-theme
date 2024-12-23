@@ -6,7 +6,7 @@ $darkgreen: #0c8a2d;
 $lightgreen: #96bf0d;
 $orange: #f29400;
 
-$primary_color: $darkgreen;
+$primary_color: var(--primary-color);
 $secondary_color: $lightgreen;
 $accent_color: $orange;
 
