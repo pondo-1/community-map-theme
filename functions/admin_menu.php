@@ -253,7 +253,7 @@ class MapAppSettings
         </td>
       </tr>
     </table>
-<?php
+  <?php
   }
 
   /**
@@ -363,8 +363,15 @@ class MapAppSettings
 
 new MapAppSettings();
 
-// function init_mapapp_settings()
-// {
-//   $mapapp_settings = new MapAppSettings();
-// }
-// add_action('admin_menu', 'init_mapapp_settings');
+function add_custom_colors()
+{
+  $primary_color = get_option('mapapp_primary_color', '#407CBF');
+  ?>
+  <style>
+    :root {
+      --primary-color: <?php echo esc_attr($primary_color); ?>;
+    }
+  </style>
+<?php
+}
+add_action('wp_head', 'add_custom_colors');

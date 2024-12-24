@@ -7,8 +7,10 @@
 ?>
 
 </main><!-- .site-main -->
-<?php //get_template_part('template-parts/_welcome_popup'); 
-?>
+
+<?php $welcome_popup = get_field('use_welcome_popup', 'option');  ?>
+<?php ($welcome_popup == true) ? get_template_part('template-parts/welcome_popup') : "" ?>
+
 <footer class="footer">
 </footer>
 <?php wp_footer(); ?>

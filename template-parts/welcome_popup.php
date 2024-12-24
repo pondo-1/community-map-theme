@@ -14,7 +14,7 @@
       <div class="popup_buttons">
         <?php
         ?>
-        <a target="_blank" href="<?php echo site_url("admin"); ?>"><button class="button right_triangle">Daten bearbeiten</button>
+        <a target="_blank" href="<?php echo get_admin_url(); ?>"><button class="button right_triangle">Daten bearbeiten</button>
         </a>
         <button class="close button right_triangle" aria-label="Close">Zur Karte </button>
       </div>

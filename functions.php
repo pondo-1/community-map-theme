@@ -11,18 +11,6 @@ require_once(FUNCTIONSPATH . 'dev.php');
 require_once(FUNCTIONSPATH . 'dep_check.php');
 //Custom admin menu page 
 require_once(FUNCTIONSPATH . 'admin_menu.php');
-function add_custom_colors()
-{
-  $primary_color = get_option('mapapp_primary_color', '#407CBF');
-?>
-  <style>
-    :root {
-      --primary-color: <?php echo esc_attr($primary_color); ?>;
-    }
-  </style>
-<?php
-}
-add_action('wp_head', 'add_custom_colors');
 
 // Data Handling 
 // -- Prepare cpt(mappoints), , Karte taxonomie(markertax)  & Admin columns -> Data  & View 
@@ -38,6 +26,7 @@ require_once(FUNCTIONSPATH . 'admin_map_metabox_prep.php');
 // -- Enque leaflet for front & Backend, where it needs
 require_once(FUNCTIONSPATH . 'leaflet.php');
 require_once(FUNCTIONSPATH . 'marker_list.php');
+require_once(FUNCTIONSPATH . 'welcome_popup.php');
 
 
 class CommunityMap
