@@ -33,8 +33,8 @@
           <span><?php echo get_the_date(); ?></span>
         </div>
         <?php
-        //echo get_the_content();
-        the_content()
+        echo get_the_content();
+        // the_content()
         ?>
         <!-- //   </div>  -->
         <div class="content_footer">
