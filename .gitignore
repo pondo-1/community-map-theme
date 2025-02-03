@@ -7,5 +7,3 @@ build
 build/
 
 # Ignore Assets for specific website related
-assets/mapapp/
-assets/markertax/
