@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg class="theme-icon" width="25px" height="25px" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Search Icon</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g  transform="translate(-1356.000000, -445.000000)" >
+            <g transform="translate(1357.000000, 446.000000)">
+                <circle class="primary--stroke" stroke="#009CDE" stroke-width="3" cx="9.5" cy="9.5" r="9"></circle>
+                <line class="primary--stroke" stroke="#009CDE" stroke-width="3" stroke-linecap="round" x1="16" y1="16" x2="22.4497475" y2="22.4497475" ></line>
+            </g>
+        </g>
+    </g>
+</svg>
