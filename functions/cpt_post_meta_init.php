@@ -127,14 +127,6 @@ class Post_meta_setting
         $content = __('No icon set', 'your-text-domain');
       }
     }
-    // elseif ($column_name == 'color') {
-    //   $color = get_term_meta($term_id, 'taxonomy-color', true);
-    //   if ($color) {
-    //     $content = '<div style="width: 40px; height: 20px; background-color:' . esc_attr($color) . ';"></div>';
-    //   } else {
-    //     $content = __('No color set', 'your-text-domain');
-    //   }
-    // }
     return $content;
   }
 
