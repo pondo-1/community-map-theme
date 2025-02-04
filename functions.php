@@ -35,7 +35,6 @@ class CommunityMap
   function __construct()
   {
     add_action('wp_enqueue_scripts', [$this, 'theme_files']);
-    add_action('admin_enqueue_scripts', [$this, 'theme_files_admin']);
   }
 
   // Enqueue style and js
@@ -46,10 +45,6 @@ class CommunityMap
 
     // Javascript need to be loaded in footer: last variable need to be true
     wp_enqueue_script('theme_js', get_template_directory_uri() . '/build/index.js', array('jquery'), '', true);
-  }
-  function theme_files_admin()
-  {
-    wp_enqueue_style('theme_main_styles', get_theme_file_uri('/build/style-index.css'));
   }
 }
 
