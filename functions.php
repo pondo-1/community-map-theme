@@ -42,7 +42,6 @@ class CommunityMap
   {
     //front end
     wp_enqueue_style('theme_main_styles', get_theme_file_uri('/build/style-index.css'));
-    // wp_enqueue_style('theme_main_styles_2', get_theme_file_uri('/build/index.css'));
 
     // Javascript need to be loaded in footer: last variable need to be true
     wp_enqueue_script('theme_js', get_template_directory_uri() . '/build/index.js', array('jquery'), '', true);
