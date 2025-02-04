@@ -27,7 +27,6 @@ class Post_meta_setting
 
 
 
-
     //////------------Amdin Post list columns ----------------//
     /////////------- Add custom column, to see if the post has a right Geocode
     add_filter('manage_posts_columns',                      array($this, 'custom_posts_table_head'));
@@ -60,7 +59,7 @@ class Post_meta_setting
       'public' => true,
       'show_in_menu' => true,
       'menu_position' => 5,
-      'supports' => array('title', 'editor', 'thumbnail', 'custom-fields'),
+      'supports' => array('title', 'editor', 'thumbnail', 'custom-fields', 'excerpt'),
       'has_archive' => true,
       'rewrite' => array('slug' => 'marker'),
       'show_in_rest' => true, // Disable/able the block editor (Gutenberg)
