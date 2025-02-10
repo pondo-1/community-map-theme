@@ -56,7 +56,7 @@
   <?php
   // Check geocode meta exist, if not print map center 
   $lat = get_post_meta(get_the_ID(), 'latitude', true) ?  get_post_meta(get_the_ID(), 'latitude', true) : get_option('map_center_lati',  true);
-  $lon = get_post_meta(get_the_ID(), 'logitude', true) ?  get_post_meta(get_the_ID(), 'longitude', true) : get_option('map_center_long',  true);
+  $lon = get_post_meta(get_the_ID(), 'longitude', true) ?  get_post_meta(get_the_ID(), 'longitude', true) : get_option('map_center_long',  true);
   ?>
   <div class="metadata_save_here">
     <div><b>Breitengrad</b><input id="latitude" type="text" name="latitude" size=12
