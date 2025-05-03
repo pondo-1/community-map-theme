@@ -49,7 +49,6 @@ class Infojson_API extends RestAPI_Base
 
   public function generator($request = null)
   {
-    $map_center_geo = array_map("floatval", explode(',', esc_attr(get_option('map_center_point'))));
 
     $map_info = [
       "center"        => array_map("floatval", explode(',', esc_attr(get_option('map_center_point')))),
