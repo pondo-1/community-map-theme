@@ -129,6 +129,13 @@ class Dev_custom_button
         update_post_meta($post_id, 'latitude', $latitude);
         update_post_meta($post_id, 'longitude', $longitude);
 
+        // Add start and end year 
+        $start_year = max(1900, date('Y', $rand_timestamp));
+        // $end_year need to be at least 5 year bigger then start year and $end year could not be later then 2030
+        $end_year = min(2030, $start_year + max(5, rand(1, 130)));
+        update_post_meta($post_id, 'start_year', $start_year);
+        update_post_meta($post_id, 'end_year', $end_year);
+
         // Assign the taxonomy term
         if (isset($random_term)) {
           wp_set_object_terms($post_id, $random_term->term_id, $taxonomy_key);
