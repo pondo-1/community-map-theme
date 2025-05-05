@@ -136,11 +136,18 @@ class Geojson_API extends RestAPI_Base
     while ($post_type_query->have_posts()) {
       $post_type_query->the_post();
 
-      $marker_tax_list = get_the_terms(get_the_ID(), "markertax");
+      $marker_tax_list = get_the_terms(get_the_ID(), "markertax")[0];
 
       $features[] = [
         'type' => 'Feature',
         'id' => get_the_ID(),
+        'geometry' => array(
+          'type' => 'Point',
+          'coordinates' =>  [
+            (float) get_post_meta(get_the_ID(), $key = "latitude", true),
+            (float) get_post_meta(get_the_ID(), $key = "longitude", true)
+          ]
+        ),
         'properties' => array(
           'name'    => get_the_title(),
           'post_id' => get_the_ID(),
@@ -152,18 +159,15 @@ class Geojson_API extends RestAPI_Base
         ),
         'taxonomy' => array(
           'category' => array(
-            'term_id'   => $marker_tax_list[0]->term_id,
-            'name'      => $marker_tax_list[0]->name,
-            'slug'      => $marker_tax_list[0]->slug,
-            'icon_url' => get_term_meta($marker_tax_list[0]->term_id, 'taxonomy-icon', true)
+            'term_id'   => $marker_tax_list->term_id,
+            'name'      => $marker_tax_list->name,
+            'slug'      => $marker_tax_list->slug,
+            'icon_url' => get_term_meta($marker_tax_list->term_id, 'taxonomy-icon', true)
           )
         ),
-        'geometry' => array(
-          'type' => 'Point',
-          'coordinates' =>  [
-            (float) get_post_meta(get_the_ID(), $key = "latitude", true),
-            (float) get_post_meta(get_the_ID(), $key = "longitude", true)
-          ]
+        'period' => array(
+          'start_year' => get_post_meta(get_the_ID(), $key = "start_year", true),
+          'end_year' => get_post_meta(get_the_ID(), $key = "end_year", true),
         ),
         'route' => get_post_meta(get_the_ID(), $key = "route"),
         'meta_list' => get_post_meta(get_the_ID()),
@@ -181,4 +185,4 @@ class Geojson_API extends RestAPI_Base
   }
 }
 
-new Geojson_API(); // endpoint: /wp-json/community-map-theme/geojson
+new Geojson_API(); // endpoint: /wp-json/community-map-theme/testjson

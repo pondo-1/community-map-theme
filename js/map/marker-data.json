@@ -1,0 +1,18 @@
+[
+  {
+    "lat": 52.52,
+    "lng": 13.405,
+    "category": "A",
+    "start_year": 1950,
+    "end_year": 2000,
+    "popup": "Berlin Marker A"
+  },
+  {
+    "lat": 48.8566,
+    "lng": 2.3522,
+    "category": "B",
+    "start_year": 1980,
+    "end_year": 2020,
+    "popup": "Paris Marker B"
+  }
+]
