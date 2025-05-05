@@ -149,6 +149,8 @@ class Geojson_API extends RestAPI_Base
           'author'  => get_the_author(),
           'thumbnail_url' => get_the_post_thumbnail_url(),
           'excerpt' => has_excerpt() ? get_the_excerpt() : "",
+          'start_year' => get_post_meta(get_the_ID(), $key = "start_year", true),
+          'end_year' => get_post_meta(get_the_ID(), $key = "end_year", true),
         ),
         'taxonomy' => array(
           'category' => array(

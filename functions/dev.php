@@ -130,9 +130,9 @@ class Dev_custom_button
         update_post_meta($post_id, 'longitude', $longitude);
 
         // Add start and end year 
-        $start_year = max(1900, date('Y', $rand_timestamp));
+        $start_year = rand(1900, 2023);
         // $end_year need to be at least 5 year bigger then start year and $end year could not be later then 2030
-        $end_year = min(2030, $start_year + max(5, rand(1, 130)));
+        $end_year = rand($start_year + 5, 2030);
         update_post_meta($post_id, 'start_year', $start_year);
         update_post_meta($post_id, 'end_year', $end_year);
 
