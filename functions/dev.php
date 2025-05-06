@@ -204,31 +204,7 @@ class Dev_custom_button
   }
 
 
-  // function create_markertax_taxonomy()
-  // {
-  //   $labels = array(
-  //     'name'              => _x('Map Taxonomies', 'taxonomy general name', 'textdomain'),
-  //     'singular_name'     => _x('Map Taxonomy', 'taxonomy singular name', 'textdomain'),
-  //     'search_items'      => __('Search Map Taxonomies', 'textdomain'),
-  //     'all_items'         => __('All Map Taxonomies', 'textdomain'),
-  //     'edit_item'         => __('Edit Map Taxonomy', 'textdomain'),
-  //     'update_item'       => __('Update Map Taxonomy', 'textdomain'),
-  //     'add_new_item'      => __('Add New Map Taxonomy', 'textdomain'),
-  //     'new_item_name'     => __('New Map Taxonomy Name', 'textdomain'),
-  //     'menu_name'         => __('Map Taxonomy', 'textdomain'),
-  //   );
 
-  //   $args = array(
-  //     'hierarchical'      => true, // true for categories, false for tags
-  //     'labels'            => $labels,
-  //     'show_ui'           => true,
-  //     'show_admin_column' => true,
-  //     'query_var'         => true,
-  //     'rewrite'           => array('slug' => 'markertax'),
-  //   );
-
-  //   register_taxonomy('markertax', array('post'), $args);
-  // }
 
 
   public function import_markertax_terms($file_path)
