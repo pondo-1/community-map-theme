@@ -135,7 +135,18 @@ export default class MapApp {
         marker.category = feature.taxonomy.category.slug;
         marker.start_year = props.start_year;
         marker.end_year = props.end_year;
-        marker.bindPopup(marker.category || "No info");
+        let popupText = "";
+        if (props.thumbnail_url) {
+          popupText += `<img src="${props.thumbnail_url}" alt="${props.name} thumbnail image" width="50px" height="50px">`;
+        }
+        popupText += `
+        <div class="text_wrapper">
+          <div class="popup_title">${props.name}</div>
+          <div class="popupcategory">${feature.taxonomy.category.name}</div>
+          <p>${props.excerpt || ""}</p>
+          <a class="popup_button button" href="${props.url}">Eintrag ansehen</a>
+        </div>`;
+        marker.bindPopup(popupText);
         return marker;
       });
 
@@ -200,7 +211,7 @@ export default class MapApp {
         this.map
           .flyTo(marker.getLatLng(), 15, {
             animate: true,
-            duration: 2, // Adjust duration as needed
+            //duration: 2, // Adjust duration as needed
           })
           .once("moveend", () => {
             marker.openPopup();
