@@ -1,6 +1,6 @@
 // MapApp.js
-import L from 'leaflet';
-// Corresponding CSS is added in leaflet,php 
+import L from "leaflet";
+// Corresponding CSS is added in leaflet,php
 import "leaflet.markercluster";
 import "leaflet.markercluster.layersupport"; // make sure this is included
 
@@ -10,11 +10,14 @@ export default class MapApp {
   constructor(mapId, dataUrl, options = {}) {
     this.mapId = mapId;
     this.dataUrl = dataUrl;
-    this.options = Object.assign({
-      filter: false,
-      slider: false,
-      editable: false,
-    }, options);
+    this.options = Object.assign(
+      {
+        filter: false,
+        slider: false,
+        editable: false,
+      },
+      options
+    );
 
     this.markers = [];
     this.map = null;
@@ -42,8 +45,6 @@ export default class MapApp {
       this.initControls();
       this.initSidebarHandlers();
     }
-
-   
   }
 
   initMap() {
@@ -85,21 +86,21 @@ export default class MapApp {
   }
 
   initControls() {
-    console.log('Initializing controls...');
+    console.log("Initializing controls...");
     if (this.options.filter) {
-      document.querySelectorAll('.cat_checkbox').forEach(cb => {
-        cb.addEventListener('change', () => {
+      document.querySelectorAll(".cat_checkbox").forEach((cb) => {
+        cb.addEventListener("change", () => {
           this.updateMarkers();
         });
       });
     }
 
     if (this.options.slider) {
-      const slider = document.getElementById('yearRange');
+      const slider = document.getElementById("yearRange");
       if (slider) {
-        slider.addEventListener('input', () => {
+        slider.addEventListener("input", () => {
           this.year = parseInt(slider.value);
-          document.getElementById('yearValue').textContent = this.year;
+          document.getElementById("yearValue").textContent = this.year;
           this.updateMarkers();
         });
         this.year = parseInt(slider.value);
@@ -112,44 +113,55 @@ export default class MapApp {
       const res = await fetch(this.dataUrl);
       const geojson = await res.json();
       const data = geojson.features;
-      this.markers = data.map(feature => {
+      this.markers = data.map((feature) => {
         const coords = feature.geometry.coordinates;
         const props = feature.properties;
 
         const marker = L.marker([coords[0], coords[1]], {
           post_id: props.post_id,
           name: props.name,
-          icon: L.icon({ iconUrl: feature.taxonomy.category.icon_url, iconSize: [30, 30] })  // Optional
+          icon: L.icon({
+            iconUrl: feature.taxonomy.category.icon_url,
+            iconSize: [30, 30],
+          }), // Optional
         });
 
         marker.category = feature.taxonomy.category.slug;
         marker.start_year = props.start_year;
         marker.end_year = props.end_year;
-        marker.bindPopup(marker.category || 'No info');
+        marker.bindPopup(marker.category || "No info");
         return marker;
       });
 
       this.updateMarkers();
-
     } catch (err) {
-      console.error('Error loading marker data:', err);
+      console.error("Error loading marker data:", err);
     }
   }
 
-  updateMarkers() {
+  updateMarkers(searchTerm = "") {
     if (!this.markerGroup) return;
     // Clear existing markers
     this.markerGroup.clearLayers();
-    let filtered = this.markers;
+    let filtered = null;
+    if (this.searchedMarkers) {
+      filtered = this.searchedMarkers;
+    } else {
+      filtered = this.markers;
+    }
 
     if (this.options.filter) {
-      const selectedCategories = Array.from(document.querySelectorAll('input[type=checkbox]:checked')).map(cb => cb.value);
-      filtered = filtered.filter(m => selectedCategories.includes(m.category));
+      const selectedCategories = Array.from(
+        document.querySelectorAll("input[type=checkbox]:checked")
+      ).map((cb) => cb.value);
+      filtered = filtered.filter((m) =>
+        selectedCategories.includes(m.category)
+      );
     }
 
     if (this.options.slider) {
-      filtered = filtered.filter(m =>
-        this.year >= m.start_year && this.year <= m.end_year
+      filtered = filtered.filter(
+        (m) => this.year >= m.start_year && this.year <= m.end_year
       );
     }
 
@@ -159,19 +171,63 @@ export default class MapApp {
   }
 
   updateMarkerlist(filteredMarkers) {
-    const markerList = document.getElementById('marker_list');
-    markerList.innerHTML = ''; // Clear existing list
+    const markerList = document.getElementById("marker_list");
+    markerList.innerHTML = ""; // Clear existing list
 
-    filteredMarkers.forEach(marker => {
-      const li = document.createElement('li');
-      li.textContent = marker.options.name;
-      li.addEventListener('click', () => {
-        this.map.flyTo(marker.getLatLng(), 15);
-        marker.openPopup();
+    filteredMarkers.forEach((marker) => {
+      const div = document.createElement("div");
+      div.className = `show marker--entry map_link_point category_${marker.category}`;
+      div.id = `map_id_${marker.options.post_id}`;
+      div.setAttribute("category", marker.category);
+
+      div.innerHTML = `
+      <div class="entry_title">${marker.options.name}</div>
+      <div class="entry_category">
+        <img src="${marker.options.icon.options.iconUrl}" />
+        ${marker.category}
+      </div>
+      <a class="dn button main-page-button" href="${marker.options.icon.iconUrl}">Eintrag ansehen</a>
+      `;
+
+      div.addEventListener("click", () => {
+        this.map
+          .flyTo(marker.getLatLng(), 15, {
+            animate: true,
+            duration: 2, // Adjust duration as needed
+          })
+          .once("moveend", () => {
+            marker.openPopup();
+          });
       });
-      markerList.appendChild(li);
+
+      markerList.appendChild(div);
     });
   }
+
+  // renderMarkerList(features) {
+  //   const html = features
+  //     .map(
+  //       (feature) => `
+  //     <div class="show marker--entry map_link_point category_${feature.taxonomy.category.slug}"
+  //          id="map_id_${feature.id}"
+  //          category="${feature.taxonomy.category.slug}"
+  //          date="${feature.properties.date}"
+  //          author="${feature.properties.author}">
+  //       <div class="entry_title">${feature.properties.name}</div>
+  //       <div class="entry_date">${feature.properties.date}</div>
+  //       <div class="entry_author">${feature.properties.author}</div>
+  //       <div class="entry_category">
+  //         <img src="${feature.taxonomy.category.icon_url}" />
+  //         ${feature.taxonomy.category.name}
+  //       </div>
+  //       <a class="dn button main-page-button" href="${feature.properties.url}">Eintrag ansehen</a>
+  //     </div>
+  //   `
+  //     )
+  //     .join("");
+
+  //   this.markerListElement.innerHTML = html;
+  // }
 
   initEditableMode() {
     const drawnItems = new L.FeatureGroup();
@@ -185,19 +241,21 @@ export default class MapApp {
         circle: false,
         rectangle: false,
         circlemarker: false,
-        marker: true
-      }
+        marker: true,
+      },
     });
     this.map.addControl(drawControl);
 
-    this.map.on('draw:created', (e) => {
+    this.map.on("draw:created", (e) => {
       const marker = e.layer;
       drawnItems.addLayer(marker);
 
       const { lat, lng } = marker.getLatLng();
-      console.log('New marker:', { lat, lng });
+      console.log("New marker:", { lat, lng });
 
-      marker.bindPopup(`Lat: ${lat.toFixed(4)}<br>Lng: ${lng.toFixed(4)}`).openPopup();
+      marker
+        .bindPopup(`Lat: ${lat.toFixed(4)}<br>Lng: ${lng.toFixed(4)}`)
+        .openPopup();
     });
   }
 
@@ -208,20 +266,6 @@ export default class MapApp {
   }
 
   initCheckboxHandler() {
-    document.querySelectorAll(".cat_checkbox").forEach((checkbox) => {
-      checkbox.addEventListener("change", () => {
-        const targetClass = `category_${checkbox.value}`;
-        const currentCategory = document.getElementsByClassName(targetClass);
-        if (checkbox.checked) {
-          Array.from(currentCategory).forEach((el) => el.classList.add("show"));
-        } else {
-          Array.from(currentCategory).forEach((el) =>
-            el.classList.remove("show")
-          );
-        }
-      });
-    });
-
     const noneButton = document.querySelector(".category_filter .none");
     const allButton = document.querySelector(".category_filter .all");
 
@@ -283,55 +327,55 @@ export default class MapApp {
       markers.forEach((marker) => markerList.appendChild(marker));
     });
   }
-
   initSearchHandler() {
     const searchInput = document.getElementById("search");
-    console.log(searchInput);
-    const markerListElement = document.getElementById("marker_list");
-    console.log(markerListElement);
     let timeoutId = null;
-
+    console.log("Initializing search handler...");
     if (searchInput) {
       searchInput.addEventListener("keyup", () => {
         if (timeoutId) {
           clearTimeout(timeoutId);
         }
-
         timeoutId = setTimeout(async () => {
           const searchTerm = searchInput.value.trim();
-          console.log(searchTerm);
-
-          try {
-            const response = await fetch(
-              `/wp-json/community-map-theme/geojson${
-                searchTerm ? `?search=${searchTerm}` : ""
-              }`
-            );
-            const data = await response.json();
-            console.log(data);
-
-            // Get all marker entries in the list
-            const markerEntries =
-              markerListElement.querySelectorAll(".marker--entry");
-
-            // Create a Set of matching IDs from the API response
-            const matchingIds = new Set(
-              data.features.map((feature) => `map_id_${feature.id}`)
-            );
-
-            // Show/hide entries based on ID matches
-            markerEntries.forEach((entry) => {
-              if (matchingIds.has(entry.id)) {
-                entry.style.display = ""; // Show matching entries
-              } else {
-                entry.style.display = "none"; // Hide non-matching entries
-              }
-            });
-          } catch (error) {
-            console.error("Search error:", error);
-          }
-        }, 300); // 300ms delay
+          this.SearchHandler(searchTerm);
+        }, 200); // 200ms delay
       });
+    }
+  }
+
+  async SearchHandler(searchTerm) {
+    // if searchTerm is empty, reset the markers
+    if (searchTerm === "") {
+      this.searchedMarkers = null;
+      this.updateMarkers();
+      return;
+    }
+    console.log(searchTerm);
+
+    try {
+      const response = await fetch(
+        `/wp-json/community-map-theme/geojson${
+          searchTerm ? `?search=${searchTerm}` : ""
+        }`
+      );
+      const data = await response.json();
+
+      // Filter the markers based on the search results
+      const filteredMarkers = this.markers.filter((marker) =>
+        data.features.some(
+          (feature) => feature.properties.post_id === marker.options.post_id
+        )
+      );
+      this.searchedMarkers = filteredMarkers;
+      // Update the marker list
+      this.updateMarkerlist(filteredMarkers);
+
+      // Update the markers on the map
+      this.markerGroup.clearLayers();
+      this.markerGroup.addLayers(filteredMarkers);
+    } catch (error) {
+      console.error("Search error:", error);
     }
   }
 }
