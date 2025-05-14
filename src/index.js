@@ -3,7 +3,7 @@ import "../scss/style.scss";
 import MapApp from "./map/MapApp";
 document.addEventListener("DOMContentLoaded", () => {
   // Check if the page is home
-  const pageType = document.body.classList.contains('home') ? 'home' : 'other';
+  const pageType = document.body.classList.contains("home") ? "home" : "other";
 
   if (document.getElementById("mapapp_map")) {
     if (pageType === "home") {

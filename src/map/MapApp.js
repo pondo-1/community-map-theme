@@ -96,9 +96,15 @@ export default class MapApp {
     }
 
     if (this.options.slider) {
+      const sliderElement = document.getElementById("slider-container");
+      if (sliderElement) {
+        sliderElement.style.display = "block";
+      }
       const slider = document.getElementById("yearRange");
+      // sliderer element display
       if (slider) {
         slider.addEventListener("input", () => {
+          console.log("Slider value:", slider.value);
           this.year = parseInt(slider.value);
           document.getElementById("yearValue").textContent = this.year;
           this.updateMarkers();
@@ -133,8 +139,8 @@ export default class MapApp {
           category_slug: feature.taxonomy.category.slug,
         };
         marker.category = feature.taxonomy.category.slug;
-        marker.start_year = props.start_year;
-        marker.end_year = props.end_year;
+        marker.start_year = feature.period.start_year;
+        marker.end_year = feature.period.end_year;
         let popupText = "";
         if (props.thumbnail_url) {
           popupText += `<img src="${props.thumbnail_url}" alt="${props.name} thumbnail image" width="50px" height="50px">`;

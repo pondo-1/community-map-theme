@@ -15,11 +15,16 @@
   </div>
 
   <div class="content sidebar">
-    <div class="scrolldown_wrapper">
-      <a href="#checkboxes" aria-label="scrolldown">
-        <span class="scrolldown icon">
-        </span>
-      </a>
+    <div id="slider-container" style="display: none;">
+      <label for="yearRange">Year: <span id="yearValue">2025</span></label>
+      <input
+        type="range"
+        id="yearRange"
+        name="yearRange"
+        min="1990"
+        max="2030"
+        value="2025"
+        step="1" />
     </div>
 
     <div id="checkboxes" class="category_filter">
