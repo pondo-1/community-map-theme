@@ -51,7 +51,7 @@ export default class MapApp {
     this.map = L.map(this.mapId, {
       center: [49.64541, 9.949025],
       zoomSnap: 0.1,
-      zoom: 12.5,
+      zoom: 11.5,
       zoomControl: false,
     });
     L.tileLayer(
@@ -118,7 +118,6 @@ export default class MapApp {
         const props = feature.properties;
 
         const marker = L.marker([coords[0], coords[1]], {
-          post_id: props.post_id,
           name: props.name,
           icon: L.icon({
             iconUrl: feature.taxonomy.category.icon_url,
@@ -126,6 +125,13 @@ export default class MapApp {
           }), // Optional
         });
 
+        marker.post = {
+          id: props.post_id,
+          title: props.name,
+          published: props.date,
+          category: feature.taxonomy.category.name,
+          category_slug: feature.taxonomy.category.slug,
+        };
         marker.category = feature.taxonomy.category.slug;
         marker.start_year = props.start_year;
         marker.end_year = props.end_year;
@@ -176,15 +182,16 @@ export default class MapApp {
 
     filteredMarkers.forEach((marker) => {
       const div = document.createElement("div");
-      div.className = `show marker--entry map_link_point category_${marker.category}`;
-      div.id = `map_id_${marker.options.post_id}`;
-      div.setAttribute("category", marker.category);
+      div.className = `show marker--entry map_link_point category_${marker.post.category_slug}`;
+      div.id = `map_id_${marker.post.id}`;
+      div.setAttribute("category", marker.post.category_slug);
+      div.setAttribute("date", marker.post.published);
 
       div.innerHTML = `
-      <div class="entry_title">${marker.options.name}</div>
+      <div class="entry_title">${marker.post.title}</div>
       <div class="entry_category">
         <img src="${marker.options.icon.options.iconUrl}" />
-        ${marker.category}
+        ${marker.post.category}
       </div>
       <a class="dn button main-page-button" href="${marker.options.icon.iconUrl}">Eintrag ansehen</a>
       `;
@@ -203,31 +210,6 @@ export default class MapApp {
       markerList.appendChild(div);
     });
   }
-
-  // renderMarkerList(features) {
-  //   const html = features
-  //     .map(
-  //       (feature) => `
-  //     <div class="show marker--entry map_link_point category_${feature.taxonomy.category.slug}"
-  //          id="map_id_${feature.id}"
-  //          category="${feature.taxonomy.category.slug}"
-  //          date="${feature.properties.date}"
-  //          author="${feature.properties.author}">
-  //       <div class="entry_title">${feature.properties.name}</div>
-  //       <div class="entry_date">${feature.properties.date}</div>
-  //       <div class="entry_author">${feature.properties.author}</div>
-  //       <div class="entry_category">
-  //         <img src="${feature.taxonomy.category.icon_url}" />
-  //         ${feature.taxonomy.category.name}
-  //       </div>
-  //       <a class="dn button main-page-button" href="${feature.properties.url}">Eintrag ansehen</a>
-  //     </div>
-  //   `
-  //     )
-  //     .join("");
-
-  //   this.markerListElement.innerHTML = html;
-  // }
 
   initEditableMode() {
     const drawnItems = new L.FeatureGroup();
@@ -364,7 +346,7 @@ export default class MapApp {
       // Filter the markers based on the search results
       const filteredMarkers = this.markers.filter((marker) =>
         data.features.some(
-          (feature) => feature.properties.post_id === marker.options.post_id
+          (feature) => feature.properties.post_id === marker.post.id
         )
       );
       this.searchedMarkers = filteredMarkers;
