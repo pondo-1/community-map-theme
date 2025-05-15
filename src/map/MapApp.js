@@ -3,6 +3,7 @@ import L from "leaflet";
 // Corresponding CSS is added in leaflet,php
 import "leaflet.markercluster";
 import "leaflet.markercluster.layersupport"; // make sure this is included
+import "leaflet-draw";
 
 import { fetchSVG } from "../utils/fetchSVG"; // adjust the path
 
@@ -12,6 +13,7 @@ export default class MapApp {
     this.dataUrl = dataUrl;
     this.options = Object.assign(
       {
+        pageType: "home", // home, single-marker, wp_admin
         filter: false,
         slider: false,
         editable: false,
@@ -25,7 +27,18 @@ export default class MapApp {
     this.markerGroup = null;
     this.svgContent = null;
 
-    this.init();
+    if (
+      this.options.pageType === "home" ||
+      this.options.pageType === "single-marker"
+    ) {
+      this.init();
+    }
+
+    if (this.options.pageType === "wp_admin") {
+      setTimeout(() => {
+        this.initMapAdmin();
+      }, 1000); // Delay of 1 second
+    }
   }
 
   async init() {
@@ -35,16 +48,16 @@ export default class MapApp {
     );
     this.initClusterGroup();
 
-    if (this.options.editable) {
-      this.initEditableMode();
-    } else {
-      await this.loadMarkers();
-    }
-
     if (this.options.filter) {
       this.initControls();
       this.initSidebarHandlers();
     }
+    this.loadMarkers();
+  }
+
+  async initMapAdmin() {
+    this.initMap();
+    this.initEditableMode();
   }
 
   initMap() {
@@ -104,7 +117,7 @@ export default class MapApp {
       // sliderer element display
       if (slider) {
         slider.addEventListener("input", () => {
-          console.log("Slider value:", slider.value);
+          // console.log("Slider value:", slider.value);
           this.year = parseInt(slider.value);
           document.getElementById("yearValue").textContent = this.year;
           this.updateMarkers();
@@ -155,7 +168,6 @@ export default class MapApp {
         marker.bindPopup(popupText);
         return marker;
       });
-
       this.updateMarkers();
     } catch (err) {
       console.error("Error loading marker data:", err);
@@ -166,31 +178,69 @@ export default class MapApp {
     if (!this.markerGroup) return;
     // Clear existing markers
     this.markerGroup.clearLayers();
-    let filtered = null;
-    if (this.searchedMarkers) {
-      filtered = this.searchedMarkers;
-    } else {
-      filtered = this.markers;
-    }
 
-    if (this.options.filter) {
-      const selectedCategories = Array.from(
-        document.querySelectorAll("input[type=checkbox]:checked")
-      ).map((cb) => cb.value);
-      filtered = filtered.filter((m) =>
-        selectedCategories.includes(m.category)
-      );
-    }
+    if (this.options.pageType === "home") {
+      let filtered = null;
+      if (this.searchedMarkers) {
+        filtered = this.searchedMarkers;
+      } else {
+        filtered = this.markers;
+      }
 
-    if (this.options.slider) {
-      filtered = filtered.filter(
-        (m) => this.year >= m.start_year && this.year <= m.end_year
-      );
-    }
+      if (this.options.filter) {
+        const selectedCategories = Array.from(
+          document.querySelectorAll("input[type=checkbox]:checked")
+        ).map((cb) => cb.value);
+        filtered = filtered.filter((m) =>
+          selectedCategories.includes(m.category)
+        );
+      }
 
-    this.updateMarkerlist(filtered);
-    this.markerGroup.checkIn(filtered);
-    this.markerGroup.addLayers(filtered);
+      if (this.options.slider) {
+        filtered = filtered.filter(
+          (m) => this.year >= m.start_year && this.year <= m.end_year
+        );
+      }
+      this.updateMarkerlist(filtered);
+      this.markerGroup.checkIn(filtered);
+      this.markerGroup.addLayers(filtered);
+    }
+    // For single marker page, we show the current marker with bigger icon and custom popuptext on the map
+    // the marker in the center and the popup is opened
+    // the other markers are also shown but with smaller icon
+    else if (this.options.pageType === "single-marker") {
+      let filtered = this.markers;
+      // Find the current marker based on the post ID
+      const currentPostId = document.body.getAttribute("data-post-id");
+
+      const currentMarker = this.markers.find((marker) => {
+        console.log(
+          "Checking marker:",
+          marker.post.id,
+          "against",
+          currentPostId
+        );
+        return marker.post.id == currentPostId;
+      });
+
+      if (currentMarker) {
+        let popupText = `<div class="hier_bin_ich"><div class="popup_title">${currentMarker.post.title}</div></div>`;
+        currentMarker.bindPopup(popupText);
+        this.map.setView(currentMarker.getLatLng(), 15);
+
+        currentMarker.setIcon(
+          L.icon({
+            className: "here-bin-ich",
+            iconUrl: currentMarker.options.icon.options.iconUrl,
+            iconSize: [50, 50],
+            html: `<img src="${currentMarker.options.icon.options.iconUrl}" style ="filter: drop-shadow(#124054 0px 0px 15px);">`,
+          })
+        );
+      }
+      this.markerGroup.checkIn(filtered);
+      this.markerGroup.addLayers(filtered);
+      currentMarker.openPopup();
+    }
   }
 
   updateMarkerlist(filteredMarkers) {

@@ -4,12 +4,25 @@ class Admin_mapapp
 {
   public function __construct()
   {
+    add_action('admin_enqueue_scripts',  array($this, 'enqueue_admin_script'));
     //////////------------Meta data for new Post page----------------// 
     add_action('add_meta_boxes', array($this, 'standort_boxes'));
     add_action('save_post', array($this, 'save_standort_box'));
   }
 
-
+  function enqueue_admin_script($hook)
+  {
+    // Only enqueue on post edit pages
+    if ($hook === 'post.php') {
+      wp_enqueue_script(
+        'admin-custom-js',
+        get_template_directory_uri() . '/build/index.js',
+        array('jquery'),
+        null,
+        true
+      );
+    }
+  }
   function standort_boxes_display_callback($post)
   {
     include THEMEPATH . '/template_admin/admin_geo_metabox.php';
