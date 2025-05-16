@@ -40,10 +40,11 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.pathname.includes("post.php") &&
     new URLSearchParams(window.location.search).get("action") === "edit";
 
-  if (isAdminEditPage) {
+  if (isAdminEditPage && document.body.classList.contains("post-type-marker")) {
     const mapApp = new MapApp("mapapp_map", null, {
       pageType: "wp_admin",
       editable: true,
     });
+    // initialize leaflet map for editing here
   }
 });

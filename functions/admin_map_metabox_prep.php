@@ -5,6 +5,7 @@ class Admin_mapapp
   public function __construct()
   {
     add_action('admin_enqueue_scripts',  array($this, 'enqueue_admin_script'));
+
     //////////------------Meta data for new Post page----------------// 
     add_action('add_meta_boxes', array($this, 'standort_boxes'));
     add_action('save_post', array($this, 'save_standort_box'));
@@ -13,14 +14,7 @@ class Admin_mapapp
   function enqueue_admin_script($hook)
   {
     // Only enqueue on post edit pages
-    if ($hook === 'post.php') {
-      wp_enqueue_script(
-        'admin-geometa-js',
-        get_template_directory_uri() . '/admin/js/admin_map_metabox.js',
-        array('jquery'),
-        null,
-        true
-      );
+    if (in_array($hook, ['post.php', 'post-new.php'])) {
       wp_enqueue_script(
         'Map-js',
         get_template_directory_uri() . '/build/index.js',
@@ -28,11 +22,17 @@ class Admin_mapapp
         null,
         true
       );
+      global $post;
+      $post_type = get_post_type($post);
+
+      wp_localize_script('admin_enqueue_scripts', 'MapAppData', [
+        'postType' => $post_type,
+      ]);
     }
   }
   function standort_boxes_display_callback($post)
   {
-    include THEMEPATH . '/admin/php/admin_geo_metabox.php';
+    include THEMEPATH . '/functions/admin_geo_metabox.php';
   }
 
   function standort_boxes()
