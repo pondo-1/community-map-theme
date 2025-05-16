@@ -48,7 +48,7 @@ class Leaflet_setting
     // only call the function for adding coorodinates in Backend, when editing posts
     if ('post.php' == $hook_suffix || 'post-new.php' == $hook_suffix) {
       if ($post_type == 'marker') {
-        wp_enqueue_script('admin-map',                         get_template_directory_uri() . '/js/admin_map_metabox.js', array('map_init', 'leaflet-draw-js'), false, true);
+        wp_enqueue_script('admin-map',                         get_template_directory_uri() . 'admin/js/admin_map_metabox.js', array(), false, true);
       }
     }
   }

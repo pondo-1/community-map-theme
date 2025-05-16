@@ -74,14 +74,14 @@
   <form>
     <input type="text" name="lat" id="lat" size=12 value="">
     <input type="text" name="lon" id="lon" size=12 value="">
-    <button type="button" onclick="save_geocode_metadata();">verwenden</button>
+    <button type="button" id="use_geocode">verwenden</button>
   </form>
   <br>
 
   <b>Adresssuche</b>
   <div id="search">
     <input type="text" name="addr" value="" id="addr" size="58" />
-    <button type="button" onclick="addr_search();">Suchen</button>
+    <button type="button" id="search_geocode" onclick="addr_search();">Suchen</button>
     <div id="results"></div>
   </div>
   <br>

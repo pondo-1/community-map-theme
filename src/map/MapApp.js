@@ -10,6 +10,7 @@ import { fetchSVG } from "../utils/fetchSVG"; // adjust the path
 export default class MapApp {
   constructor(mapId, dataUrl, options = {}) {
     this.mapId = mapId;
+    this.mapCenter = [49.64541, 9.949025]; //latitude, Logitutde
     this.dataUrl = dataUrl;
     this.options = Object.assign(
       {
@@ -62,7 +63,7 @@ export default class MapApp {
 
   initMap() {
     this.map = L.map(this.mapId, {
-      center: [49.64541, 9.949025],
+      center: this.mapCenter,
       zoomSnap: 0.1,
       zoom: 11.5,
       zoomControl: false,
@@ -279,33 +280,108 @@ export default class MapApp {
   }
 
   initEditableMode() {
-    const drawnItems = new L.FeatureGroup();
-    this.map.addLayer(drawnItems);
+    const marker = this.settingEditableMap();
+    this.edithelper(marker);
+  }
 
-    const drawControl = new L.Control.Draw({
-      edit: { featureGroup: drawnItems },
-      draw: {
-        polygon: false,
-        polyline: false,
-        circle: false,
-        rectangle: false,
-        circlemarker: false,
-        marker: true,
-      },
-    });
-    this.map.addControl(drawControl);
+  edithelper(marker) {
+    const useButton = document.getElementById("use_geocode");
 
-    this.map.on("draw:created", (e) => {
-      const marker = e.layer;
-      drawnItems.addLayer(marker);
+    if (useButton) {
+      useButton.addEventListener("click", () => {
+        document.getElementById("longitude").value =
+          document.getElementById("lon").value;
+        document.getElementById("latitude").value =
+          document.getElementById("lat").value;
+      });
+    }
 
-      const { lat, lng } = marker.getLatLng();
-      console.log("New marker:", { lat, lng });
+    const searchButton = document.getElementById("search_geocode");
 
-      marker
-        .bindPopup(`Lat: ${lat.toFixed(4)}<br>Lng: ${lng.toFixed(4)}`)
-        .openPopup();
-    });
+    if (searchButton) {
+      searchButton.addEventListener("click", () => {
+        const inp = document.getElementById("addr");
+        const xmlhttp = new XMLHttpRequest();
+        const url =
+          "https://nominatim.openstreetmap.org/search?format=json&limit=3&q=" +
+          inp.value;
+        xmlhttp.onreadystatechange = () => {
+          if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+            const arr = JSON.parse(xmlhttp.responseText);
+            let out = "<br />";
+            if (arr.length > 0) {
+              arr.forEach((item) => {
+                out += `<div class="address" data-lat="${item.lat}" data-lon="${item.lon}">${item.display_name}</div>`;
+              });
+              document.getElementById("results").innerHTML = out;
+
+              // Attach click event to each address
+              document
+                .querySelectorAll(".address")
+                .forEach((addressElement) => {
+                  addressElement.addEventListener("click", (event) => {
+                    const lat = parseFloat(
+                      event.target.getAttribute("data-lat")
+                    );
+                    const lon = parseFloat(
+                      event.target.getAttribute("data-lon")
+                    );
+                    marker.setLatLng([lat, lon]);
+                    this.map.setView([lat, lon], 18);
+                    // Update the latitude and longitude input fields
+                    document.getElementById("lat").value = lat.toFixed(8);
+                    document.getElementById("lon").value = lon.toFixed(8);
+
+                    // Bind a popup to the marker
+                    marker
+                      .bindPopup(
+                        `Lat: ${lat.toFixed(8)}<br>Lon: ${lon.toFixed(8)}`
+                      )
+                      .openPopup();
+                  });
+                });
+            } else {
+              document.getElementById("results").innerHTML =
+                "Sorry, no results...";
+            }
+          }
+        };
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();
+      });
+    }
+  }
+
+  settingEditableMap() {
+    let startlat = document.getElementById("latitude").value;
+    let startlon = document.getElementById("longitude").value;
+
+    // Create a marker at the specified coordinates
+    var marker = L.marker([startlat, startlon], {
+      title: "Coordinates",
+      alt: "Coordinates",
+      draggable: true,
+    })
+      .addTo(this.map) // Add the marker to the map
+      .bindPopup(
+        "Lat " +
+          parseFloat(startlat).toFixed(8) +
+          "<br />Lon " +
+          parseFloat(startlon).toFixed(8)
+      )
+      .openPopup() // Open the popup immediately
+      .on("dragend", function () {
+        var lat = marker.getLatLng().lat.toFixed(8);
+        var lon = marker.getLatLng().lng.toFixed(8);
+        document.getElementById("lat").value = lat;
+        document.getElementById("lon").value = lon;
+        marker.bindPopup("Lat " + lat + "<br />Lon " + lon).openPopup();
+      });
+
+    // Set the map view to the marker's location
+    this.map.setView(new L.LatLng(startlat, startlon), 12.5);
+
+    return marker;
   }
 
   initSidebarHandlers() {

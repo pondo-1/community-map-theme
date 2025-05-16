@@ -15,7 +15,14 @@ class Admin_mapapp
     // Only enqueue on post edit pages
     if ($hook === 'post.php') {
       wp_enqueue_script(
-        'admin-custom-js',
+        'admin-geometa-js',
+        get_template_directory_uri() . '/admin/js/admin_map_metabox.js',
+        array('jquery'),
+        null,
+        true
+      );
+      wp_enqueue_script(
+        'Map-js',
         get_template_directory_uri() . '/build/index.js',
         array('jquery'),
         null,
@@ -25,7 +32,7 @@ class Admin_mapapp
   }
   function standort_boxes_display_callback($post)
   {
-    include THEMEPATH . '/template_admin/admin_geo_metabox.php';
+    include THEMEPATH . '/admin/php/admin_geo_metabox.php';
   }
 
   function standort_boxes()

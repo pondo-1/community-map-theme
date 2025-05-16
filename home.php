@@ -21,7 +21,7 @@
         type="range"
         id="yearRange"
         name="yearRange"
-        min="1990"
+        min="2018"
         max="2030"
         value="2025"
         step="1" />
