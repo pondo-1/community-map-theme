@@ -1,0 +1,23 @@
+{
+    "key": "ui_options_page_68277eebe1ed1",
+    "title": "Map App Setting",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "Map App Setting",
+    "menu_slug": "map-app-setting",
+    "parent_slug": "theme_setting",
+    "advanced_configuration": false,
+    "icon_url": "",
+    "menu_title": "",
+    "position": null,
+    "redirect": false,
+    "description": "",
+    "menu_icon": [],
+    "update_button": "Update",
+    "updated_message": "Options Updated",
+    "capability": "edit_posts",
+    "data_storage": "options",
+    "post_id": "",
+    "autoload": false,
+    "modified": 1747418859
+}
