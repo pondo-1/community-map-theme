@@ -83,11 +83,19 @@ class Dev_custom_button
     $number_of_posts = 20;
 
     // Range for latitude and longitude
+    $radius_km =  get_field('allowed_radius', 'option');
+    $lati =  (float)get_field('map_center_lati', 'option');
+    $long =  (float)get_field('map_center_long', 'option');
+    $map_center = [$lati, $long];
+    // Latitude calculation
+    $latitude_diff = $radius_km / 111.32;
+    $min_latitude = $lati - $latitude_diff;
+    $max_latitude = $lati + $latitude_diff;
 
-    $min_longitude = get_option('min_longitude');
-    $max_longitude = get_option('max_longitude');
-    $min_latitude = get_option('min_latitude');
-    $max_latitude = get_option('max_latitude');
+    // Longitude calculation (adjusted by latitude) o
+    $longitude_diff = $radius_km / (111.32 * cos(deg2rad($lati)));
+    $min_longitude = $long - $longitude_diff;
+    $max_longitude = $long + $longitude_diff;
 
     // Available taxonomy terms (replace with your actual terms)
     $taxonomy_key = 'markertax';

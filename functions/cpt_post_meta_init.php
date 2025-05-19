@@ -198,19 +198,19 @@ class Post_meta_setting
   {
     switch ($name) {
       case 'geocode':
-        $geocode = get_post_meta($post_id, 'longitude', true) . '<br>' . get_post_meta($post_id, 'latitude', true);
+        $geocode = 'lati: ' . get_post_meta($post_id, 'latitude', true) . '<br>' . 'long: ' . get_post_meta($post_id, 'longitude', true);
         echo $geocode;
         break;
 
-        // case 'valid':
-        //   if (!array_key_exists($category,$category_array) || empty(get_post_meta( $post_id , 'latitude' , true )) || empty(get_post_meta( $post_id , 'longitude' , true ) )){
-        //   $lati = get_post_meta($post_id, 'latitude', true);
-        //   $longi = get_post_meta($post_id, 'longitude', true);
-        //   $category_name = get_the_category()[0]->name;
-        //   if ($this->post_valid_check($category_name, $lati, $longi)) {
-        //     echo "O";
-        //   } else echo "X: Geocode befindet sich nicht in Europa oder/and  Error in Kategory";
-        //   break;
+      // case 'valid':
+      //   if (!array_key_exists($category,$category_array) || empty(get_post_meta( $post_id , 'latitude' , true )) || empty(get_post_meta( $post_id , 'longitude' , true ) )){
+      //   $lati = get_post_meta($post_id, 'latitude', true);
+      //   $longi = get_post_meta($post_id, 'longitude', true);
+      //   $category_name = get_the_category()[0]->name;
+      //   if ($this->post_valid_check($category_name, $lati, $longi)) {
+      //     echo "O";
+      //   } else echo "X: Geocode befindet sich nicht in Europa oder/and  Error in Kategory";
+      //   break;
 
       case 'route':
         $array = get_post_meta(get_the_ID(), $key = "route");

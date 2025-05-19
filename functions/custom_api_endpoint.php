@@ -49,7 +49,7 @@ class Infojson_API extends RestAPI_Base
 
   public function generator($request = null)
   {
-    $radius_km =  get_field('map_radius', 'option');
+    $radius_km =  get_field('allowed_radius', 'option');
     $lati =  (float)get_field('map_center_lati', 'option');
     $long =  (float)get_field('map_center_long', 'option');
     $map_center = [$lati, $long];
