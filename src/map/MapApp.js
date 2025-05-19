@@ -215,12 +215,6 @@ export default class MapApp {
       const currentPostId = document.body.getAttribute("data-post-id");
 
       const currentMarker = this.markers.find((marker) => {
-        console.log(
-          "Checking marker:",
-          marker.post.id,
-          "against",
-          currentPostId
-        );
         return marker.post.id == currentPostId;
       });
 

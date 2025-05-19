@@ -16,24 +16,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (document.getElementById("mapapp_map")) {
     if (pageType === "home") {
-      new MapApp("mapapp_map", "/wp-json/community-map-theme/geojson", {
-        pageType: "home",
-        filter: true,
-        slider: true,
-        editable: false,
-      });
+      const mapApp = new MapApp(
+        "mapapp_map",
+        "/wp-json/community-map-theme/geojson",
+        {
+          pageType: "home",
+          filter: true,
+          slider: true,
+          editable: false,
+        }
+      );
+      // Expose the mapApp instance globally
+      window.mapApp = mapApp;
     }
-  }
-  if (pageType === "single-marker") {
-    new MapApp("mapapp_map", "/wp-json/community-map-theme/geojson", {
-      pageType: "single-marker",
-      filter: false,
-      slider: false,
-      editable: false,
-    });
+
+    if (pageType === "single-marker") {
+      const mapApp = new MapApp(
+        "mapapp_map",
+        "/wp-json/community-map-theme/geojson",
+        {
+          pageType: "single-marker",
+          filter: false,
+          slider: false,
+          editable: false,
+        }
+      );
+      // Expose the mapApp instance globally
+      window.mapApp = mapApp;
+    }
+
+    // // add multiploygon
+    // fetch(
+    //   "/wp-content/themes/community-map-theme/assets/polygon/ILE-Gebiet-NES.geojson"
+    // )
+    //   .then((response) => response.json())
+    //   .then((geojsonData) => {
+    //     const multipolygon = L.geoJSON(geojsonData).addTo(window.mapApp.map);
+    //     window.mapApp.map.fitBounds(multipolygon.getBounds());
+    //     console.log("Multipolygon added and map bounds adjusted.");
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error loading GeoJSON data:", error);
+    //   });
   }
 });
-
 document.addEventListener("DOMContentLoaded", () => {
   const isAdminEditPage =
     document.body.classList.contains("wp-admin") &&

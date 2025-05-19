@@ -112,8 +112,6 @@ class Dev_custom_button
         $random_term = $available_terms[array_rand($available_terms)];
       }
 
-      $rand_timestamp = mt_rand($start_date, $end_date);
-      $random_date = date('Y-m-d H:i:s', $rand_timestamp);
 
 
       // Create the post
@@ -121,8 +119,12 @@ class Dev_custom_button
         'post_title'    => $title,
         'post_type'     => 'marker',
         'post_status'   => 'publish',
-        'post_date'     => $random_date // Set the random post date
       ));
+      // start_year
+      $start_year = rand(1993, 2030);
+      update_post_meta($post_id, $key = "start_year", $start_year);
+      update_post_meta($post_id, $key = "end_year", rand($start_year, 2030));
+      // 50.328665405047495, 10.204834819794534
 
       // Add post meta data (geocode)
       if ($post_id) {
