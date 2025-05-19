@@ -49,16 +49,29 @@ class Infojson_API extends RestAPI_Base
 
   public function generator($request = null)
   {
+    $radius_km =  get_field('map_radius', 'option');
+    $lati =  (float)get_field('map_center_lati', 'option');
+    $long =  (float)get_field('map_center_long', 'option');
+    $map_center = [$lati, $long];
+    // Latitude calculation
+    $latitude_diff = $radius_km / 111.32;
+    $min_latitude = $lati - $latitude_diff;
+    $max_latitude = $lati + $latitude_diff;
+
+    // Longitude calculation (adjusted by latitude) o
+    $longitude_diff = $radius_km / (111.32 * cos(deg2rad($lati)));
+    $min_longitude = $long - $longitude_diff;
+    $max_longitude = $long + $longitude_diff;
 
     $map_info = [
-      "center"        => array_map("floatval", explode(',', esc_attr(get_option('map_center_point')))),
-      "center_long"   => (float) get_option('map_center_long'),
-      "center_lati"   => (float) get_option('map_center_lati'),
-      "radius"        => (float) get_option('map_radius'),
-      "min_longitude" => (float) get_option('min_longitude'),
-      "max_longitude" => (float) get_option('max_longitude'),
-      "min_latitude"  => (float) get_option('min_latitude'),
-      "max_latitude"  => (float) get_option('max_latitude')
+      "center"        => $map_center,
+      "zoomsnap"     =>  (float)get_field('zoomsnap', 'option'),
+      "center_long"   => (float)get_field('map_center_long', 'option'),
+      "center_lati"   => (float)get_field('map_center_lati', 'option'),
+      "min_longitude" =>  $min_longitude,
+      "max_longitude" =>  $max_longitude,
+      "min_latitude"  =>  $min_latitude,
+      "max_latitude"  =>  $max_latitude
     ];
 
     $terms = get_terms(array(

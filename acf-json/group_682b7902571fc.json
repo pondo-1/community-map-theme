@@ -1,0 +1,44 @@
+{
+    "key": "group_682b7902571fc",
+    "title": "Color Setting",
+    "fields": [
+        {
+            "key": "field_682b7902a06e6",
+            "label": "Primary color",
+            "name": "mapapp_primary_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "This color will be used for the basic icons( X, Search... )",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#407CBF",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "allow_in_bindings": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "communitymap"
+            }
+        ]
+    ],
+    "menu_order": 20,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1747679910
+}

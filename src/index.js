@@ -22,14 +22,33 @@ document.addEventListener("DOMContentLoaded", () => {
         {
           pageType: "home",
           filter: true,
-          slider: true,
+          slider: true, // true, get from the addon
           editable: false,
         }
       );
       // Expose the mapApp instance globally
       window.mapApp = mapApp;
-    }
+      // Listen for the mapReady event
+      document.addEventListener("mapReady", () => {
+        console.log("Map is ready:", window.mapApp.map);
 
+        fetch(
+          "./wp-content/themes/community-map-theme/assets/polygon/ILE-Gebiet-NES.geojson"
+        )
+          .then((response) => response.json())
+          .then((geojsonData) => {
+            console.log("GeoJSON data loaded:", geojsonData);
+            const multipolygon = L.geoJSON(geojsonData).addTo(
+              window.mapApp.map
+            );
+            window.mapApp.map.fitBounds(multipolygon.getBounds());
+            console.log("Multipolygon added and map bounds adjusted.");
+          })
+          .catch((error) => {
+            console.error("Error loading GeoJSON data:", error);
+          });
+      });
+    }
     if (pageType === "single-marker") {
       const mapApp = new MapApp(
         "mapapp_map",
@@ -44,20 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
       // Expose the mapApp instance globally
       window.mapApp = mapApp;
     }
-
-    // // add multiploygon
-    // fetch(
-    //   "/wp-content/themes/community-map-theme/assets/polygon/ILE-Gebiet-NES.geojson"
-    // )
-    //   .then((response) => response.json())
-    //   .then((geojsonData) => {
-    //     const multipolygon = L.geoJSON(geojsonData).addTo(window.mapApp.map);
-    //     window.mapApp.map.fitBounds(multipolygon.getBounds());
-    //     console.log("Multipolygon added and map bounds adjusted.");
-    //   })
-    //   .catch((error) => {
-    //     console.error("Error loading GeoJSON data:", error);
-    //   });
   }
 });
 document.addEventListener("DOMContentLoaded", () => {

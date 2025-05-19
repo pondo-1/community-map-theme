@@ -10,7 +10,8 @@ require_once(FUNCTIONSPATH . 'dev.php');
 // dependency & Essential check, Acf pro plugin check 
 require_once(FUNCTIONSPATH . 'dep_check.php');
 //Custom admin menu page 
-require_once(FUNCTIONSPATH . 'admin_menu.php');
+// require_once(FUNCTIONSPATH . 'admin_menu.php');
+require_once(FUNCTIONSPATH . 'MapAppOptions.php');
 
 // Data Handling 
 // -- Prepare cpt(mappoints), , Karte taxonomie(markertax)  & Admin columns -> Data  & View 
@@ -25,7 +26,6 @@ require_once(FUNCTIONSPATH . 'admin_map_metabox_prep.php');
 
 // -- Enque leaflet for front & Backend, where it needs
 require_once(FUNCTIONSPATH . 'leaflet.php');
-require_once(FUNCTIONSPATH . 'marker_list.php');
 require_once(FUNCTIONSPATH . 'welcome_popup.php');
 
 

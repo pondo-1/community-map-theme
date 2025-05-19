@@ -5,11 +5,11 @@
     "menu_order": 0,
     "page_title": "Map App Setting",
     "menu_slug": "map-app-setting",
-    "parent_slug": "theme_setting",
-    "advanced_configuration": false,
+    "parent_slug": "themes.php",
+    "advanced_configuration": 1,
     "icon_url": "",
     "menu_title": "",
-    "position": null,
+    "position": 0,
     "redirect": false,
     "description": "",
     "menu_icon": [],
@@ -18,6 +18,6 @@
     "capability": "edit_posts",
     "data_storage": "options",
     "post_id": "",
-    "autoload": false,
-    "modified": 1747418859
+    "autoload": 0,
+    "modified": 1747677964
 }

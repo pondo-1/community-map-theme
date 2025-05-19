@@ -5,8 +5,8 @@
     "menu_order": 0,
     "page_title": "Welcome popup",
     "menu_slug": "welcome_popup_setting",
-    "parent_slug": "theme_setting",
-    "advanced_configuration": 1,
+    "parent_slug": "communitymap",
+    "advanced_configuration": 0,
     "icon_url": "",
     "menu_title": "",
     "position": "",
@@ -19,5 +19,6 @@
     "data_storage": "options",
     "post_id": "",
     "autoload": 0,
-    "modified": 1726401462
+    "_parent": 196,
+    "modified": 1747678505
 }

@@ -96,8 +96,7 @@ class Dev_custom_button
       'hide_empty' => false,
     ));
 
-    $end_date = time();  // Current time
-    $start_date = strtotime("-3 months", $end_date); // Time three months ago
+
 
     for ($i = 0; $i < $number_of_posts; $i++) {
       // Generate a random title (2-3 words)

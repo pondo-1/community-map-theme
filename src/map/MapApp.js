@@ -41,8 +41,23 @@ export default class MapApp {
       }, 1000); // Delay of 1 second
     }
   }
+  async fetchMapConfig() {
+    try {
+      const response = await fetch("/wp-json/community-map-theme/infojson");
+      const data = await response.json();
 
+      // Update map center and zoom level
+      if (data.map.center && data.map.zoomsnap) {
+        this.mapCenter = [data.map.center[0], data.map.center[1]];
+        this.mapZoomSnap = data.map.zoomsnap;
+      }
+    } catch (error) {
+      console.error("Error fetching map configuration:", error);
+    }
+  }
   async init() {
+    await this.fetchMapConfig(); // Fetch map configuration
+
     this.initMap();
     this.svgContent = await fetchSVG(
       "/wp-content/themes/community-map-theme/assets/mapapp/icon-star.svg"
@@ -63,8 +78,9 @@ export default class MapApp {
 
   initMap() {
     this.map = L.map(this.mapId, {
-      center: this.mapCenter,
-      zoomSnap: 0.1,
+      center: this.mapCenter, // Use dynamic center
+      zoomDelta: 3,
+      zoomSnap: 1,
       zoom: 11.5,
       zoomControl: false,
     });
@@ -80,6 +96,12 @@ export default class MapApp {
           "pk.eyJ1IjoicG9uZGVsZWsiLCJhIjoiY2w5Zm1tc3h4MGphODNvbzBkM29jdWRlaCJ9.j64kLJQP_RmwAccN1jGKrw",
       }
     ).addTo(this.map);
+
+    // Emit an event when the map is ready
+    this.map.whenReady(() => {
+      const event = new Event("mapReady");
+      document.dispatchEvent(event);
+    });
   }
 
   initClusterGroup() {
