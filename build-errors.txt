@@ -1,0 +1,1626 @@
+
+> community-map-theme@1.0.0 start
+> wp-scripts start src/index.js --stats-error-details
+
+asset index.js 753 KiB [compared for emit] (name: index) 1 related asset
+asset index.asset.php 84 bytes [compared for emit] (name: index)
+Entrypoint index 753 KiB (784 KiB) = index.js 753 KiB index.asset.php 84 bytes 1 auxiliary asset
+orphan modules 112 KiB (javascript) 868 KiB (asset) 1.06 KiB (runtime) [orphan] 46 modules
+runtime modules 937 bytes 4 modules
+cacheable modules 609 KiB
+  modules by path ./node_modules/ 591 KiB
+    ./node_modules/leaflet/dist/leaflet-src.js 440 KiB [built] [code generated]
+    ./node_modules/leaflet.markercluster/dist/leaflet.markercluster-src.js 79.3 KiB [built] [code generated]
+    ./node_modules/leaflet.markercluster.layersupport/dist/leaflet.markercluster.l...(truncated) 6.47 KiB [built] [code generated]
+    ./node_modules/leaflet-draw/dist/leaflet.draw.js 65.9 KiB [built] [code generated]
+  modules by path ./src/ 17.9 KiB
+    ./src/index.js 2.32 KiB [built] [code generated]
+    ./src/map/MapApp.js 15.4 KiB [built] [code generated]
+    ./src/utils/fetchSVG.js 173 bytes [built] [code generated]
+  ./scss/style.scss 39 bytes [built] [code generated] [1 error]
+
+WARNING in ./scss/style.scss (./scss/style.scss.webpack[javascript/auto]!=!./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./scss/style.scss)
+Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///home/diane/Local%20Sites/ilek/app/public/wp-content/themes/community-map-theme/scss/style.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "base/path";
+
+
+scss/style.scss 1:9  root stylesheet
+ @ ./scss/style.scss
+ @ ./src/index.js 1:0-28
+
+WARNING in ./scss/style.scss (./scss/style.scss.webpack[javascript/auto]!=!./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./scss/style.scss)
+Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 1, column 8 of file:///home/diane/Local%20Sites/ilek/app/public/wp-content/themes/community-map-theme/scss/style.scss:1:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+1 | @import "base/typography";
+
+
+scss/style.scss 2:9  root stylesheet
+ @ ./scss/style.scss
+ @ ./src/index.js 1:0-28
+
+WARNING in ./scss/style.scss (./scss/style.scss.webpack[javascript/auto]!=!./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./scss/style.scss)
+Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 2, column 8 of file:///home/diane/Local%20Sites/ilek/app/public/wp-content/themes/community-map-theme/scss/style.scss:2:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+2 | @import "base/color";
+
+
+scss/style.scss 3:9  root stylesheet
+ @ ./scss/style.scss
+ @ ./src/index.js 1:0-28
+
+WARNING in ./scss/style.scss (./scss/style.scss.webpack[javascript/auto]!=!./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./scss/style.scss)
+Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 3, column 8 of file:///home/diane/Local%20Sites/ilek/app/public/wp-content/themes/community-map-theme/scss/style.scss:3:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+3 | @import "base/base";
+
+
+scss/style.scss 4:9  root stylesheet
+ @ ./scss/style.scss
+ @ ./src/index.js 1:0-28
+
+WARNING in ./scss/style.scss (./scss/style.scss.webpack[javascript/auto]!=!./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./scss/style.scss)
+Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 4, column 8 of file:///home/diane/Local%20Sites/ilek/app/public/wp-content/themes/community-map-theme/scss/style.scss:4:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+4 | @import "base/media_query";
+
+
+scss/style.scss 5:9  root stylesheet
+ @ ./scss/style.scss
+ @ ./src/index.js 1:0-28
+
+WARNING in ./scss/style.scss (./scss/style.scss.webpack[javascript/auto]!=!./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./scss/style.scss)
+Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 46, column 6 of file:///home/diane/Local%20Sites/ilek/app/public/wp-content/themes/community-map-theme/scss/template/_single-marker.scss:46:6:
+Sass's behavior for declarations that appear after nested
+rules will be changing to match the behavior specified by CSS in an upcoming
+version. To keep the existing behavior, move the declaration above the nested
+rule. To opt into the new behavior, wrap the declaration in `& {}`.
+
+More info: https://sass-lang.com/d/mixed-decls
+
+46 |       display: flex;
+
+
+scss/template/_single-marker.scss 47:7  @import
+scss/style.scss 19:9                    root stylesheet
+ @ ./scss/style.scss
+ @ ./src/index.js 1:0-28
+
+WARNING in ./scss/style.scss (./scss/style.scss.webpack[javascript/auto]!=!./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./scss/style.scss)
+Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 47, column 6 of file:///home/diane/Local%20Sites/ilek/app/public/wp-content/themes/community-map-theme/scss/template/_single-marker.scss:47:6:
+Sass's behavior for declarations that appear after nested
+rules will be changing to match the behavior specified by CSS in an upcoming
+version. To keep the existing behavior, move the declaration above the nested
+rule. To opt into the new behavior, wrap the declaration in `& {}`.
+
+More info: https://sass-lang.com/d/mixed-decls
+
+47 |       font-size: 22px;
+
+
+scss/template/_single-marker.scss 48:7  @import
+scss/style.scss 19:9                    root stylesheet
+ @ ./scss/style.scss
+ @ ./src/index.js 1:0-28
+
+WARNING in ./scss/style.scss (./scss/style.scss.webpack[javascript/auto]!=!./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./scss/style.scss)
+Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+13 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+ @ ./scss/style.scss
+ @ ./src/index.js 1:0-28
+
+ERROR in ./scss/style.scss (./scss/style.scss.webpack[javascript/auto]!=!./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./scss/style.scss) 41:37-116
+Module not found: Error: Can't resolve '/assets/mapapp/static_icon_triangle_right_black.svg' in '/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/scss'
+resolve '/assets/mapapp/static_icon_triangle_right_black.svg' in '/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/scss'
+  using description file: /home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/package.json (relative path: ./scss)
+    No description file found in /assets/mapapp or above
+    no extension
+      /assets/mapapp/static_icon_triangle_right_black.svg doesn't exist
+    .jsx
+      /assets/mapapp/static_icon_triangle_right_black.svg.jsx doesn't exist
+    .ts
+      /assets/mapapp/static_icon_triangle_right_black.svg.ts doesn't exist
+    .tsx
+      /assets/mapapp/static_icon_triangle_right_black.svg.tsx doesn't exist
+    as directory
+      /assets/mapapp/static_icon_triangle_right_black.svg doesn't exist
+    root path /home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme
+      using description file: /home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/package.json (relative path: ./assets/mapapp/static_icon_triangle_right_black.svg)
+        no extension
+          /home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/assets/mapapp/static_icon_triangle_right_black.svg doesn't exist
+        .jsx
+          /home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/assets/mapapp/static_icon_triangle_right_black.svg.jsx doesn't exist
+        .ts
+          /home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/assets/mapapp/static_icon_triangle_right_black.svg.ts doesn't exist
+        .tsx
+          /home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/assets/mapapp/static_icon_triangle_right_black.svg.tsx doesn't exist
+        as directory
+          /home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/assets/mapapp/static_icon_triangle_right_black.svg doesn't exist
+ @ ./scss/style.scss
+ @ ./src/index.js 1:0-28
+
+ERROR in ./scss/style.scss (./scss/style.scss.webpack[javascript/auto]!=!./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./scss/style.scss) 42:37-101
+Module not found: Error: Can't resolve '/assets/mapapp/mapbox-logo-black.svg' in '/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/scss'
+resolve '/assets/mapapp/mapbox-logo-black.svg' in '/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/scss'
+  using description file: /home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/package.json (relative path: ./scss)
+    No description file found in /assets/mapapp or above
+    no extension
+      /assets/mapapp/mapbox-logo-black.svg doesn't exist
+    .jsx
+      /assets/mapapp/mapbox-logo-black.svg.jsx doesn't exist
+    .ts
+      /assets/mapapp/mapbox-logo-black.svg.ts doesn't exist
+    .tsx
+      /assets/mapapp/mapbox-logo-black.svg.tsx doesn't exist
+    as directory
+      /assets/mapapp/mapbox-logo-black.svg doesn't exist
+    root path /home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme
+      using description file: /home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/package.json (relative path: ./assets/mapapp/mapbox-logo-black.svg)
+        no extension
+          /home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/assets/mapapp/mapbox-logo-black.svg doesn't exist
+        .jsx
+          /home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/assets/mapapp/mapbox-logo-black.svg.jsx doesn't exist
+        .ts
+          /home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/assets/mapapp/mapbox-logo-black.svg.ts doesn't exist
+        .tsx
+          /home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/assets/mapapp/mapbox-logo-black.svg.tsx doesn't exist
+        as directory
+          /home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/assets/mapapp/mapbox-logo-black.svg doesn't exist
+ @ ./scss/style.scss
+ @ ./src/index.js 1:0-28
+
+ERROR in ./scss/style.scss (./scss/style.scss.webpack[javascript/auto]!=!./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./scss/style.scss) 43:37-97
+Module not found: Error: Can't resolve '/assets/mapapp/static_icon_x.svg' in '/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/scss'
+resolve '/assets/mapapp/static_icon_x.svg' in '/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/scss'
+  using description file: /home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/package.json (relative path: ./scss)
+    No description file found in /assets/mapapp or above
+    no extension
+      /assets/mapapp/static_icon_x.svg doesn't exist
+    .jsx
+      /assets/mapapp/static_icon_x.svg.jsx doesn't exist
+    .ts
+      /assets/mapapp/static_icon_x.svg.ts doesn't exist
+    .tsx
+      /assets/mapapp/static_icon_x.svg.tsx doesn't exist
+    as directory
+      /assets/mapapp/static_icon_x.svg doesn't exist
+    root path /home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme
+      using description file: /home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/package.json (relative path: ./assets/mapapp/static_icon_x.svg)
+        no extension
+          /home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/assets/mapapp/static_icon_x.svg doesn't exist
+        .jsx
+          /home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/assets/mapapp/static_icon_x.svg.jsx doesn't exist
+        .ts
+          /home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/assets/mapapp/static_icon_x.svg.ts doesn't exist
+        .tsx
+          /home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/assets/mapapp/static_icon_x.svg.tsx doesn't exist
+        as directory
+          /home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/assets/mapapp/static_icon_x.svg doesn't exist
+ @ ./scss/style.scss
+ @ ./src/index.js 1:0-28
+
+ERROR in ./scss/style.scss
+Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):
+HookWebpackError: Cannot find module '/assets/mapapp/static_icon_triangle_right_black.svg'
+    at tryRunOrWebpackError (/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/node_modules/webpack/lib/HookWebpackError.js:87:9)
+    at __webpack_require_module__ (/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/node_modules/webpack/lib/Compilation.js:5498:12)
+    at __webpack_require__ (/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/node_modules/webpack/lib/Compilation.js:5445:18)
+    at /home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/node_modules/webpack/lib/Compilation.js:5533:20
+    at symbolIterator (/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/node_modules/neo-async/async.js:3485:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+-- inner error --
+Error: Cannot find module '/assets/mapapp/static_icon_triangle_right_black.svg'
+    at webpackMissingModule (/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/scss/style.scss:51:114)
+    at Module.<anonymous> (/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/scss/style.scss:51:240)
+    at /home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/node_modules/webpack/lib/javascript/JavascriptModulesPlugin.js:519:10
+    at Hook.eval [as call] (eval at create (/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/node_modules/tapable/lib/HookCodeFactory.js:19:10), <anonymous>:7:1)
+    at /home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/node_modules/webpack/lib/Compilation.js:5500:39
+    at tryRunOrWebpackError (/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/node_modules/webpack/lib/HookWebpackError.js:82:7)
+    at __webpack_require_module__ (/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/node_modules/webpack/lib/Compilation.js:5498:12)
+    at __webpack_require__ (/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/node_modules/webpack/lib/Compilation.js:5445:18)
+    at /home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/node_modules/webpack/lib/Compilation.js:5533:20
+    at symbolIterator (/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/node_modules/neo-async/async.js:3485:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+
+Generated code for /home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/scss/style.scss
+   1 | __webpack_require__.r(__webpack_exports__);
+   2 | /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+   3 | /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+   4 | /* harmony export */ });
+   5 | /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/sourceMaps.js */ "/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/node_modules/css-loader/dist/runtime/sourceMaps.js");
+   6 | /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+   7 | /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/node_modules/css-loader/dist/runtime/api.js");
+   8 | /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+   9 | /* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/getUrl.js */ "/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/node_modules/css-loader/dist/runtime/getUrl.js");
+  10 | /* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
+  11 | // Imports
+  12 | 
+  13 | 
+  14 | 
+  15 | var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-100.woff2 */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-100.woff2"), __webpack_require__.b);
+  16 | var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-100.woff */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-100.woff"), __webpack_require__.b);
+  17 | var ___CSS_LOADER_URL_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-100italic.woff2 */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-100italic.woff2"), __webpack_require__.b);
+  18 | var ___CSS_LOADER_URL_IMPORT_3___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-100italic.woff */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-100italic.woff"), __webpack_require__.b);
+  19 | var ___CSS_LOADER_URL_IMPORT_4___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-200.woff2 */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-200.woff2"), __webpack_require__.b);
+  20 | var ___CSS_LOADER_URL_IMPORT_5___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-200.woff */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-200.woff"), __webpack_require__.b);
+  21 | var ___CSS_LOADER_URL_IMPORT_6___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-200italic.woff2 */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-200italic.woff2"), __webpack_require__.b);
+  22 | var ___CSS_LOADER_URL_IMPORT_7___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-200italic.woff */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-200italic.woff"), __webpack_require__.b);
+  23 | var ___CSS_LOADER_URL_IMPORT_8___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-300italic.woff2 */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-300italic.woff2"), __webpack_require__.b);
+  24 | var ___CSS_LOADER_URL_IMPORT_9___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-300italic.woff */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-300italic.woff"), __webpack_require__.b);
+  25 | var ___CSS_LOADER_URL_IMPORT_10___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-italic.woff2 */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-italic.woff2"), __webpack_require__.b);
+  26 | var ___CSS_LOADER_URL_IMPORT_11___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-italic.woff */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-italic.woff"), __webpack_require__.b);
+  27 | var ___CSS_LOADER_URL_IMPORT_12___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-regular.woff2 */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-regular.woff2"), __webpack_require__.b);
+  28 | var ___CSS_LOADER_URL_IMPORT_13___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-regular.woff */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-regular.woff"), __webpack_require__.b);
+  29 | var ___CSS_LOADER_URL_IMPORT_14___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-500.woff2 */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-500.woff2"), __webpack_require__.b);
+  30 | var ___CSS_LOADER_URL_IMPORT_15___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-500.woff */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-500.woff"), __webpack_require__.b);
+  31 | var ___CSS_LOADER_URL_IMPORT_16___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-600.woff2 */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-600.woff2"), __webpack_require__.b);
+  32 | var ___CSS_LOADER_URL_IMPORT_17___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-600.woff */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-600.woff"), __webpack_require__.b);
+  33 | var ___CSS_LOADER_URL_IMPORT_18___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-500italic.woff2 */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-500italic.woff2"), __webpack_require__.b);
+  34 | var ___CSS_LOADER_URL_IMPORT_19___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-500italic.woff */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-500italic.woff"), __webpack_require__.b);
+  35 | var ___CSS_LOADER_URL_IMPORT_20___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-600italic.woff2 */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-600italic.woff2"), __webpack_require__.b);
+  36 | var ___CSS_LOADER_URL_IMPORT_21___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-600italic.woff */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-600italic.woff"), __webpack_require__.b);
+  37 | var ___CSS_LOADER_URL_IMPORT_22___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-700italic.woff2 */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-700italic.woff2"), __webpack_require__.b);
+  38 | var ___CSS_LOADER_URL_IMPORT_23___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-700italic.woff */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-700italic.woff"), __webpack_require__.b);
+  39 | var ___CSS_LOADER_URL_IMPORT_24___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-300.woff2 */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-300.woff2"), __webpack_require__.b);
+  40 | var ___CSS_LOADER_URL_IMPORT_25___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-300.woff */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-300.woff"), __webpack_require__.b);
+  41 | var ___CSS_LOADER_URL_IMPORT_26___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-800italic.woff2 */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-800italic.woff2"), __webpack_require__.b);
+  42 | var ___CSS_LOADER_URL_IMPORT_27___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-800italic.woff */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-800italic.woff"), __webpack_require__.b);
+  43 | var ___CSS_LOADER_URL_IMPORT_28___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-700.woff2 */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-700.woff2"), __webpack_require__.b);
+  44 | var ___CSS_LOADER_URL_IMPORT_29___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-700.woff */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-700.woff"), __webpack_require__.b);
+  45 | var ___CSS_LOADER_URL_IMPORT_30___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-900.woff2 */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-900.woff2"), __webpack_require__.b);
+  46 | var ___CSS_LOADER_URL_IMPORT_31___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-900.woff */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-900.woff"), __webpack_require__.b);
+  47 | var ___CSS_LOADER_URL_IMPORT_32___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-900italic.woff2 */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-900italic.woff2"), __webpack_require__.b);
+  48 | var ___CSS_LOADER_URL_IMPORT_33___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-900italic.woff */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-900italic.woff"), __webpack_require__.b);
+  49 | var ___CSS_LOADER_URL_IMPORT_34___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-800.woff2 */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-800.woff2"), __webpack_require__.b);
+  50 | var ___CSS_LOADER_URL_IMPORT_35___ = new URL(/* asset import */ __webpack_require__(/*! ../../../../../../../../../barlow-v12-latin/barlow-v12-latin-800.woff */ "asset/resource|/home/diane/Local Sites/ilek/app/public/wp-content/themes/community-map-theme/barlow-v12-latin/barlow-v12-latin-800.woff"), __webpack_require__.b);
+  51 | var ___CSS_LOADER_URL_IMPORT_36___ = new URL(/* asset import */ Object(function webpackMissingModule() { var e = new Error("Cannot find module '/assets/mapapp/static_icon_triangle_right_black.svg'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), __webpack_require__.b);
+  52 | var ___CSS_LOADER_URL_IMPORT_37___ = new URL(/* asset import */ Object(function webpackMissingModule() { var e = new Error("Cannot find module '/assets/mapapp/mapbox-logo-black.svg'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), __webpack_require__.b);
+  53 | var ___CSS_LOADER_URL_IMPORT_38___ = new URL(/* asset import */ Object(function webpackMissingModule() { var e = new Error("Cannot find module '/assets/mapapp/static_icon_x.svg'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), __webpack_require__.b);
+  54 | var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+  55 | var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
+  56 | var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
+  57 | var ___CSS_LOADER_URL_REPLACEMENT_2___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_2___);
+  58 | var ___CSS_LOADER_URL_REPLACEMENT_3___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_3___);
+  59 | var ___CSS_LOADER_URL_REPLACEMENT_4___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_4___);
+  60 | var ___CSS_LOADER_URL_REPLACEMENT_5___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_5___);
+  61 | var ___CSS_LOADER_URL_REPLACEMENT_6___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_6___);
+  62 | var ___CSS_LOADER_URL_REPLACEMENT_7___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_7___);
+  63 | var ___CSS_LOADER_URL_REPLACEMENT_8___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_8___);
+  64 | var ___CSS_LOADER_URL_REPLACEMENT_9___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_9___);
+  65 | var ___CSS_LOADER_URL_REPLACEMENT_10___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_10___);
+  66 | var ___CSS_LOADER_URL_REPLACEMENT_11___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_11___);
+  67 | var ___CSS_LOADER_URL_REPLACEMENT_12___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_12___);
+  68 | var ___CSS_LOADER_URL_REPLACEMENT_13___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_13___);
+  69 | var ___CSS_LOADER_URL_REPLACEMENT_14___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_14___);
+  70 | var ___CSS_LOADER_URL_REPLACEMENT_15___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_15___);
+  71 | var ___CSS_LOADER_URL_REPLACEMENT_16___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_16___);
+  72 | var ___CSS_LOADER_URL_REPLACEMENT_17___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_17___);
+  73 | var ___CSS_LOADER_URL_REPLACEMENT_18___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_18___);
+  74 | var ___CSS_LOADER_URL_REPLACEMENT_19___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_19___);
+  75 | var ___CSS_LOADER_URL_REPLACEMENT_20___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_20___);
+  76 | var ___CSS_LOADER_URL_REPLACEMENT_21___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_21___);
+  77 | var ___CSS_LOADER_URL_REPLACEMENT_22___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_22___);
+  78 | var ___CSS_LOADER_URL_REPLACEMENT_23___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_23___);
+  79 | var ___CSS_LOADER_URL_REPLACEMENT_24___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_24___);
+  80 | var ___CSS_LOADER_URL_REPLACEMENT_25___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_25___);
+  81 | var ___CSS_LOADER_URL_REPLACEMENT_26___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_26___);
+  82 | var ___CSS_LOADER_URL_REPLACEMENT_27___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_27___);
+  83 | var ___CSS_LOADER_URL_REPLACEMENT_28___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_28___);
+  84 | var ___CSS_LOADER_URL_REPLACEMENT_29___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_29___);
+  85 | var ___CSS_LOADER_URL_REPLACEMENT_30___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_30___);
+  86 | var ___CSS_LOADER_URL_REPLACEMENT_31___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_31___);
+  87 | var ___CSS_LOADER_URL_REPLACEMENT_32___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_32___);
+  88 | var ___CSS_LOADER_URL_REPLACEMENT_33___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_33___);
+  89 | var ___CSS_LOADER_URL_REPLACEMENT_34___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_34___);
+  90 | var ___CSS_LOADER_URL_REPLACEMENT_35___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_35___);
+  91 | var ___CSS_LOADER_URL_REPLACEMENT_36___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_36___);
+  92 | var ___CSS_LOADER_URL_REPLACEMENT_37___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_37___);
+  93 | var ___CSS_LOADER_URL_REPLACEMENT_38___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_38___);
+  94 | // Module
+  95 | ___CSS_LOADER_EXPORT___.push([module.id, `@charset "UTF-8";
+  96 | /*Fonts*/
+  97 | /* barlow-100 - latin */
+  98 | @font-face {
+  99 |   font-family: "Barlow";
+ 100 |   font-style: normal;
+ 101 |   font-weight: 100;
+ 102 |   src: local(""), url(${___CSS_LOADER_URL_REPLACEMENT_0___}) format("woff2"), url(${___CSS_LOADER_URL_REPLACEMENT_1___}) format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+ 103 | }
+ 104 | /* barlow-100italic - latin */
+ 105 | @font-face {
+ 106 |   font-family: "Barlow";
+ 107 |   font-style: italic;
+ 108 |   font-weight: 100;
+ 109 |   src: local(""), url(${___CSS_LOADER_URL_REPLACEMENT_2___}) format("woff2"), url(${___CSS_LOADER_URL_REPLACEMENT_3___}) format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+ 110 | }
+ 111 | /* barlow-200 - latin */
+ 112 | @font-face {
+ 113 |   font-family: "Barlow";
+ 114 |   font-style: normal;
+ 115 |   font-weight: 200;
+ 116 |   src: local(""), url(${___CSS_LOADER_URL_REPLACEMENT_4___}) format("woff2"), url(${___CSS_LOADER_URL_REPLACEMENT_5___}) format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+ 117 | }
+ 118 | /* barlow-200italic - latin */
+ 119 | @font-face {
+ 120 |   font-family: "Barlow";
+ 121 |   font-style: italic;
+ 122 |   font-weight: 200;
+ 123 |   src: local(""), url(${___CSS_LOADER_URL_REPLACEMENT_6___}) format("woff2"), url(${___CSS_LOADER_URL_REPLACEMENT_7___}) format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+ 124 | }
+ 125 | /* barlow-300italic - latin */
+ 126 | @font-face {
+ 127 |   font-family: "Barlow";
+ 128 |   font-style: italic;
+ 129 |   font-weight: 300;
+ 130 |   src: local(""), url(${___CSS_LOADER_URL_REPLACEMENT_8___}) format("woff2"), url(${___CSS_LOADER_URL_REPLACEMENT_9___}) format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+ 131 | }
+ 132 | /* barlow-italic - latin */
+ 133 | @font-face {
+ 134 |   font-family: "Barlow";
+ 135 |   font-style: italic;
+ 136 |   font-weight: 400;
+ 137 |   src: local(""), url(${___CSS_LOADER_URL_REPLACEMENT_10___}) format("woff2"), url(${___CSS_LOADER_URL_REPLACEMENT_11___}) format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+ 138 | }
+ 139 | /* barlow-regular - latin */
+ 140 | @font-face {
+ 141 |   font-family: "Barlow";
+ 142 |   font-style: normal;
+ 143 |   font-weight: 400;
+ 144 |   src: local(""), url(${___CSS_LOADER_URL_REPLACEMENT_12___}) format("woff2"), url(${___CSS_LOADER_URL_REPLACEMENT_13___}) format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+ 145 | }
+ 146 | /* barlow-500 - latin */
+ 147 | @font-face {
+ 148 |   font-family: "Barlow";
+ 149 |   font-style: normal;
+ 150 |   font-weight: 500;
+ 151 |   src: local(""), url(${___CSS_LOADER_URL_REPLACEMENT_14___}) format("woff2"), url(${___CSS_LOADER_URL_REPLACEMENT_15___}) format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+ 152 | }
+ 153 | /* barlow-600 - latin */
+ 154 | @font-face {
+ 155 |   font-family: "Barlow";
+ 156 |   font-style: normal;
+ 157 |   font-weight: 600;
+ 158 |   src: local(""), url(${___CSS_LOADER_URL_REPLACEMENT_16___}) format("woff2"), url(${___CSS_LOADER_URL_REPLACEMENT_17___}) format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+ 159 | }
+ 160 | /* barlow-500italic - latin */
+ 161 | @font-face {
+ 162 |   font-family: "Barlow";
+ 163 |   font-style: italic;
+ 164 |   font-weight: 500;
+ 165 |   src: local(""), url(${___CSS_LOADER_URL_REPLACEMENT_18___}) format("woff2"), url(${___CSS_LOADER_URL_REPLACEMENT_19___}) format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+ 166 | }
+ 167 | /* barlow-600italic - latin */
+ 168 | @font-face {
+ 169 |   font-family: "Barlow";
+ 170 |   font-style: italic;
+ 171 |   font-weight: 600;
+ 172 |   src: local(""), url(${___CSS_LOADER_URL_REPLACEMENT_20___}) format("woff2"), url(${___CSS_LOADER_URL_REPLACEMENT_21___}) format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+ 173 | }
+ 174 | /* barlow-700italic - latin */
+ 175 | @font-face {
+ 176 |   font-family: "Barlow";
+ 177 |   font-style: italic;
+ 178 |   font-weight: 700;
+ 179 |   src: local(""), url(${___CSS_LOADER_URL_REPLACEMENT_22___}) format("woff2"), url(${___CSS_LOADER_URL_REPLACEMENT_23___}) format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+ 180 | }
+ 181 | /* barlow-300 - latin */
+ 182 | @font-face {
+ 183 |   font-family: "Barlow";
+ 184 |   font-style: normal;
+ 185 |   font-weight: 300;
+ 186 |   src: local(""), url(${___CSS_LOADER_URL_REPLACEMENT_24___}) format("woff2"), url(${___CSS_LOADER_URL_REPLACEMENT_25___}) format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+ 187 | }
+ 188 | /* barlow-800italic - latin */
+ 189 | @font-face {
+ 190 |   font-family: "Barlow";
+ 191 |   font-style: italic;
+ 192 |   font-weight: 800;
+ 193 |   src: local(""), url(${___CSS_LOADER_URL_REPLACEMENT_26___}) format("woff2"), url(${___CSS_LOADER_URL_REPLACEMENT_27___}) format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+ 194 | }
+ 195 | /* barlow-700 - latin */
+ 196 | @font-face {
+ 197 |   font-family: "Barlow";
+ 198 |   font-style: normal;
+ 199 |   font-weight: 700;
+ 200 |   src: local(""), url(${___CSS_LOADER_URL_REPLACEMENT_28___}) format("woff2"), url(${___CSS_LOADER_URL_REPLACEMENT_29___}) format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+ 201 | }
+ 202 | /* barlow-900 - latin */
+ 203 | @font-face {
+ 204 |   font-family: "Barlow";
+ 205 |   font-style: normal;
+ 206 |   font-weight: 900;
+ 207 |   src: local(""), url(${___CSS_LOADER_URL_REPLACEMENT_30___}) format("woff2"), url(${___CSS_LOADER_URL_REPLACEMENT_31___}) format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+ 208 | }
+ 209 | /* barlow-900italic - latin */
+ 210 | @font-face {
+ 211 |   font-family: "Barlow";
+ 212 |   font-style: italic;
+ 213 |   font-weight: 900;
+ 214 |   src: local(""), url(${___CSS_LOADER_URL_REPLACEMENT_32___}) format("woff2"), url(${___CSS_LOADER_URL_REPLACEMENT_33___}) format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+ 215 | }
+ 216 | /* barlow-800 - latin */
+ 217 | @font-face {
+ 218 |   font-family: "Barlow";
+ 219 |   font-style: normal;
+ 220 |   font-weight: 800;
+ 221 |   src: local(""), url(${___CSS_LOADER_URL_REPLACEMENT_34___}) format("woff2"), url(${___CSS_LOADER_URL_REPLACEMENT_35___}) format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+ 222 | }
+ 223 | .primary {
+ 224 |   color: var(--primary-color);
+ 225 | }
+ 226 | .primary--fill {
+ 227 |   fill: var(--primary-color);
+ 228 | }
+ 229 | .primary--stroke {
+ 230 |   stroke: var(--primary-color);
+ 231 | }
+ 232 | 
+ 233 | * {
+ 234 |   box-sizing: border-box;
+ 235 |   font-family: "Barlow";
+ 236 |   color: #212427;
+ 237 | }
+ 238 | 
+ 239 | html,
+ 240 | body,
+ 241 | main {
+ 242 |   height: 100%;
+ 243 | }
+ 244 | 
+ 245 | body {
+ 246 |   margin: 0;
+ 247 |   background-color: rgba(128, 128, 128, 0.1);
+ 248 | }
+ 249 | 
+ 250 | p {
+ 251 |   font-size: 20px;
+ 252 |   font-weight: 300;
+ 253 |   line-height: 32px;
+ 254 | }
+ 255 | p strong {
+ 256 |   font-weight: 600;
+ 257 | }
+ 258 | 
+ 259 | h1 {
+ 260 |   font-weight: 600;
+ 261 |   font-size: 50px;
+ 262 | }
+ 263 | 
+ 264 | ul,
+ 265 | ol,
+ 266 | li {
+ 267 |   list-style: none;
+ 268 |   margin: 0;
+ 269 | }
+ 270 | 
+ 271 | a {
+ 272 |   text-decoration: none;
+ 273 | }
+ 274 | a:hover, a:active {
+ 275 |   opacity: 0.75;
+ 276 | }
+ 277 | 
+ 278 | button {
+ 279 |   display: inline-block;
+ 280 |   position: relative;
+ 281 |   border: unset;
+ 282 |   background-color: #fff;
+ 283 |   cursor: pointer;
+ 284 |   text-decoration: none;
+ 285 |   border-radius: 3px;
+ 286 |   font-weight: 700;
+ 287 |   line-height: 1em;
+ 288 |   padding: 0.7rem 1.5rem;
+ 289 | }
+ 290 | button:hover, button:active {
+ 291 |   opacity: 0.75;
+ 292 | }
+ 293 | button.right_triangle {
+ 294 |   display: flex;
+ 295 |   justify-content: center;
+ 296 |   align-items: center;
+ 297 |   padding-right: 1.5em;
+ 298 |   font-size: inherit;
+ 299 | }
+ 300 | button.right_triangle::after {
+ 301 |   content: "";
+ 302 |   display: inline;
+ 303 |   width: 1em;
+ 304 |   height: 1em;
+ 305 |   margin-left: 0.5em;
+ 306 |   background-repeat: no-repeat;
+ 307 |   background-image: url(${___CSS_LOADER_URL_REPLACEMENT_36___});
+ 308 |   background-size: cover;
+ 309 | }
+ 310 | 
+ 311 | .search #livesearch {
+ 312 |   display: none;
+ 313 | }
+ 314 | .search_wrapper {
+ 315 |   width: 80%;
+ 316 |   position: relative;
+ 317 |   margin: 15px 10%;
+ 318 | }
+ 319 | .searchTerm {
+ 320 |   border: none;
+ 321 |   padding: 5px 15px;
+ 322 |   height: 65px;
+ 323 |   border-radius: 5px;
+ 324 |   outline: none;
+ 325 |   color: var(--d_text);
+ 326 |   box-shadow: inset 0px 0px 1px 1px var(--l_grey);
+ 327 |   width: 100%;
+ 328 |   font-weight: 400;
+ 329 |   font-size: 16px;
+ 330 | }
+ 331 | .searchButton {
+ 332 |   position: absolute;
+ 333 |   transform: translate(0%, -50%);
+ 334 |   right: 0px;
+ 335 |   top: 50%;
+ 336 |   border: none;
+ 337 |   cursor: pointer;
+ 338 |   font-size: 30px;
+ 339 | }
+ 340 | .searchButton:hover, .searchButton:active {
+ 341 |   background-color: #fff;
+ 342 |   opacity: 0.7;
+ 343 | }
+ 344 | 
+ 345 | .footer_nav {
+ 346 |   margin-top: auto;
+ 347 |   box-shadow: inset 0px -1px 1px 1px gray;
+ 348 | }
+ 349 | .footer_nav ul {
+ 350 |   display: flex;
+ 351 |   justify-content: flex-end;
+ 352 | }
+ 353 | .footer_nav ul li {
+ 354 |   padding: 5px 30px;
+ 355 | }
+ 356 | 
+ 357 | .menu.top {
+ 358 |   width: 100%;
+ 359 |   padding: 20px 30px;
+ 360 |   list-style: none;
+ 361 |   pointer-events: none;
+ 362 |   display: flex;
+ 363 |   justify-content: space-between;
+ 364 |   align-content: center;
+ 365 | }
+ 366 | .menu.top ul {
+ 367 |   padding: 8px 16px;
+ 368 |   margin: 0;
+ 369 | }
+ 370 | .menu.top li {
+ 371 |   pointer-events: auto;
+ 372 | }
+ 373 | .menu.top li:nth-child(1) {
+ 374 |   margin-right: auto;
+ 375 | }
+ 376 | .menu.top li:nth-child(2) {
+ 377 |   display: flex;
+ 378 |   align-items: center;
+ 379 | }
+ 380 | .menu.top li:nth-child(2) a {
+ 381 |   display: flex;
+ 382 |   -moz-column-gap: 3px;
+ 383 |        column-gap: 3px;
+ 384 |   align-items: center;
+ 385 | }
+ 386 | 
+ 387 | .mapapp .map-block {
+ 388 |   height: 100%;
+ 389 |   position: relative;
+ 390 | }
+ 391 | .mapapp .map-block .menu.top {
+ 392 |   position: absolute;
+ 393 |   z-index: 410;
+ 394 | }
+ 395 | .mapapp .map-block .leaflet-container {
+ 396 |   padding: 0;
+ 397 |   margin: 0;
+ 398 |   height: 100%;
+ 399 |   grid-row: 1/2;
+ 400 |   grid-column: 1/2;
+ 401 | }
+ 402 | .mapapp .map-block .leaflet-container .leaflet-control-container .leaflet-bottom.leaflet-right {
+ 403 |   width: 100%;
+ 404 | }
+ 405 | .mapapp .map-block .leaflet-container .leaflet-control-container .leaflet-control-zoom {
+ 406 |   margin-bottom: 40px;
+ 407 |   margin-right: 40px;
+ 408 |   border-radius: 8px;
+ 409 |   border: none;
+ 410 |   background-color: white;
+ 411 | }
+ 412 | .mapapp .map-block .leaflet-container .leaflet-control-container .leaflet-control-zoom.leaflet-bar a {
+ 413 |   width: 45px;
+ 414 |   height: 45px;
+ 415 |   font-size: 40px;
+ 416 |   line-height: 40px;
+ 417 |   background: none;
+ 418 | }
+ 419 | .mapapp .map-block .leaflet-container .leaflet-control-container .leaflet-control-attribution {
+ 420 |   margin: 0 auto 0 15px;
+ 421 |   background-color: rgba(255, 255, 255, 0);
+ 422 |   right: auto;
+ 423 |   left: 0;
+ 424 |   position: absolute;
+ 425 |   bottom: 2px;
+ 426 | }
+ 427 | .mapapp .map-block .leaflet-container .leaflet-control-container .leaflet-control-attribution a {
+ 428 |   text-decoration: none;
+ 429 |   font-size: 14px;
+ 430 |   font-weight: 400;
+ 431 |   color: #000;
+ 432 | }
+ 433 | .mapapp .map-block .leaflet-container .leaflet-control-container .leaflet-bottom.leaflet-right::after {
+ 434 |   height: 20px;
+ 435 |   width: 90px;
+ 436 |   background-size: contain;
+ 437 |   content: "";
+ 438 |   background-image: url(${___CSS_LOADER_URL_REPLACEMENT_37___});
+ 439 |   display: inline-block;
+ 440 |   background-color: none;
+ 441 |   background-repeat: no-repeat;
+ 442 |   position: absolute;
+ 443 |   right: 0;
+ 444 |   bottom: 0;
+ 445 |   margin: 5px 5px 2px 5px;
+ 446 | }
+ 447 | .mapapp .map-block .leaflet-container .custom-cluster-marker svg {
+ 448 |   height: 100%;
+ 449 |   width: 100%;
+ 450 | }
+ 451 | .mapapp .map-block .leaflet-container .cluster-count {
+ 452 |   display: inline-block;
+ 453 |   position: absolute;
+ 454 |   top: 56%;
+ 455 |   left: 50%;
+ 456 |   transform: translate(-50%, -50%);
+ 457 |   font-size: 20px;
+ 458 |   color: white;
+ 459 | }
+ 460 | .mapapp .map-block .leaflet-container .leaflet-popup-pane .leaflet-popup {
+ 461 |   padding: 7.5px;
+ 462 |   border: 3px;
+ 463 |   width: 450px;
+ 464 |   max-width: 90vw;
+ 465 |   margin: 20px 0;
+ 466 | }
+ 467 | .mapapp .map-block .leaflet-container .leaflet-popup-pane .leaflet-popup p {
+ 468 |   margin: 0;
+ 469 |   font-size: 16px;
+ 470 |   line-height: 1.1em;
+ 471 |   padding-top: 5px;
+ 472 |   font-weight: 400;
+ 473 | }
+ 474 | .mapapp .map-block .leaflet-container .leaflet-popup-pane .leaflet-popup-content {
+ 475 |   display: flex;
+ 476 |   flex-direction: row;
+ 477 |   width: 400px !important;
+ 478 |   max-width: 90vw;
+ 479 |   position: relative;
+ 480 |   padding: 10px;
+ 481 |   margin: auto;
+ 482 | }
+ 483 | .mapapp .map-block .leaflet-container .leaflet-popup-pane .leaflet-popup-content img {
+ 484 |   width: 100px;
+ 485 |   height: auto;
+ 486 |   padding-right: 10px;
+ 487 |   align-self: center;
+ 488 |   display: block;
+ 489 | }
+ 490 | .mapapp .map-block .leaflet-container .leaflet-popup-pane .leaflet-popup-content .text_wrapper {
+ 491 |   flex-direction: column;
+ 492 |   max-width: 390px;
+ 493 |   display: flex;
+ 494 |   justify-content: space-between;
+ 495 |   padding-right: 10px;
+ 496 | }
+ 497 | .mapapp .map-block .leaflet-container .leaflet-popup-pane .leaflet-popup-content .text_wrapper .popup_title {
+ 498 |   font-size: 18px;
+ 499 |   font-weight: 600;
+ 500 |   color: var(--d_text);
+ 501 | }
+ 502 | .mapapp .map-block .leaflet-container .leaflet-popup-pane .leaflet-popup-content .text_wrapper .popupcategory {
+ 503 |   display: none;
+ 504 | }
+ 505 | .mapapp .map-block .leaflet-container .leaflet-popup-pane .leaflet-popup-content .text_wrapper .popup_button {
+ 506 |   padding: 0;
+ 507 |   font-size: 18px;
+ 508 |   display: block;
+ 509 |   border: none;
+ 510 |   grid-column: 2/3;
+ 511 |   grid-row: 3/4;
+ 512 |   border: none;
+ 513 |   position: relative;
+ 514 |   margin: 15px 0 15px 15px;
+ 515 |   font-weight: 600;
+ 516 | }
+ 517 | .mapapp .map-block .leaflet-container .leaflet-popup-pane .leaflet-popup-content .text_wrapper .popup_button:active, .mapapp .map-block .leaflet-container .leaflet-popup-pane .leaflet-popup-content .text_wrapper .popup_button:hover {
+ 518 |   background-color: #fff;
+ 519 |   color: var(--d_text);
+ 520 |   opacity: 0.75;
+ 521 | }
+ 522 | .mapapp .map-block .leaflet-container .leaflet-popup-pane .leaflet-popup-close-button::before {
+ 523 |   content: "";
+ 524 |   background-image: url(${___CSS_LOADER_URL_REPLACEMENT_38___});
+ 525 |   display: flex;
+ 526 |   background-position: center center;
+ 527 |   background-size: 60%;
+ 528 |   background-repeat: no-repeat;
+ 529 |   position: relative;
+ 530 |   left: 0px;
+ 531 |   background-color: #fff;
+ 532 |   border-radius: 50px;
+ 533 |   box-shadow: 0 0 2px 1px gray;
+ 534 |   width: 24px;
+ 535 |   height: 24px;
+ 536 | }
+ 537 | .mapapp .map-block .leaflet-container .leaflet-popup-pane .leaflet-popup-close-button span {
+ 538 |   display: none;
+ 539 | }
+ 540 | 
+ 541 | .leaflet-popup .popup_button::after {
+ 542 |   left: -25px;
+ 543 |   right: auto;
+ 544 |   background-size: 60%;
+ 545 |   bottom: -5px;
+ 546 |   padding: 0;
+ 547 |   top: auto;
+ 548 | }
+ 549 | 
+ 550 | .logo {
+ 551 |   margin: 0;
+ 552 |   font-size: 60px;
+ 553 |   font-weight: 500;
+ 554 |   width: 100%;
+ 555 | }
+ 556 | .logo img {
+ 557 |   height: 70px;
+ 558 |   width: auto;
+ 559 | }
+ 560 | 
+ 561 | .content {
+ 562 |   margin: 10%;
+ 563 | }
+ 564 | .content .entry-title {
+ 565 |   text-align: center;
+ 566 | }
+ 567 | 
+ 568 | .mapapp {
+ 569 |   display: grid;
+ 570 |   grid-template-rows: 100%;
+ 571 |   grid-template-columns: 70% 30%;
+ 572 |   position: relative;
+ 573 |   overflow-y: hidden;
+ 574 |   height: 100%;
+ 575 | }
+ 576 | .mapapp .map-block {
+ 577 |   width: 100%;
+ 578 | }
+ 579 | .mapapp .sidebar {
+ 580 |   margin: 0;
+ 581 |   display: flex;
+ 582 |   flex-flow: column;
+ 583 |   height: 100%;
+ 584 |   overflow-y: scroll;
+ 585 |   overflow-x: hidden;
+ 586 | }
+ 587 | .mapapp .legal ul {
+ 588 |   display: flex;
+ 589 |   padding: 0;
+ 590 |   margin: 0;
+ 591 |   justify-content: flex-end;
+ 592 | }
+ 593 | .mapapp .legal ul li {
+ 594 |   padding: 5px 30px;
+ 595 |   line-height: 1em;
+ 596 |   font-size: 14px;
+ 597 |   color: #000;
+ 598 | }
+ 599 | @media screen and (max-width: 980px) {
+ 600 |   .mapapp {
+ 601 |     height: unset;
+ 602 |     display: flex;
+ 603 |     flex-direction: column;
+ 604 |   }
+ 605 |   .mapapp .map-block {
+ 606 |     max-height: 85vh;
+ 607 |     position: unset;
+ 608 |   }
+ 609 |   .mapapp .map-block .menu.top {
+ 610 |     background-color: rgba(128, 128, 128, 0.1);
+ 611 |     order: 1;
+ 612 |     margin: 0px;
+ 613 |     position: unset;
+ 614 |   }
+ 615 |   .mapapp .map-block #mapapp_map {
+ 616 |     height: 550px;
+ 617 |     width: 100%;
+ 618 |   }
+ 619 | }
+ 620 | .mapapp .legal {
+ 621 |   position: static;
+ 622 |   order: 4;
+ 623 | }
+ 624 | 
+ 625 | .home {
+ 626 |   /* Media Querries */
+ 627 | }
+ 628 | .home .sidebar {
+ 629 |   min-width: 360px;
+ 630 |   min-width: 250px;
+ 631 |   grid-column: 2/3;
+ 632 | }
+ 633 | .home .sidebar .category_filter {
+ 634 |   padding: 30px 45px 15px 45px;
+ 635 |   margin: 0;
+ 636 |   display: flex;
+ 637 |   flex-direction: column;
+ 638 |   row-gap: 20px;
+ 639 | }
+ 640 | .home .sidebar .category_filter--title {
+ 641 |   margin: 0;
+ 642 |   font-size: 28px;
+ 643 |   font-weight: 600;
+ 644 |   padding-bottom: 10px;
+ 645 | }
+ 646 | .home .sidebar .category_filter--button {
+ 647 |   display: flex;
+ 648 |   -moz-column-gap: 5%;
+ 649 |        column-gap: 5%;
+ 650 | }
+ 651 | .home .sidebar .category_filter--button button {
+ 652 |   position: relative;
+ 653 | }
+ 654 | .home .sidebar .category_filter--list {
+ 655 |   display: flex;
+ 656 |   flex-direction: column;
+ 657 |   row-gap: 0.5rem;
+ 658 | }
+ 659 | .home .sidebar .category_filter--list .single_category_wrapper {
+ 660 |   display: flex;
+ 661 |   align-items: center;
+ 662 |   align-content: center;
+ 663 |   row-gap: 0.5rem;
+ 664 | }
+ 665 | .home .sidebar .category_filter--list .single_category_wrapper .cat_checkbox {
+ 666 |   width: 25px;
+ 667 |   height: 25px;
+ 668 |   flex-shrink: 0;
+ 669 | }
+ 670 | .home .sidebar .category_filter--list .single_category_wrapper .cat_label {
+ 671 |   margin-left: 7.5px;
+ 672 |   display: flex;
+ 673 |   cursor: pointer;
+ 674 |   align-items: center;
+ 675 | }
+ 676 | .home .sidebar .category_filter--list .single_category_wrapper .cat_label:hover, .home .sidebar .category_filter--list .single_category_wrapper .cat_label:active {
+ 677 |   opacity: 0.75;
+ 678 | }
+ 679 | .home .sidebar .category_filter--list .single_category_wrapper .cat_icon {
+ 680 |   width: 30px;
+ 681 |   display: block;
+ 682 |   margin-right: 7.5px;
+ 683 | }
+ 684 | .home .sidebar .sort_options_block {
+ 685 |   padding: 15px 10%;
+ 686 |   font-size: 15px;
+ 687 |   display: flex;
+ 688 |   align-items: center;
+ 689 | }
+ 690 | .home .sidebar .sort_options_block span {
+ 691 |   margin-right: 5px;
+ 692 | }
+ 693 | .home .sidebar .sort_options_block #list_sort_options {
+ 694 |   flex-grow: 1;
+ 695 |   padding: 15px;
+ 696 |   font-weight: 500;
+ 697 |   background-color: #fff;
+ 698 |   border: none;
+ 699 | }
+ 700 | .home .sidebar .marker_list {
+ 701 |   cursor: pointer;
+ 702 | }
+ 703 | .home .sidebar .marker_list .marker--entry {
+ 704 |   padding: 22.5px 45px 0 45px;
+ 705 |   background-color: #fff;
+ 706 | }
+ 707 | .home .sidebar .marker_list .marker--entry:not(.show) {
+ 708 |   display: none;
+ 709 | }
+ 710 | .home .sidebar .marker_list .marker--entry .entry_title {
+ 711 |   font-size: 17px;
+ 712 |   line-height: 25px;
+ 713 |   font-weight: 600;
+ 714 | }
+ 715 | .home .sidebar .marker_list .marker--entry .entry_author, .home .sidebar .marker_list .marker--entry .entry_date {
+ 716 |   display: none;
+ 717 | }
+ 718 | .home .sidebar .marker_list .marker--entry .entry_category {
+ 719 |   border-bottom: 2px dashed gray;
+ 720 |   padding-bottom: 22.5px;
+ 721 | }
+ 722 | .home .sidebar .marker_list .marker--entry .entry_category img {
+ 723 |   width: 20px;
+ 724 |   height: 20px;
+ 725 |   position: relative;
+ 726 |   top: 5px;
+ 727 |   margin-right: 7.5px;
+ 728 | }
+ 729 | .home .sidebar .marker_list .marker--entry.marked {
+ 730 |   background-color: rgba(242, 148, 0, 0.9);
+ 731 |   color: #fff;
+ 732 |   padding-bottom: 30px;
+ 733 |   cursor: default;
+ 734 | }
+ 735 | .home .sidebar .marker_list .marker--entry.marked .entry_category {
+ 736 |   border: none;
+ 737 |   padding-bottom: 7.5px;
+ 738 | }
+ 739 | .home .sidebar .marker_list .marker--entry.marked .button {
+ 740 |   border-color: #fff;
+ 741 |   color: #fff;
+ 742 | }
+ 743 | .home .sidebar .marker_list .marker--entry.marked:hover, .home .sidebar .marker_list .marker--entry.marked:active {
+ 744 |   opacity: 0.7;
+ 745 | }
+ 746 | .home .sidebar .marker_list .dn.button.main-page-button {
+ 747 |   display: none;
+ 748 | }
+ 749 | .home .sidebar .marker_list .dn.button.main-page-button.db {
+ 750 |   display: block;
+ 751 | }
+ 752 | @media screen and (max-width: 980px) {
+ 753 |   .home .sidebar {
+ 754 |     display: block;
+ 755 |     position: static;
+ 756 |     width: 100%;
+ 757 |     max-width: 100%;
+ 758 |     order: 3;
+ 759 |     overflow-y: auto;
+ 760 |     min-width: 250px;
+ 761 |     box-shadow: none;
+ 762 |   }
+ 763 | }
+ 764 | @media screen and (max-width: 980px) {
+ 765 |   .home .kulturdatenbank .sidebar {
+ 766 |     min-width: 250px;
+ 767 |   }
+ 768 |   .home .category_filter_section {
+ 769 |     padding-top: 15px;
+ 770 |   }
+ 771 |   .home .category_filter_section .category {
+ 772 |     font-weight: 500;
+ 773 |   }
+ 774 |   .home .single_category_wrapper {
+ 775 |     width: -moz-max-content;
+ 776 |     width: max-content;
+ 777 |   }
+ 778 |   .home .kulturdatenbank .sidebar .sort_options_block {
+ 779 |     justify-content: flex-start;
+ 780 |     padding-left: 5px;
+ 781 |   }
+ 782 |   .home .kulturdatenbank #list_sort_options {
+ 783 |     background-color: #fff;
+ 784 |     width: 185px;
+ 785 |   }
+ 786 |   .home .search {
+ 787 |     margin-left: 5px;
+ 788 |     margin-right: 5px;
+ 789 |     width: 96%;
+ 790 |     box-sizing: border-box;
+ 791 |   }
+ 792 | }
+ 793 | @media screen and (max-width: 440px) {
+ 794 |   .home .category_filter_section {
+ 795 |     padding-left: 5px;
+ 796 |     padding-right: 5px;
+ 797 |   }
+ 798 |   .home .marker--entry {
+ 799 |     padding-left: 10px;
+ 800 |     padding-right: 10px;
+ 801 |   }
+ 802 |   .home .sort_options_block {
+ 803 |     padding: 15px;
+ 804 |     width: 100%;
+ 805 |     justify-content: center;
+ 806 |   }
+ 807 | }
+ 808 | 
+ 809 | .single-marker {
+ 810 |   /*Map Popup Default Media */
+ 811 |   /* Entry Content Text Default Media */
+ 812 |   /* List */
+ 813 |   /* Media Querries */
+ 814 | }
+ 815 | .single-marker .mapapp {
+ 816 |   grid-template-columns: 45% 55%;
+ 817 | }
+ 818 | .single-marker .mapapp .popup_title {
+ 819 |   font-size: 20px;
+ 820 |   font-weight: 600;
+ 821 |   line-height: 1.5em;
+ 822 |   text-shadow: 0px 0px 2px #fff;
+ 823 | }
+ 824 | .single-marker .mapapp .leaflet-popup:has(.hier_bin_ich) {
+ 825 |   pointer-events: none;
+ 826 | }
+ 827 | .single-marker .mapapp .leaflet-popup-content-wrapper:has(.hier_bin_ich) {
+ 828 |   background-color: rgba(255, 255, 255, 0);
+ 829 |   box-shadow: none;
+ 830 | }
+ 831 | .single-marker .mapapp .leaflet-popup-content-wrapper:has(.hier_bin_ich) + .leaflet-popup-tip-container {
+ 832 |   display: none;
+ 833 | }
+ 834 | .single-marker .mapapp .leaflet-popup-content-wrapper:has(.hier_bin_ich) ~ .leaflet-popup-close-button {
+ 835 |   display: none;
+ 836 | }
+ 837 | .single-marker .mapapp .leaflet-popup-content-wrapper:has(.hier_bin_ich) .hier_bin_ich {
+ 838 |   width: 100%;
+ 839 |   pointer-events: none;
+ 840 | }
+ 841 | .single-marker .mapapp .leaflet-popup-content-wrapper:has(.hier_bin_ich) .hier_bin_ich .popup_title {
+ 842 |   margin: 0 auto;
+ 843 |   width: -moz-max-content;
+ 844 |   width: max-content;
+ 845 |   position: relative;
+ 846 | }
+ 847 | .single-marker .post_content {
+ 848 |   margin-top: 60px;
+ 849 |   overflow-y: scroll;
+ 850 |   margin-left: 10%;
+ 851 |   margin-right: 20%;
+ 852 | }
+ 853 | .single-marker .post_content .entry_category {
+ 854 |   display: flex;
+ 855 |   font-size: 22px;
+ 856 | }
+ 857 | .single-marker .post_content .entry_category > * {
+ 858 |   margin: 0px 10px;
+ 859 | }
+ 860 | .single-marker .post_content .entry_category img {
+ 861 |   width: 30px;
+ 862 | }
+ 863 | .single-marker .post_content .wp-block-image {
+ 864 |   margin-left: 10%;
+ 865 |   margin-right: 20%;
+ 866 | }
+ 867 | .single-marker .post_content a.close {
+ 868 |   width: 40px;
+ 869 |   height: 40px;
+ 870 |   display: block;
+ 871 |   position: fixed;
+ 872 |   right: 60px;
+ 873 |   top: 60px;
+ 874 | }
+ 875 | .single-marker .content_footer {
+ 876 |   margin-top: 60px;
+ 877 |   padding-bottom: 150px;
+ 878 | }
+ 879 | .single-marker .content_footer_text {
+ 880 |   text-align: right;
+ 881 | }
+ 882 | .single-marker .content_footer .mobile {
+ 883 |   display: none;
+ 884 | }
+ 885 | .single-marker .single_post_main_block .leaflet-popup-content-wrapper.current {
+ 886 |   background-color: rgba(255, 255, 255, 0);
+ 887 |   box-shadow: none;
+ 888 | }
+ 889 | .single-marker .single_post_main_block .leaflet-popup-content-wrapper.current .hier_bin_ich {
+ 890 |   width: 100%;
+ 891 | }
+ 892 | .single-marker .single_post_main_block .leaflet-popup-content-wrapper.current .hier_bin_ich .popup_title {
+ 893 |   margin: 0 auto;
+ 894 |   width: -moz-max-content;
+ 895 |   width: max-content;
+ 896 |   position: relative;
+ 897 |   left: 10px;
+ 898 | }
+ 899 | .single-marker .single_post_main_block .current .leaflet-popup-close-button,
+ 900 | .single-marker .single_post_main_block .current .leaflet-popup-tip-container {
+ 901 |   display: none;
+ 902 | }
+ 903 | .single-marker .single_post_main_block .leaflet-popup-content {
+ 904 |   justify-content: center;
+ 905 | }
+ 906 | .single-marker .single_post_main_block .popup_title {
+ 907 |   font-size: 20px;
+ 908 |   font-weight: 600;
+ 909 |   line-height: 1.5em;
+ 910 |   text-shadow: 0px 0px 2px #fff;
+ 911 |   color: var(--d_text);
+ 912 | }
+ 913 | .single-marker .post_content h2,
+ 914 | .single-marker .post_content h3,
+ 915 | .single-marker .post_content h4,
+ 916 | .single-marker .post_content h5,
+ 917 | .single-marker .post_content h6 {
+ 918 |   margin-top: 1.5em;
+ 919 |   margin-bottom: 1em;
+ 920 |   color: var(--l_blue);
+ 921 |   font-weight: 600;
+ 922 |   font-size: 32px;
+ 923 | }
+ 924 | .single-marker .single_post_side_bar .post_content h3 {
+ 925 |   font-size: 28px;
+ 926 | }
+ 927 | .single-marker .single_post_side_bar .post_content h4 {
+ 928 |   font-size: 24px;
+ 929 | }
+ 930 | .single-marker .single_post_side_bar .post_content h5 {
+ 931 |   font-size: 24px;
+ 932 | }
+ 933 | .single-marker .single_post_side_bar .post_content h6 {
+ 934 |   font-size: 24px;
+ 935 | }
+ 936 | .single-marker .post_content .wp-block-image.aligncenter {
+ 937 |   display: flex;
+ 938 |   flex-direction: column;
+ 939 | }
+ 940 | .single-marker .post_content .wp-block-image > * {
+ 941 |   align-self: center;
+ 942 | }
+ 943 | .single-marker .post_content .wp-block-image figcaption {
+ 944 |   color: var(--d_text);
+ 945 |   font-size: 17px;
+ 946 |   text-align: left;
+ 947 |   margin-top: 1em;
+ 948 |   margin-bottom: 2em;
+ 949 |   font-weight: 400;
+ 950 | }
+ 951 | .single-marker .post_content .wp-block-quote {
+ 952 |   background-color: rgba(0, 156, 222, 0.05);
+ 953 |   padding-left: 15%;
+ 954 |   padding-right: 20%;
+ 955 |   border-left: 0;
+ 956 |   padding-top: 60px;
+ 957 |   padding-bottom: 90px;
+ 958 |   margin-bottom: 60px;
+ 959 | }
+ 960 | .single-marker .post_content .wp-block-quote p::before {
+ 961 |   content: "„";
+ 962 |   visibility: visible;
+ 963 | }
+ 964 | .single-marker .post_content .wp-block-quote p::after {
+ 965 |   content: "“";
+ 966 |   visibility: visible;
+ 967 | }
+ 968 | .single-marker .post_content .wp-block-quote p {
+ 969 |   font-size: 38px;
+ 970 |   font-style: italic;
+ 971 |   font-weight: 400;
+ 972 |   line-height: 1.2;
+ 973 |   color: var(--l_blue);
+ 974 |   margin: 0;
+ 975 | }
+ 976 | .single-marker .post_content .wp-block-quote > cite {
+ 977 |   margin-top: 25px;
+ 978 |   display: block;
+ 979 |   font-size: 18px;
+ 980 |   font-weight: 400;
+ 981 | }
+ 982 | .single-marker .post_content > ul {
+ 983 |   display: flex;
+ 984 |   flex-direction: column;
+ 985 |   gap: 0.6em;
+ 986 |   font-size: 22px;
+ 987 |   font-weight: 300;
+ 988 | }
+ 989 | .single-marker .post_content > ul strong {
+ 990 |   font-weight: 600;
+ 991 | }
+ 992 | .single-marker .post_content li::marker {
+ 993 |   color: var(--l_blue);
+ 994 |   font-size: 16px;
+ 995 | }
+ 996 | .single-marker #gform_confirmation_wrapper_4 {
+ 997 |   position: fixed;
+ 998 |   top: 50vh;
+ 999 |   left: 50vw;
+1000 |   transform: translate(-50%, -50%);
+1001 |   padding: 2em;
+1002 |   background: rgba(255, 255, 255, 0.5019607843);
+1003 |   margin: 0;
+1004 |   display: flex;
+1005 |   justify-content: center;
+1006 |   align-items: center;
+1007 |   font-size: 30px;
+1008 |   font-weight: 700;
+1009 |   animation: hide_confirmation 0s 3s forwards;
+1010 | }
+1011 | @keyframes hide_confirmation {
+1012 |   to {
+1013 |     visibility: hidden;
+1014 |   }
+1015 | }
+1016 | @media screen and (max-width: 1650px) {
+1017 |   .single-marker .entry_category p {
+1018 |     display: grid;
+1019 |     grid-template-columns: 30px auto;
+1020 |     grid-template-rows: min-content min-content;
+1021 |     margin: 0;
+1022 |     font-size: 18px;
+1023 |     padding-bottom: 1.2em;
+1024 |   }
+1025 |   .single-marker .entry_category span {
+1026 |     grid-column: 1/3;
+1027 |     grid-row: 1/2;
+1028 |     padding-bottom: 0;
+1029 |   }
+1030 |   .single-marker .entry_category img {
+1031 |     grid-column: 1/2;
+1032 |     grid-row: 2/3;
+1033 |   }
+1034 |   .single-marker .entry_category b {
+1035 |     grid-column: 2/3;
+1036 |     grid-row: 2/3;
+1037 |     font-size: 18px;
+1038 |   }
+1039 | }
+1040 | @media screen and (max-width: 1350px) {
+1041 |   .single-marker {
+1042 |     /* .single_post .menu.top ul{
+1043 |       grid-template-columns: auto min-content;
+1044 |     } */
+1045 |   }
+1046 |   .single-marker body.kulturdatenbank.single_post .menu.top li:nth-child(2) {
+1047 |     left: 32%;
+1048 |   }
+1049 |   .single-marker body.kulturdatenbank.single_post .menu.top li:nth-child(3) {
+1050 |     top: 50px;
+1051 |     left: 32%;
+1052 |   }
+1053 |   .single-marker .single_post.kulturdatenbank .leaflet-container .leaflet-control-attribution {
+1054 |     max-width: 70%;
+1055 |   }
+1056 | }
+1057 | @media screen and (max-width: 980px) {
+1058 |   .single-marker {
+1059 |     /*
+1060 |       .single_post_main_block.map_block,
+1061 |       .kulturdatenbank .menu.top,
+1062 |       .scrolldown.icon {
+1063 |     display: none;
+1064 |       }
+1065 |       */
+1066 |   }
+1067 |   .single-marker .kulturdatenbank .sidebar {
+1068 |     padding: 20px 0;
+1069 |   }
+1070 |   .single-marker .kulturdatenbank .post_content {
+1071 |     margin-top: 30px;
+1072 |   }
+1073 |   .single-marker .post_content > * {
+1074 |     padding-left: 0;
+1075 |     padding-right: 0;
+1076 |   }
+1077 |   .single-marker .post_content h1,
+1078 |   .single-marker .post_content h2,
+1079 |   .single-marker .post_content h3,
+1080 |   .single-marker .post_content h4,
+1081 |   .single-marker .post_content h5,
+1082 |   .single-marker .post_content h6 {
+1083 |     overflow-wrap: break-word;
+1084 |     word-wrap: break-word;
+1085 |     -webkit-hyphens: auto;
+1086 |     hyphens: auto;
+1087 |     -webkit-hyphenate-character: "-";
+1088 |     hyphenate-limit-chars: 6 4 4;
+1089 |     -webkit-hyphenate-limit-before: 4;
+1090 |     -webkit-hyphenate-limit-after: 4;
+1091 |     -ms-hyphenate-limit-chars: 6 4 4;
+1092 |     -moz-hyphenate-limit-chars: 6 4 4;
+1093 |   }
+1094 |   .single-marker .post_content h1 {
+1095 |     font-size: 38px;
+1096 |   }
+1097 |   .single-marker .button.share.desktop {
+1098 |     display: none;
+1099 |   }
+1100 |   .single-marker .content_footer .button.share.mobile {
+1101 |     display: block;
+1102 |     min-width: 188px;
+1103 |     max-width: 188px;
+1104 |   }
+1105 |   .single-marker .single_post.kulturdatenbank .leaflet-container .leaflet-control-attribution {
+1106 |     max-width: unset;
+1107 |   }
+1108 |   .single-marker .single_post .menu.top {
+1109 |     height: unset;
+1110 |   }
+1111 | }
+1112 | @media screen and (max-width: 600px) {
+1113 |   .single-marker .post_content {
+1114 |     margin-top: 20px;
+1115 |   }
+1116 |   .single-marker .post_content h1 {
+1117 |     font-size: 28px;
+1118 |   }
+1119 |   .single-marker .kulturdatenbank .sidebar p {
+1120 |     font-size: 18px;
+1121 |   }
+1122 |   .single-marker .kulturdatenbank .post_content > *,
+1123 |   .single-marker .post_content .wp-block-image {
+1124 |     margin-left: 5%;
+1125 |     margin-right: 10%;
+1126 |   }
+1127 |   .single-marker .post_content .wp-block-image figcaption {
+1128 |     font-size: 15px;
+1129 |   }
+1130 |   .single-marker .kulturdatenbank .post_content h2,
+1131 |   .single-marker .kulturdatenbank .post_content h3,
+1132 |   .single-marker .kulturdatenbank .post_content h4,
+1133 |   .single-marker .kulturdatenbank .post_content h5,
+1134 |   .single-marker .kulturdatenbank .post_content h6 {
+1135 |     font-size: 22px;
+1136 |     font-weight: 500;
+1137 |     line-height: 1.2em;
+1138 |   }
+1139 |   .single-marker .kulturdatenbank .post_content .wp-block-quote {
+1140 |     margin: 0;
+1141 |     padding: 40px 5% 40px 10%;
+1142 |   }
+1143 |   .single-marker .kulturdatenbank .post_content .wp-block-quote p {
+1144 |     font-size: 24px;
+1145 |     line-height: 1.5em;
+1146 |   }
+1147 |   .single-marker .kulturdatenbank .post_content .wp-block-quote cite {
+1148 |     font-size: 18px;
+1149 |     line-height: 1.2em;
+1150 |   }
+1151 |   .single-marker .post_content > ul {
+1152 |     padding-left: 5%;
+1153 |   }
+1154 |   .single-marker .post_content li {
+1155 |     font-size: 18px;
+1156 |   }
+1157 |   .single-marker .content_footer {
+1158 |     flex-direction: column;
+1159 |     align-items: flex-start;
+1160 |   }
+1161 | }
+1162 | 
+1163 | .popup_wrapper {
+1164 |   display: none;
+1165 |   font-weight: 600;
+1166 | }
+1167 | .popup_wrapper.show {
+1168 |   height: 100%;
+1169 |   background-color: rgba(128, 128, 128, 0.8);
+1170 |   position: fixed;
+1171 |   z-index: 1010;
+1172 |   top: 0;
+1173 |   width: 100%;
+1174 |   height: 100%;
+1175 |   display: flex;
+1176 |   justify-content: center;
+1177 |   align-items: center;
+1178 | }
+1179 | .popup_wrapper .popup.info {
+1180 |   max-width: 1200px;
+1181 |   background-color: #fff;
+1182 |   display: block;
+1183 |   position: relative;
+1184 |   margin: 15%;
+1185 | }
+1186 | .popup_wrapper .popup.info .before_content {
+1187 |   height: 150px;
+1188 | }
+1189 | .popup_wrapper .popup.info .before_content img {
+1190 |   height: 100%;
+1191 |   width: 100%;
+1192 |   -o-object-fit: cover;
+1193 |      object-fit: cover;
+1194 | }
+1195 | .popup_wrapper .popup.info .content_wrapper {
+1196 |   position: relative;
+1197 |   margin: 5%;
+1198 | }
+1199 | .popup_wrapper .popup.info .content_wrapper h2 {
+1200 |   font-size: 40px;
+1201 |   font-weight: inherit;
+1202 | }
+1203 | .popup_wrapper .popup.info .popup_buttons {
+1204 |   display: flex;
+1205 |   font-size: 16px;
+1206 |   font-weight: inherit;
+1207 | }
+1208 | .popup_wrapper .close.d-button {
+1209 |   cursor: pointer;
+1210 |   height: -moz-fit-content;
+1211 |   height: fit-content;
+1212 |   position: absolute;
+1213 |   top: 0px;
+1214 |   right: 0px;
+1215 |   transform: translate(40%, -40%);
+1216 | }
+1217 | .popup_wrapper .close.d-button::before {
+1218 |   content: "";
+1219 |   width: 32px;
+1220 |   height: 32px;
+1221 |   background-image: url(${___CSS_LOADER_URL_REPLACEMENT_38___});
+1222 |   display: flex;
+1223 |   background-position: center center;
+1224 |   background-size: 60%;
+1225 |   background-repeat: no-repeat;
+1226 |   position: relative;
+1227 |   left: 0px;
+1228 |   background-color: #fff;
+1229 |   border-radius: 50px;
+1230 |   box-shadow: 0 0 2px 1px gray;
+1231 | }
+1232 | .popup_wrapper .close.d-button::before:hover, .popup_wrapper .close.d-button::before:active {
+1233 |   background-color: #808080;
+1234 | }`, "",{"version":3,"sources":["webpack://./scss/style.scss","webpack://./scss/base/_typography.scss","webpack://./scss/base/_color.scss","webpack://./scss/base/_base.scss","webpack://./scss/component/_button.scss","webpack://./scss/component/_search.scss","webpack://./scss/component/_footer_nav.scss","webpack://./scss/component/_nav-top.scss","webpack://./scss/component/_map_common.scss","webpack://./scss/template/_common.scss","webpack://./scss/template/_home.scss","webpack://./scss/template/_single-marker.scss","webpack://./scss/template/_welcome-popup.scss","webpack://./scss/component/_x-button.scss"],"names":[],"mappings":"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","sourcesContent":["@charset \"UTF-8\";\n/*Fonts*/\n/* barlow-100 - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: normal;\n  font-weight: 100;\n  src: local(\"\"), url(\"~/barlow-v12-latin/barlow-v12-latin-100.woff2\") format(\"woff2\"), url(\"~/barlow-v12-latin/barlow-v12-latin-100.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n/* barlow-100italic - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: italic;\n  font-weight: 100;\n  src: local(\"\"), url(\"~/barlow-v12-latin/barlow-v12-latin-100italic.woff2\") format(\"woff2\"), url(\"~/barlow-v12-latin/barlow-v12-latin-100italic.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n/* barlow-200 - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: normal;\n  font-weight: 200;\n  src: local(\"\"), url(\"~/barlow-v12-latin/barlow-v12-latin-200.woff2\") format(\"woff2\"), url(\"~/barlow-v12-latin/barlow-v12-latin-200.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n/* barlow-200italic - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: italic;\n  font-weight: 200;\n  src: local(\"\"), url(\"~/barlow-v12-latin/barlow-v12-latin-200italic.woff2\") format(\"woff2\"), url(\"~/barlow-v12-latin/barlow-v12-latin-200italic.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n/* barlow-300italic - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: italic;\n  font-weight: 300;\n  src: local(\"\"), url(\"~/barlow-v12-latin/barlow-v12-latin-300italic.woff2\") format(\"woff2\"), url(\"~/barlow-v12-latin/barlow-v12-latin-300italic.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n/* barlow-italic - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: italic;\n  font-weight: 400;\n  src: local(\"\"), url(\"~/barlow-v12-latin/barlow-v12-latin-italic.woff2\") format(\"woff2\"), url(\"~/barlow-v12-latin/barlow-v12-latin-italic.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n/* barlow-regular - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: normal;\n  font-weight: 400;\n  src: local(\"\"), url(\"~/barlow-v12-latin/barlow-v12-latin-regular.woff2\") format(\"woff2\"), url(\"~/barlow-v12-latin/barlow-v12-latin-regular.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n/* barlow-500 - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: normal;\n  font-weight: 500;\n  src: local(\"\"), url(\"~/barlow-v12-latin/barlow-v12-latin-500.woff2\") format(\"woff2\"), url(\"~/barlow-v12-latin/barlow-v12-latin-500.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n/* barlow-600 - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: normal;\n  font-weight: 600;\n  src: local(\"\"), url(\"~/barlow-v12-latin/barlow-v12-latin-600.woff2\") format(\"woff2\"), url(\"~/barlow-v12-latin/barlow-v12-latin-600.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n/* barlow-500italic - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: italic;\n  font-weight: 500;\n  src: local(\"\"), url(\"~/barlow-v12-latin/barlow-v12-latin-500italic.woff2\") format(\"woff2\"), url(\"~/barlow-v12-latin/barlow-v12-latin-500italic.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n/* barlow-600italic - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: italic;\n  font-weight: 600;\n  src: local(\"\"), url(\"~/barlow-v12-latin/barlow-v12-latin-600italic.woff2\") format(\"woff2\"), url(\"~/barlow-v12-latin/barlow-v12-latin-600italic.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n/* barlow-700italic - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: italic;\n  font-weight: 700;\n  src: local(\"\"), url(\"~/barlow-v12-latin/barlow-v12-latin-700italic.woff2\") format(\"woff2\"), url(\"~/barlow-v12-latin/barlow-v12-latin-700italic.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n/* barlow-300 - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: normal;\n  font-weight: 300;\n  src: local(\"\"), url(\"~/barlow-v12-latin/barlow-v12-latin-300.woff2\") format(\"woff2\"), url(\"~/barlow-v12-latin/barlow-v12-latin-300.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n/* barlow-800italic - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: italic;\n  font-weight: 800;\n  src: local(\"\"), url(\"~/barlow-v12-latin/barlow-v12-latin-800italic.woff2\") format(\"woff2\"), url(\"~/barlow-v12-latin/barlow-v12-latin-800italic.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n/* barlow-700 - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: normal;\n  font-weight: 700;\n  src: local(\"\"), url(\"~/barlow-v12-latin/barlow-v12-latin-700.woff2\") format(\"woff2\"), url(\"~/barlow-v12-latin/barlow-v12-latin-700.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n/* barlow-900 - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: normal;\n  font-weight: 900;\n  src: local(\"\"), url(\"~/barlow-v12-latin/barlow-v12-latin-900.woff2\") format(\"woff2\"), url(\"~/barlow-v12-latin/barlow-v12-latin-900.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n/* barlow-900italic - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: italic;\n  font-weight: 900;\n  src: local(\"\"), url(\"~/barlow-v12-latin/barlow-v12-latin-900italic.woff2\") format(\"woff2\"), url(\"~/barlow-v12-latin/barlow-v12-latin-900italic.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n/* barlow-800 - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: normal;\n  font-weight: 800;\n  src: local(\"\"), url(\"~/barlow-v12-latin/barlow-v12-latin-800.woff2\") format(\"woff2\"), url(\"~/barlow-v12-latin/barlow-v12-latin-800.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n.primary {\n  color: var(--primary-color);\n}\n.primary--fill {\n  fill: var(--primary-color);\n}\n.primary--stroke {\n  stroke: var(--primary-color);\n}\n\n* {\n  box-sizing: border-box;\n  font-family: \"Barlow\";\n  color: #212427;\n}\n\nhtml,\nbody,\nmain {\n  height: 100%;\n}\n\nbody {\n  margin: 0;\n  background-color: rgba(128, 128, 128, 0.1);\n}\n\np {\n  font-size: 20px;\n  font-weight: 300;\n  line-height: 32px;\n}\np strong {\n  font-weight: 600;\n}\n\nh1 {\n  font-weight: 600;\n  font-size: 50px;\n}\n\nul,\nol,\nli {\n  list-style: none;\n  margin: 0;\n}\n\na {\n  text-decoration: none;\n}\na:hover, a:active {\n  opacity: 0.75;\n}\n\nbutton {\n  display: inline-block;\n  position: relative;\n  border: unset;\n  background-color: #fff;\n  cursor: pointer;\n  text-decoration: none;\n  border-radius: 3px;\n  font-weight: 700;\n  line-height: 1em;\n  padding: 0.7rem 1.5rem;\n}\nbutton:hover, button:active {\n  opacity: 0.75;\n}\nbutton.right_triangle {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding-right: 1.5em;\n  font-size: inherit;\n}\nbutton.right_triangle::after {\n  content: \"\";\n  display: inline;\n  width: 1em;\n  height: 1em;\n  margin-left: 0.5em;\n  background-repeat: no-repeat;\n  background-image: url(\"~/assets/mapapp/static_icon_triangle_right_black.svg\");\n  background-size: cover;\n}\n\n.search #livesearch {\n  display: none;\n}\n.search_wrapper {\n  width: 80%;\n  position: relative;\n  margin: 15px 10%;\n}\n.searchTerm {\n  border: none;\n  padding: 5px 15px;\n  height: 65px;\n  border-radius: 5px;\n  outline: none;\n  color: var(--d_text);\n  box-shadow: inset 0px 0px 1px 1px var(--l_grey);\n  width: 100%;\n  font-weight: 400;\n  font-size: 16px;\n}\n.searchButton {\n  position: absolute;\n  transform: translate(0%, -50%);\n  right: 0px;\n  top: 50%;\n  border: none;\n  cursor: pointer;\n  font-size: 30px;\n}\n.searchButton:hover, .searchButton:active {\n  background-color: #fff;\n  opacity: 0.7;\n}\n\n.footer_nav {\n  margin-top: auto;\n  box-shadow: inset 0px -1px 1px 1px gray;\n}\n.footer_nav ul {\n  display: flex;\n  justify-content: flex-end;\n}\n.footer_nav ul li {\n  padding: 5px 30px;\n}\n\n.menu.top {\n  width: 100%;\n  padding: 20px 30px;\n  list-style: none;\n  pointer-events: none;\n  display: flex;\n  justify-content: space-between;\n  align-content: center;\n}\n.menu.top ul {\n  padding: 8px 16px;\n  margin: 0;\n}\n.menu.top li {\n  pointer-events: auto;\n}\n.menu.top li:nth-child(1) {\n  margin-right: auto;\n}\n.menu.top li:nth-child(2) {\n  display: flex;\n  align-items: center;\n}\n.menu.top li:nth-child(2) a {\n  display: flex;\n  column-gap: 3px;\n  align-items: center;\n}\n\n.mapapp .map-block {\n  height: 100%;\n  position: relative;\n}\n.mapapp .map-block .menu.top {\n  position: absolute;\n  z-index: 410;\n}\n.mapapp .map-block .leaflet-container {\n  padding: 0;\n  margin: 0;\n  height: 100%;\n  grid-row: 1/2;\n  grid-column: 1/2;\n}\n.mapapp .map-block .leaflet-container .leaflet-control-container .leaflet-bottom.leaflet-right {\n  width: 100%;\n}\n.mapapp .map-block .leaflet-container .leaflet-control-container .leaflet-control-zoom {\n  margin-bottom: 40px;\n  margin-right: 40px;\n  border-radius: 8px;\n  border: none;\n  background-color: white;\n}\n.mapapp .map-block .leaflet-container .leaflet-control-container .leaflet-control-zoom.leaflet-bar a {\n  width: 45px;\n  height: 45px;\n  font-size: 40px;\n  line-height: 40px;\n  background: none;\n}\n.mapapp .map-block .leaflet-container .leaflet-control-container .leaflet-control-attribution {\n  margin: 0 auto 0 15px;\n  background-color: rgba(255, 255, 255, 0);\n  right: auto;\n  left: 0;\n  position: absolute;\n  bottom: 2px;\n}\n.mapapp .map-block .leaflet-container .leaflet-control-container .leaflet-control-attribution a {\n  text-decoration: none;\n  font-size: 14px;\n  font-weight: 400;\n  color: #000;\n}\n.mapapp .map-block .leaflet-container .leaflet-control-container .leaflet-bottom.leaflet-right::after {\n  height: 20px;\n  width: 90px;\n  background-size: contain;\n  content: \"\";\n  background-image: url(\"~/assets/mapapp/mapbox-logo-black.svg\");\n  display: inline-block;\n  background-color: none;\n  background-repeat: no-repeat;\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  margin: 5px 5px 2px 5px;\n}\n.mapapp .map-block .leaflet-container .custom-cluster-marker svg {\n  height: 100%;\n  width: 100%;\n}\n.mapapp .map-block .leaflet-container .cluster-count {\n  display: inline-block;\n  position: absolute;\n  top: 56%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  font-size: 20px;\n  color: white;\n}\n.mapapp .map-block .leaflet-container .leaflet-popup-pane .leaflet-popup {\n  padding: 7.5px;\n  border: 3px;\n  width: 450px;\n  max-width: 90vw;\n  margin: 20px 0;\n}\n.mapapp .map-block .leaflet-container .leaflet-popup-pane .leaflet-popup p {\n  margin: 0;\n  font-size: 16px;\n  line-height: 1.1em;\n  padding-top: 5px;\n  font-weight: 400;\n}\n.mapapp .map-block .leaflet-container .leaflet-popup-pane .leaflet-popup-content {\n  display: flex;\n  flex-direction: row;\n  width: 400px !important;\n  max-width: 90vw;\n  position: relative;\n  padding: 10px;\n  margin: auto;\n}\n.mapapp .map-block .leaflet-container .leaflet-popup-pane .leaflet-popup-content img {\n  width: 100px;\n  height: auto;\n  padding-right: 10px;\n  align-self: center;\n  display: block;\n}\n.mapapp .map-block .leaflet-container .leaflet-popup-pane .leaflet-popup-content .text_wrapper {\n  flex-direction: column;\n  max-width: 390px;\n  display: flex;\n  justify-content: space-between;\n  padding-right: 10px;\n}\n.mapapp .map-block .leaflet-container .leaflet-popup-pane .leaflet-popup-content .text_wrapper .popup_title {\n  font-size: 18px;\n  font-weight: 600;\n  color: var(--d_text);\n}\n.mapapp .map-block .leaflet-container .leaflet-popup-pane .leaflet-popup-content .text_wrapper .popupcategory {\n  display: none;\n}\n.mapapp .map-block .leaflet-container .leaflet-popup-pane .leaflet-popup-content .text_wrapper .popup_button {\n  padding: 0;\n  font-size: 18px;\n  display: block;\n  border: none;\n  grid-column: 2/3;\n  grid-row: 3/4;\n  border: none;\n  position: relative;\n  margin: 15px 0 15px 15px;\n  font-weight: 600;\n}\n.mapapp .map-block .leaflet-container .leaflet-popup-pane .leaflet-popup-content .text_wrapper .popup_button:active, .mapapp .map-block .leaflet-container .leaflet-popup-pane .leaflet-popup-content .text_wrapper .popup_button:hover {\n  background-color: #fff;\n  color: var(--d_text);\n  opacity: 0.75;\n}\n.mapapp .map-block .leaflet-container .leaflet-popup-pane .leaflet-popup-close-button::before {\n  content: \"\";\n  background-image: url(\"~/assets/mapapp/static_icon_x.svg\");\n  display: flex;\n  background-position: center center;\n  background-size: 60%;\n  background-repeat: no-repeat;\n  position: relative;\n  left: 0px;\n  background-color: #fff;\n  border-radius: 50px;\n  box-shadow: 0 0 2px 1px gray;\n  width: 24px;\n  height: 24px;\n}\n.mapapp .map-block .leaflet-container .leaflet-popup-pane .leaflet-popup-close-button span {\n  display: none;\n}\n\n.leaflet-popup .popup_button::after {\n  left: -25px;\n  right: auto;\n  background-size: 60%;\n  bottom: -5px;\n  padding: 0;\n  top: auto;\n}\n\n.logo {\n  margin: 0;\n  font-size: 60px;\n  font-weight: 500;\n  width: 100%;\n}\n.logo img {\n  height: 70px;\n  width: auto;\n}\n\n.content {\n  margin: 10%;\n}\n.content .entry-title {\n  text-align: center;\n}\n\n.mapapp {\n  display: grid;\n  grid-template-rows: 100%;\n  grid-template-columns: 70% 30%;\n  position: relative;\n  overflow-y: hidden;\n  height: 100%;\n}\n.mapapp .map-block {\n  width: 100%;\n}\n.mapapp .sidebar {\n  margin: 0;\n  display: flex;\n  flex-flow: column;\n  height: 100%;\n  overflow-y: scroll;\n  overflow-x: hidden;\n}\n.mapapp .legal ul {\n  display: flex;\n  padding: 0;\n  margin: 0;\n  justify-content: flex-end;\n}\n.mapapp .legal ul li {\n  padding: 5px 30px;\n  line-height: 1em;\n  font-size: 14px;\n  color: #000;\n}\n@media screen and (max-width: 980px) {\n  .mapapp {\n    height: unset;\n    display: flex;\n    flex-direction: column;\n  }\n  .mapapp .map-block {\n    max-height: 85vh;\n    position: unset;\n  }\n  .mapapp .map-block .menu.top {\n    background-color: rgba(128, 128, 128, 0.1);\n    order: 1;\n    margin: 0px;\n    position: unset;\n  }\n  .mapapp .map-block #mapapp_map {\n    height: 550px;\n    width: 100%;\n  }\n}\n.mapapp .legal {\n  position: static;\n  order: 4;\n}\n\n.home {\n  /* Media Querries */\n}\n.home .sidebar {\n  min-width: 360px;\n  min-width: 250px;\n  grid-column: 2/3;\n}\n.home .sidebar .category_filter {\n  padding: 30px 45px 15px 45px;\n  margin: 0;\n  display: flex;\n  flex-direction: column;\n  row-gap: 20px;\n}\n.home .sidebar .category_filter--title {\n  margin: 0;\n  font-size: 28px;\n  font-weight: 600;\n  padding-bottom: 10px;\n}\n.home .sidebar .category_filter--button {\n  display: flex;\n  column-gap: 5%;\n}\n.home .sidebar .category_filter--button button {\n  position: relative;\n}\n.home .sidebar .category_filter--list {\n  display: flex;\n  flex-direction: column;\n  row-gap: 0.5rem;\n}\n.home .sidebar .category_filter--list .single_category_wrapper {\n  display: flex;\n  align-items: center;\n  align-content: center;\n  row-gap: 0.5rem;\n}\n.home .sidebar .category_filter--list .single_category_wrapper .cat_checkbox {\n  width: 25px;\n  height: 25px;\n  flex-shrink: 0;\n}\n.home .sidebar .category_filter--list .single_category_wrapper .cat_label {\n  margin-left: 7.5px;\n  display: flex;\n  cursor: pointer;\n  align-items: center;\n}\n.home .sidebar .category_filter--list .single_category_wrapper .cat_label:hover, .home .sidebar .category_filter--list .single_category_wrapper .cat_label:active {\n  opacity: 0.75;\n}\n.home .sidebar .category_filter--list .single_category_wrapper .cat_icon {\n  width: 30px;\n  display: block;\n  margin-right: 7.5px;\n}\n.home .sidebar .sort_options_block {\n  padding: 15px 10%;\n  font-size: 15px;\n  display: flex;\n  align-items: center;\n}\n.home .sidebar .sort_options_block span {\n  margin-right: 5px;\n}\n.home .sidebar .sort_options_block #list_sort_options {\n  flex-grow: 1;\n  padding: 15px;\n  font-weight: 500;\n  background-color: #fff;\n  border: none;\n}\n.home .sidebar .marker_list {\n  cursor: pointer;\n}\n.home .sidebar .marker_list .marker--entry {\n  padding: 22.5px 45px 0 45px;\n  background-color: #fff;\n}\n.home .sidebar .marker_list .marker--entry:not(.show) {\n  display: none;\n}\n.home .sidebar .marker_list .marker--entry .entry_title {\n  font-size: 17px;\n  line-height: 25px;\n  font-weight: 600;\n}\n.home .sidebar .marker_list .marker--entry .entry_author, .home .sidebar .marker_list .marker--entry .entry_date {\n  display: none;\n}\n.home .sidebar .marker_list .marker--entry .entry_category {\n  border-bottom: 2px dashed gray;\n  padding-bottom: 22.5px;\n}\n.home .sidebar .marker_list .marker--entry .entry_category img {\n  width: 20px;\n  height: 20px;\n  position: relative;\n  top: 5px;\n  margin-right: 7.5px;\n}\n.home .sidebar .marker_list .marker--entry.marked {\n  background-color: rgba(242, 148, 0, 0.9);\n  color: #fff;\n  padding-bottom: 30px;\n  cursor: default;\n}\n.home .sidebar .marker_list .marker--entry.marked .entry_category {\n  border: none;\n  padding-bottom: 7.5px;\n}\n.home .sidebar .marker_list .marker--entry.marked .button {\n  border-color: #fff;\n  color: #fff;\n}\n.home .sidebar .marker_list .marker--entry.marked:hover, .home .sidebar .marker_list .marker--entry.marked:active {\n  opacity: 0.7;\n}\n.home .sidebar .marker_list .dn.button.main-page-button {\n  display: none;\n}\n.home .sidebar .marker_list .dn.button.main-page-button.db {\n  display: block;\n}\n@media screen and (max-width: 980px) {\n  .home .sidebar {\n    display: block;\n    position: static;\n    width: 100%;\n    max-width: 100%;\n    order: 3;\n    overflow-y: auto;\n    min-width: 250px;\n    box-shadow: none;\n  }\n}\n@media screen and (max-width: 980px) {\n  .home .kulturdatenbank .sidebar {\n    min-width: 250px;\n  }\n  .home .category_filter_section {\n    padding-top: 15px;\n  }\n  .home .category_filter_section .category {\n    font-weight: 500;\n  }\n  .home .single_category_wrapper {\n    width: max-content;\n  }\n  .home .kulturdatenbank .sidebar .sort_options_block {\n    justify-content: flex-start;\n    padding-left: 5px;\n  }\n  .home .kulturdatenbank #list_sort_options {\n    background-color: #fff;\n    width: 185px;\n  }\n  .home .search {\n    margin-left: 5px;\n    margin-right: 5px;\n    width: 96%;\n    box-sizing: border-box;\n  }\n}\n@media screen and (max-width: 440px) {\n  .home .category_filter_section {\n    padding-left: 5px;\n    padding-right: 5px;\n  }\n  .home .marker--entry {\n    padding-left: 10px;\n    padding-right: 10px;\n  }\n  .home .sort_options_block {\n    padding: 15px;\n    width: 100%;\n    justify-content: center;\n  }\n}\n\n.single-marker {\n  /*Map Popup Default Media */\n  /* Entry Content Text Default Media */\n  /* List */\n  /* Media Querries */\n}\n.single-marker .mapapp {\n  grid-template-columns: 45% 55%;\n}\n.single-marker .mapapp .popup_title {\n  font-size: 20px;\n  font-weight: 600;\n  line-height: 1.5em;\n  text-shadow: 0px 0px 2px #fff;\n}\n.single-marker .mapapp .leaflet-popup:has(.hier_bin_ich) {\n  pointer-events: none;\n}\n.single-marker .mapapp .leaflet-popup-content-wrapper:has(.hier_bin_ich) {\n  background-color: rgba(255, 255, 255, 0);\n  box-shadow: none;\n}\n.single-marker .mapapp .leaflet-popup-content-wrapper:has(.hier_bin_ich) + .leaflet-popup-tip-container {\n  display: none;\n}\n.single-marker .mapapp .leaflet-popup-content-wrapper:has(.hier_bin_ich) ~ .leaflet-popup-close-button {\n  display: none;\n}\n.single-marker .mapapp .leaflet-popup-content-wrapper:has(.hier_bin_ich) .hier_bin_ich {\n  width: 100%;\n  pointer-events: none;\n}\n.single-marker .mapapp .leaflet-popup-content-wrapper:has(.hier_bin_ich) .hier_bin_ich .popup_title {\n  margin: 0 auto;\n  width: max-content;\n  position: relative;\n}\n.single-marker .post_content {\n  margin-top: 60px;\n  overflow-y: scroll;\n  margin-left: 10%;\n  margin-right: 20%;\n}\n.single-marker .post_content .entry_category {\n  display: flex;\n  font-size: 22px;\n}\n.single-marker .post_content .entry_category > * {\n  margin: 0px 10px;\n}\n.single-marker .post_content .entry_category img {\n  width: 30px;\n}\n.single-marker .post_content .wp-block-image {\n  margin-left: 10%;\n  margin-right: 20%;\n}\n.single-marker .post_content a.close {\n  width: 40px;\n  height: 40px;\n  display: block;\n  position: fixed;\n  right: 60px;\n  top: 60px;\n}\n.single-marker .content_footer {\n  margin-top: 60px;\n  padding-bottom: 150px;\n}\n.single-marker .content_footer_text {\n  text-align: right;\n}\n.single-marker .content_footer .mobile {\n  display: none;\n}\n.single-marker .single_post_main_block .leaflet-popup-content-wrapper.current {\n  background-color: rgba(255, 255, 255, 0);\n  box-shadow: none;\n}\n.single-marker .single_post_main_block .leaflet-popup-content-wrapper.current .hier_bin_ich {\n  width: 100%;\n}\n.single-marker .single_post_main_block .leaflet-popup-content-wrapper.current .hier_bin_ich .popup_title {\n  margin: 0 auto;\n  width: max-content;\n  position: relative;\n  left: 10px;\n}\n.single-marker .single_post_main_block .current .leaflet-popup-close-button,\n.single-marker .single_post_main_block .current .leaflet-popup-tip-container {\n  display: none;\n}\n.single-marker .single_post_main_block .leaflet-popup-content {\n  justify-content: center;\n}\n.single-marker .single_post_main_block .popup_title {\n  font-size: 20px;\n  font-weight: 600;\n  line-height: 1.5em;\n  text-shadow: 0px 0px 2px #fff;\n  color: var(--d_text);\n}\n.single-marker .post_content h2,\n.single-marker .post_content h3,\n.single-marker .post_content h4,\n.single-marker .post_content h5,\n.single-marker .post_content h6 {\n  margin-top: 1.5em;\n  margin-bottom: 1em;\n  color: var(--l_blue);\n  font-weight: 600;\n  font-size: 32px;\n}\n.single-marker .single_post_side_bar .post_content h3 {\n  font-size: 28px;\n}\n.single-marker .single_post_side_bar .post_content h4 {\n  font-size: 24px;\n}\n.single-marker .single_post_side_bar .post_content h5 {\n  font-size: 24px;\n}\n.single-marker .single_post_side_bar .post_content h6 {\n  font-size: 24px;\n}\n.single-marker .post_content .wp-block-image.aligncenter {\n  display: flex;\n  flex-direction: column;\n}\n.single-marker .post_content .wp-block-image > * {\n  align-self: center;\n}\n.single-marker .post_content .wp-block-image figcaption {\n  color: var(--d_text);\n  font-size: 17px;\n  text-align: left;\n  margin-top: 1em;\n  margin-bottom: 2em;\n  font-weight: 400;\n}\n.single-marker .post_content .wp-block-quote {\n  background-color: rgba(0, 156, 222, 0.05);\n  padding-left: 15%;\n  padding-right: 20%;\n  border-left: 0;\n  padding-top: 60px;\n  padding-bottom: 90px;\n  margin-bottom: 60px;\n}\n.single-marker .post_content .wp-block-quote p::before {\n  content: \"„\";\n  visibility: visible;\n}\n.single-marker .post_content .wp-block-quote p::after {\n  content: \"“\";\n  visibility: visible;\n}\n.single-marker .post_content .wp-block-quote p {\n  font-size: 38px;\n  font-style: italic;\n  font-weight: 400;\n  line-height: 1.2;\n  color: var(--l_blue);\n  margin: 0;\n}\n.single-marker .post_content .wp-block-quote > cite {\n  margin-top: 25px;\n  display: block;\n  font-size: 18px;\n  font-weight: 400;\n}\n.single-marker .post_content > ul {\n  display: flex;\n  flex-direction: column;\n  gap: 0.6em;\n  font-size: 22px;\n  font-weight: 300;\n}\n.single-marker .post_content > ul strong {\n  font-weight: 600;\n}\n.single-marker .post_content li::marker {\n  color: var(--l_blue);\n  font-size: 16px;\n}\n.single-marker #gform_confirmation_wrapper_4 {\n  position: fixed;\n  top: 50vh;\n  left: 50vw;\n  transform: translate(-50%, -50%);\n  padding: 2em;\n  background: rgba(255, 255, 255, 0.5019607843);\n  margin: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-size: 30px;\n  font-weight: 700;\n  animation: hide_confirmation 0s 3s forwards;\n}\n@keyframes hide_confirmation {\n  to {\n    visibility: hidden;\n  }\n}\n@media screen and (max-width: 1650px) {\n  .single-marker .entry_category p {\n    display: grid;\n    grid-template-columns: 30px auto;\n    grid-template-rows: min-content min-content;\n    margin: 0;\n    font-size: 18px;\n    padding-bottom: 1.2em;\n  }\n  .single-marker .entry_category span {\n    grid-column: 1/3;\n    grid-row: 1/2;\n    padding-bottom: 0;\n  }\n  .single-marker .entry_category img {\n    grid-column: 1/2;\n    grid-row: 2/3;\n  }\n  .single-marker .entry_category b {\n    grid-column: 2/3;\n    grid-row: 2/3;\n    font-size: 18px;\n  }\n}\n@media screen and (max-width: 1350px) {\n  .single-marker {\n    /* .single_post .menu.top ul{\n      grid-template-columns: auto min-content;\n    } */\n  }\n  .single-marker body.kulturdatenbank.single_post .menu.top li:nth-child(2) {\n    left: 32%;\n  }\n  .single-marker body.kulturdatenbank.single_post .menu.top li:nth-child(3) {\n    top: 50px;\n    left: 32%;\n  }\n  .single-marker .single_post.kulturdatenbank .leaflet-container .leaflet-control-attribution {\n    max-width: 70%;\n  }\n}\n@media screen and (max-width: 980px) {\n  .single-marker {\n    /*\n      .single_post_main_block.map_block,\n      .kulturdatenbank .menu.top,\n      .scrolldown.icon {\n    display: none;\n      }\n      */\n  }\n  .single-marker .kulturdatenbank .sidebar {\n    padding: 20px 0;\n  }\n  .single-marker .kulturdatenbank .post_content {\n    margin-top: 30px;\n  }\n  .single-marker .post_content > * {\n    padding-left: 0;\n    padding-right: 0;\n  }\n  .single-marker .post_content h1,\n  .single-marker .post_content h2,\n  .single-marker .post_content h3,\n  .single-marker .post_content h4,\n  .single-marker .post_content h5,\n  .single-marker .post_content h6 {\n    overflow-wrap: break-word;\n    word-wrap: break-word;\n    -webkit-hyphens: auto;\n    -ms-hyphens: auto;\n    hyphens: auto;\n    -webkit-hyphenate-character: \"-\";\n    hyphenate-limit-chars: 6 4 4;\n    -webkit-hyphenate-limit-before: 4;\n    -webkit-hyphenate-limit-after: 4;\n    -ms-hyphenate-limit-chars: 6 4 4;\n    -moz-hyphenate-limit-chars: 6 4 4;\n  }\n  .single-marker .post_content h1 {\n    font-size: 38px;\n  }\n  .single-marker .button.share.desktop {\n    display: none;\n  }\n  .single-marker .content_footer .button.share.mobile {\n    display: block;\n    min-width: 188px;\n    max-width: 188px;\n  }\n  .single-marker .single_post.kulturdatenbank .leaflet-container .leaflet-control-attribution {\n    max-width: unset;\n  }\n  .single-marker .single_post .menu.top {\n    height: unset;\n  }\n}\n@media screen and (max-width: 600px) {\n  .single-marker .post_content {\n    margin-top: 20px;\n  }\n  .single-marker .post_content h1 {\n    font-size: 28px;\n  }\n  .single-marker .kulturdatenbank .sidebar p {\n    font-size: 18px;\n  }\n  .single-marker .kulturdatenbank .post_content > *,\n  .single-marker .post_content .wp-block-image {\n    margin-left: 5%;\n    margin-right: 10%;\n  }\n  .single-marker .post_content .wp-block-image figcaption {\n    font-size: 15px;\n  }\n  .single-marker .kulturdatenbank .post_content h2,\n  .single-marker .kulturdatenbank .post_content h3,\n  .single-marker .kulturdatenbank .post_content h4,\n  .single-marker .kulturdatenbank .post_content h5,\n  .single-marker .kulturdatenbank .post_content h6 {\n    font-size: 22px;\n    font-weight: 500;\n    line-height: 1.2em;\n  }\n  .single-marker .kulturdatenbank .post_content .wp-block-quote {\n    margin: 0;\n    padding: 40px 5% 40px 10%;\n  }\n  .single-marker .kulturdatenbank .post_content .wp-block-quote p {\n    font-size: 24px;\n    line-height: 1.5em;\n  }\n  .single-marker .kulturdatenbank .post_content .wp-block-quote cite {\n    font-size: 18px;\n    line-height: 1.2em;\n  }\n  .single-marker .post_content > ul {\n    padding-left: 5%;\n  }\n  .single-marker .post_content li {\n    font-size: 18px;\n  }\n  .single-marker .content_footer {\n    flex-direction: column;\n    align-items: flex-start;\n  }\n}\n\n.popup_wrapper {\n  display: none;\n  font-weight: 600;\n}\n.popup_wrapper.show {\n  height: 100%;\n  background-color: rgba(128, 128, 128, 0.8);\n  position: fixed;\n  z-index: 1010;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.popup_wrapper .popup.info {\n  max-width: 1200px;\n  background-color: #fff;\n  display: block;\n  position: relative;\n  margin: 15%;\n}\n.popup_wrapper .popup.info .before_content {\n  height: 150px;\n}\n.popup_wrapper .popup.info .before_content img {\n  height: 100%;\n  width: 100%;\n  object-fit: cover;\n}\n.popup_wrapper .popup.info .content_wrapper {\n  position: relative;\n  margin: 5%;\n}\n.popup_wrapper .popup.info .content_wrapper h2 {\n  font-size: 40px;\n  font-weight: inherit;\n}\n.popup_wrapper .popup.info .popup_buttons {\n  display: flex;\n  font-size: 16px;\n  font-weight: inherit;\n}\n.popup_wrapper .close.d-button {\n  cursor: pointer;\n  height: fit-content;\n  position: absolute;\n  top: 0px;\n  right: 0px;\n  transform: translate(40%, -40%);\n}\n.popup_wrapper .close.d-button::before {\n  content: \"\";\n  width: 32px;\n  height: 32px;\n  background-image: url(\"~/assets/mapapp/static_icon_x.svg\");\n  display: flex;\n  background-position: center center;\n  background-size: 60%;\n  background-repeat: no-repeat;\n  position: relative;\n  left: 0px;\n  background-color: #fff;\n  border-radius: 50px;\n  box-shadow: 0 0 2px 1px gray;\n}\n.popup_wrapper .close.d-button::before:hover, .popup_wrapper .close.d-button::before:active {\n  background-color: #808080;\n}","/*Fonts*/\n/* barlow-100 - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: normal;\n  font-weight: 100;\n  src:\n    local(\"\"),\n    url(\"#{$fontAsset}barlow-v12-latin-100.woff2\") format(\"woff2\"),\n    /* Chrome 26+, Opera 23+, Firefox 39+ */\n      url(\"#{$fontAsset}barlow-v12-latin-100.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n\n/* barlow-100italic - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: italic;\n  font-weight: 100;\n  src:\n    local(\"\"),\n    url(\"#{$fontAsset}barlow-v12-latin-100italic.woff2\") format(\"woff2\"),\n    /* Chrome 26+, Opera 23+, Firefox 39+ */\n      url(\"#{$fontAsset}barlow-v12-latin-100italic.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n\n/* barlow-200 - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: normal;\n  font-weight: 200;\n  src:\n    local(\"\"),\n    url(\"#{$fontAsset}barlow-v12-latin-200.woff2\") format(\"woff2\"),\n    /* Chrome 26+, Opera 23+, Firefox 39+ */\n      url(\"#{$fontAsset}barlow-v12-latin-200.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n\n/* barlow-200italic - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: italic;\n  font-weight: 200;\n  src:\n    local(\"\"),\n    url(\"#{$fontAsset}barlow-v12-latin-200italic.woff2\") format(\"woff2\"),\n    /* Chrome 26+, Opera 23+, Firefox 39+ */\n      url(\"#{$fontAsset}barlow-v12-latin-200italic.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n\n/* barlow-300italic - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: italic;\n  font-weight: 300;\n  src:\n    local(\"\"),\n    url(\"#{$fontAsset}barlow-v12-latin-300italic.woff2\") format(\"woff2\"),\n    /* Chrome 26+, Opera 23+, Firefox 39+ */\n      url(\"#{$fontAsset}barlow-v12-latin-300italic.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n\n/* barlow-italic - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: italic;\n  font-weight: 400;\n  src:\n    local(\"\"),\n    url(\"#{$fontAsset}barlow-v12-latin-italic.woff2\") format(\"woff2\"),\n    /* Chrome 26+, Opera 23+, Firefox 39+ */\n      url(\"#{$fontAsset}barlow-v12-latin-italic.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n\n/* barlow-regular - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: normal;\n  font-weight: 400;\n  src:\n    local(\"\"),\n    url(\"#{$fontAsset}barlow-v12-latin-regular.woff2\") format(\"woff2\"),\n    /* Chrome 26+, Opera 23+, Firefox 39+ */\n      url(\"#{$fontAsset}barlow-v12-latin-regular.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n\n/* barlow-500 - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: normal;\n  font-weight: 500;\n  src:\n    local(\"\"),\n    url(\"#{$fontAsset}barlow-v12-latin-500.woff2\") format(\"woff2\"),\n    /* Chrome 26+, Opera 23+, Firefox 39+ */\n      url(\"#{$fontAsset}barlow-v12-latin-500.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n\n/* barlow-600 - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: normal;\n  font-weight: 600;\n  src:\n    local(\"\"),\n    url(\"#{$fontAsset}barlow-v12-latin-600.woff2\") format(\"woff2\"),\n    /* Chrome 26+, Opera 23+, Firefox 39+ */\n      url(\"#{$fontAsset}barlow-v12-latin-600.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n\n/* barlow-500italic - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: italic;\n  font-weight: 500;\n  src:\n    local(\"\"),\n    url(\"#{$fontAsset}barlow-v12-latin-500italic.woff2\") format(\"woff2\"),\n    /* Chrome 26+, Opera 23+, Firefox 39+ */\n      url(\"#{$fontAsset}barlow-v12-latin-500italic.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n\n/* barlow-600italic - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: italic;\n  font-weight: 600;\n  src:\n    local(\"\"),\n    url(\"#{$fontAsset}barlow-v12-latin-600italic.woff2\") format(\"woff2\"),\n    /* Chrome 26+, Opera 23+, Firefox 39+ */\n      url(\"#{$fontAsset}barlow-v12-latin-600italic.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n\n/* barlow-700italic - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: italic;\n  font-weight: 700;\n  src:\n    local(\"\"),\n    url(\"#{$fontAsset}barlow-v12-latin-700italic.woff2\") format(\"woff2\"),\n    /* Chrome 26+, Opera 23+, Firefox 39+ */\n      url(\"#{$fontAsset}barlow-v12-latin-700italic.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n\n/* barlow-300 - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: normal;\n  font-weight: 300;\n  src:\n    local(\"\"),\n    url(\"#{$fontAsset}barlow-v12-latin-300.woff2\") format(\"woff2\"),\n    /* Chrome 26+, Opera 23+, Firefox 39+ */\n      url(\"#{$fontAsset}barlow-v12-latin-300.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n\n/* barlow-800italic - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: italic;\n  font-weight: 800;\n  src:\n    local(\"\"),\n    url(\"#{$fontAsset}barlow-v12-latin-800italic.woff2\") format(\"woff2\"),\n    /* Chrome 26+, Opera 23+, Firefox 39+ */\n      url(\"#{$fontAsset}barlow-v12-latin-800italic.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n\n/* barlow-700 - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: normal;\n  font-weight: 700;\n  src:\n    local(\"\"),\n    url(\"#{$fontAsset}barlow-v12-latin-700.woff2\") format(\"woff2\"),\n    /* Chrome 26+, Opera 23+, Firefox 39+ */\n      url(\"#{$fontAsset}barlow-v12-latin-700.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n\n/* barlow-900 - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: normal;\n  font-weight: 900;\n  src:\n    local(\"\"),\n    url(\"#{$fontAsset}barlow-v12-latin-900.woff2\") format(\"woff2\"),\n    /* Chrome 26+, Opera 23+, Firefox 39+ */\n      url(\"#{$fontAsset}barlow-v12-latin-900.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n\n/* barlow-900italic - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: italic;\n  font-weight: 900;\n  src:\n    local(\"\"),\n    url(\"#{$fontAsset}barlow-v12-latin-900italic.woff2\") format(\"woff2\"),\n    /* Chrome 26+, Opera 23+, Firefox 39+ */\n      url(\"#{$fontAsset}barlow-v12-latin-900italic.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n\n/* barlow-800 - latin */\n@font-face {\n  font-family: \"Barlow\";\n  font-style: normal;\n  font-weight: 800;\n  src:\n    local(\"\"),\n    url(\"#{$fontAsset}barlow-v12-latin-800.woff2\") format(\"woff2\"),\n    /* Chrome 26+, Opera 23+, Firefox 39+ */\n      url(\"#{$fontAsset}barlow-v12-latin-800.woff\") format(\"woff\"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\n}\n","// Dunkelgrün:\n// Hellgrün:\n// Orange:\n$text_color_black: #212427;\n$darkgreen: #0c8a2d;\n$lightgreen: #96bf0d;\n$orange: #f29400;\n\n$primary_color: var(--primary-color);\n$secondary_color: $lightgreen;\n$accent_color: $orange;\n\n$sitewide_bg_color: rgba(128, 128, 128, 0.1);\n\n.primary {\n  color: $primary_color;\n  &--fill {\n    fill: $primary_color;\n  }\n  &--stroke {\n    stroke: $primary_color;\n  }\n}\n","* {\n  box-sizing: border-box;\n  font-family: \"Barlow\";\n  color: $text_color_black;\n}\nhtml,\nbody,\nmain {\n  height: 100%;\n}\n\nbody {\n  margin: 0;\n  background-color: $sitewide_bg_color;\n}\n\np {\n  font-size: 20px;\n  font-weight: 300;\n  line-height: 32px;\n  strong {\n    font-weight: 600;\n  }\n}\n\nh1 {\n  font-weight: 600;\n  font-size: 50px;\n}\n\nul,\nol,\nli {\n  list-style: none;\n  margin: 0;\n}\n\na {\n  // color: $primary_color;\n  text-decoration: none;\n  &:hover,\n  &:active {\n    opacity: 0.75;\n  }\n}\n\n","button {\n  display: inline-block;\n  position: relative;\n  border: unset;\n  background-color: #fff;\n  cursor: pointer;\n  text-decoration: none;\n  border-radius: 3px;\n  font-weight: 700;\n  line-height: 1em;\n  padding: 0.7rem 1.5rem;\n\n  &:hover,\n  &:active {\n    opacity: 0.75;\n  }\n\n  &.right_triangle {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    padding-right: 1.5em;\n    font-size: inherit;\n    &::after {\n      content: \"\";\n      display: inline;\n      width: 1em;\n      height: 1em;\n      margin-left: 0.5em;\n      background-repeat: no-repeat;\n      background-image: url(\"#{$mapappAssets}static_icon_triangle_right_black.svg\");\n      background-size: cover;\n    }\n  }\n}\n","// live search\n.search {\n  #livesearch {\n    display: none;\n  }\n  &_wrapper {\n    width: 80%;\n    position: relative;\n    margin: 15px 10%;\n  }\n  &Term {\n    border: none;\n    padding: 5px 15px;\n    height: 65px;\n    border-radius: 5px;\n    outline: none;\n    color: var(--d_text);\n    box-shadow: inset 0px 0px 1px 1px var(--l_grey);\n    width: 100%;\n    font-weight: 400;\n    font-size: 16px;\n  }\n  &Button {\n    position: absolute;\n    transform: translate(0%, -50%);\n    right: 0px;\n    top: 50%;\n    border: none;\n    cursor: pointer;\n    font-size: 30px;\n\n    &:hover,\n    &:active {\n      background-color: #fff;\n      opacity: 0.7;\n    }\n  }\n}\n",".footer_nav {\n  margin-top: auto;\n  box-shadow: inset 0px -1px 1px 1px gray;\n  ul {\n    display: flex;\n    justify-content: flex-end;\n    li {\n      padding: 5px 30px;\n    }\n  }\n}\n",".menu.top {\n  width: 100%;\n  padding: 20px 30px;\n  list-style: none;\n  pointer-events: none;\n\n  display: flex;\n  justify-content: space-between;\n  align-content: center;\n  ul {\n    padding: 8px 16px;\n    margin: 0;\n  }\n  li {\n    pointer-events: auto;\n    &:nth-child(1) {\n      margin-right: auto;\n    }\n    &:nth-child(2) {\n      display: flex;\n      align-items: center;\n\n      a {\n        display: flex;\n        column-gap: 3px;\n        align-items: center;\n      }\n    }\n  }\n}\n",".mapapp {\n  // map wrapper\n  .map-block {\n    height: 100%;\n    position: relative;\n    .menu.top {\n      position: absolute;\n      z-index: 410;\n    }\n\n    // Main map, selected by leaflet map selector in map init\n    .leaflet-container {\n      padding: 0;\n      margin: 0;\n      height: 100%;\n      grid-row: 1/2;\n      grid-column: 1/2;\n\n      .leaflet-control-container {\n        .leaflet-bottom.leaflet-right {\n          width: 100%;\n        }\n\n        .leaflet-control-zoom {\n          margin-bottom: 40px;\n          margin-right: 40px;\n          border-radius: 8px;\n          border: none;\n          background-color: white;\n\n          &.leaflet-bar a {\n            width: 45px;\n            height: 45px;\n            font-size: 40px;\n            line-height: 40px;\n            background: none;\n          }\n        }\n\n        .leaflet-control-attribution {\n          margin: 0 auto 0 15px;\n          background-color: rgba(255, 255, 255, 0);\n          right: auto;\n          left: 0;\n          position: absolute;\n          bottom: 2px;\n          a {\n            text-decoration: none;\n            font-size: 14px;\n            font-weight: 400;\n            color: #000;\n          }\n        }\n\n        .leaflet-bottom.leaflet-right::after {\n          height: 20px;\n          width: 90px;\n          background-size: contain;\n          content: \"\";\n          background-image: url(\"#{$mapappAssets}mapbox-logo-black.svg\");\n          display: inline-block;\n          background-color: none;\n          background-repeat: no-repeat;\n          position: absolute;\n          right: 0;\n          bottom: 0;\n          margin: 5px 5px 2px 5px;\n        }\n      }\n\n      // marker\n      .custom-cluster-marker svg {\n        height: 100%;\n        width: 100%;\n      }\n      .cluster-count {\n        display: inline-block;\n        position: absolute;\n        top: 56%;\n        left: 50%;\n        transform: translate(-50%, -50%);\n        font-size: 20px;\n        color: white;\n      }\n\n      // popup\n      .leaflet-popup-pane {\n        .leaflet-popup {\n          padding: 7.5px;\n          border: 3px;\n          width: 450px;\n          max-width: 90vw;\n          margin: 20px 0;\n\n          p {\n            margin: 0;\n            font-size: 16px;\n            line-height: 1.1em;\n            padding-top: 5px;\n            font-weight: 400;\n          }\n\n          &-content {\n            display: flex;\n            flex-direction: row;\n            width: 400px !important;\n            max-width: 90vw;\n            position: relative;\n            padding: 10px;\n            margin: auto;\n\n            img {\n              width: 100px;\n              height: auto;\n              padding-right: 10px;\n              align-self: center;\n              display: block;\n            }\n            .text_wrapper {\n              flex-direction: column;\n              max-width: 390px;\n              display: flex;\n              justify-content: space-between;\n              padding-right: 10px;\n\n              .popup_title {\n                font-size: 18px;\n                font-weight: 600;\n                color: var(--d_text);\n              }\n              .popupcategory {\n                display: none;\n              }\n              .popup_button {\n                padding: 0;\n                font-size: 18px;\n                display: block;\n                border: none;\n                grid-column: 2/3;\n                grid-row: 3/4;\n                border: none;\n                position: relative;\n                margin: 15px 0 15px 15px;\n                font-weight: 600;\n\n                &:active,\n                &:hover {\n                  background-color: #fff;\n                  color: var(--d_text);\n                  opacity: 0.75;\n                }\n              }\n            }\n          }\n        }\n        .leaflet-popup-close-button {\n          &::before {\n            content: \"\";\n            background-image: url(\"#{$mapappAssets}static_icon_x.svg\");\n            display: flex;\n            background-position: center center;\n            background-size: 60%;\n            background-repeat: no-repeat;\n            position: relative;\n            left: 0px;\n            background-color: #fff;\n            border-radius: 50px;\n            box-shadow: 0 0 2px 1px gray;\n            width: 24px;\n            height: 24px;\n          }\n\n          // hide default x\n          span {\n            display: none;\n          }\n        }\n      }\n    }\n  }\n}\n\n.leaflet-popup .popup_button::after {\n  left: -25px;\n  right: auto;\n  background-size: 60%;\n  bottom: -5px;\n  padding: 0;\n  top: auto;\n}\n\n// .leaflet-popup .popup_button:hover::after,\n// .leaflet-popup .popup_button:hover::after {\n//   background-image: url(/wp-content/plugins/ILEK-Map-App/icons/right-svgrepo-com.svg);\n// }\n","// If it has map\n.logo {\n  margin: 0;\n  font-size: 60px;\n  font-weight: 500;\n  width: 100%;\n  img{\n    height: 70px;\n    width: auto;\n  }\n}\n\n.content {\n  margin: 10%;\n  .entry-title {\n    text-align: center;\n  }\n}\n\n.mapapp {\n  display: grid;\n  grid-template-rows: 100%;\n  grid-template-columns: 70% 30%;\n  position: relative;\n  overflow-y: hidden;\n  height: 100%;\n  .map-block {\n    width: 100%;\n  }\n  .sidebar {\n    margin: 0;\n\n    display: flex;\n    flex-flow: column;\n    height: 100%;\n\n    overflow-y: scroll;\n    overflow-x: hidden;\n  }\n  .legal ul {\n    display: flex;\n    padding: 0;\n    margin: 0;\n    justify-content: flex-end;\n    li {\n      padding: 5px 30px;\n      line-height: 1em;\n      font-size: 14px;\n      color: #000;\n    }\n  }\n\n  @media screen and (max-width: 980px) {\n    height: unset;\n    display: flex;\n    flex-direction: column;\n    .map-block {\n      max-height: 85vh;\n      position: unset;\n      .menu.top {\n        background-color: rgba(128, 128, 128, 0.1);\n        order: 1;\n        margin: 0px;\n        position: unset;\n      }\n      #mapapp_map {\n        height: 550px;\n        width: 100%;\n      }\n    }\n  }\n  .legal {\n    position: static;\n    order: 4;\n  }\n}\n",".home {\n  // right side\n  .sidebar {\n    min-width: 360px;\n    min-width: 250px;\n\n    grid-column: 2/3;\n\n    .category_filter {\n      padding: 30px 45px 15px 45px;\n      margin: 0;\n      display: flex;\n      flex-direction: column;\n      row-gap: 20px;\n      &--title {\n        margin: 0;\n        font-size: 28px;\n        font-weight: 600;\n        padding-bottom: 10px;\n      }\n      &--button {\n        display: flex;\n        column-gap: 5%;\n        button {\n          position: relative;\n        }\n      }\n      &--list {\n        display: flex;\n        flex-direction: column;\n\n        row-gap: 0.5rem;\n        .single_category_wrapper {\n          display: flex;\n          align-items: center;\n          align-content: center;\n          row-gap: 0.5rem;\n          .cat_checkbox {\n            width: 25px;\n            height: 25px;\n            flex-shrink: 0;\n          }\n          .cat_label {\n            margin-left: 7.5px;\n            display: flex;\n            cursor: pointer;\n            align-items: center;\n\n            &:hover,\n            &:active {\n              opacity: 0.75;\n            }\n          }\n          .cat_icon {\n            width: 30px;\n            display: block;\n            margin-right: 7.5px;\n          }\n        }\n      }\n    }\n\n    .sort_options_block {\n      padding: 15px 10%;\n      font-size: 15px;\n      display: flex;\n      align-items: center;\n      span {\n        margin-right: 5px;\n      }\n\n      #list_sort_options {\n        flex-grow: 1;\n        padding: 15px;\n        font-weight: 500;\n        background-color: #fff;\n        border: none;\n      }\n    }\n\n    .marker_list {\n      cursor: pointer;\n      .marker--entry {\n        padding: 22.5px 45px 0 45px;\n        background-color: #fff;\n        &:not(.show) {\n          display: none;\n        }\n\n        .entry {\n          &_title {\n            font-size: 17px;\n            line-height: 25px;\n            font-weight: 600;\n          }\n          &_author,\n          &_date {\n            display: none;\n          }\n          &_category {\n            border-bottom: 2px dashed gray;\n            padding-bottom: 22.5px;\n            img {\n              width: 20px;\n              height: 20px;\n              position: relative;\n              top: 5px;\n              margin-right: 7.5px;\n            }\n          }\n        }\n\n        &.marked {\n          background-color: rgba($accent_color, 0.9);\n          color: #fff;\n          padding-bottom: 30px;\n          cursor: default;\n\n          .entry_category {\n            border: none;\n            padding-bottom: 7.5px;\n          }\n\n          .button {\n            border-color: #fff;\n            color: #fff;\n          }\n          &:hover,\n          &:active {\n            opacity: 0.7;\n          }\n        }\n      }\n\n      .dn.button.main-page-button {\n        display: none;\n        &.db {\n          display: block;\n        }\n      }\n    }\n\n    @media screen and (max-width: 980px) {\n      display: block;\n      position: static;\n      width: 100%;\n      max-width: 100%;\n      order: 3;\n      overflow-y: auto;\n      min-width: 250px;\n      box-shadow: none;\n    }\n  }\n\n  /* Media Querries */\n  @media screen and (max-width: 980px) {\n    .kulturdatenbank .sidebar {\n      min-width: 250px;\n    }\n\n    .category_filter_section {\n      padding-top: 15px;\n    }\n\n    .category_filter_section .category {\n      font-weight: 500;\n    }\n\n    .single_category_wrapper {\n      width: max-content;\n    }\n\n    .kulturdatenbank .sidebar .sort_options_block {\n      justify-content: flex-start;\n      padding-left: 5px;\n    }\n\n    .kulturdatenbank #list_sort_options {\n      background-color: #fff;\n      width: 185px;\n    }\n\n    .search {\n      margin-left: 5px;\n      margin-right: 5px;\n      width: 96%;\n      box-sizing: border-box;\n    }\n  }\n\n  @media screen and (max-width: 440px) {\n    .category_filter_section {\n      padding-left: 5px;\n      padding-right: 5px;\n    }\n\n    .marker--entry {\n      padding-left: 10px;\n      padding-right: 10px;\n    }\n    .sort_options_block {\n      padding: 15px;\n      width: 100%;\n      justify-content: center;\n    }\n  }\n}\n",".single-marker {\n  .mapapp {\n    grid-template-columns: 45% 55%;\n\n    .popup_title {\n      font-size: 20px;\n      font-weight: 600;\n      line-height: 1.5em;\n      text-shadow: 0px 0px 2px #fff;\n    }\n    .leaflet-popup:has(.hier_bin_ich) {\n      pointer-events: none;\n    }\n    .leaflet-popup-content-wrapper:has(.hier_bin_ich) {\n      background-color: rgba(255, 255, 255, 0);\n      box-shadow: none;\n\n      + .leaflet-popup-tip-container {\n        display: none;\n      }\n      ~ .leaflet-popup-close-button {\n        display: none;\n      }\n\n      .hier_bin_ich {\n        width: 100%;\n        pointer-events: none;\n        .popup_title {\n          margin: 0 auto;\n          width: max-content;\n          position: relative;\n          // left: 10px;\n        }\n      }\n    }\n  }\n\n  .post_content {\n    margin-top: 60px;\n    overflow-y: scroll;\n    margin-left: 10%;\n    margin-right: 20%;\n    .entry_category {\n      > * {\n        margin: 0px 10px;\n      }\n      display: flex;\n      font-size: 22px;\n      img {\n        width: 30px;\n      }\n    }\n\n    .wp-block-image {\n      margin-left: 10%;\n      margin-right: 20%;\n    }\n    a.close {\n      width: 40px;\n      height: 40px;\n      display: block;\n      position: fixed;\n      right: 60px;\n      top: 60px;\n    }\n  }\n  .content_footer {\n    margin-top: 60px;\n    padding-bottom: 150px;\n\n    &_text {\n      text-align: right;\n    }\n    .mobile {\n      display: none;\n    }\n  }\n\n  //////////////////////////////////////////////////\n  /*Map Popup Default Media */\n\n  .single_post_main_block .leaflet-popup-content-wrapper.current {\n    background-color: rgba(255, 255, 255, 0);\n    box-shadow: none;\n  }\n\n  .single_post_main_block .leaflet-popup-content-wrapper.current .hier_bin_ich {\n    width: 100%;\n  }\n\n  .single_post_main_block\n    .leaflet-popup-content-wrapper.current\n    .hier_bin_ich\n    .popup_title {\n    margin: 0 auto;\n    width: max-content;\n    position: relative;\n    left: 10px;\n  }\n\n  .single_post_main_block .current .leaflet-popup-close-button,\n  .single_post_main_block .current .leaflet-popup-tip-container {\n    display: none;\n  }\n\n  .single_post_main_block .leaflet-popup-content {\n    justify-content: center;\n  }\n\n  .single_post_main_block .popup_title {\n    font-size: 20px;\n    font-weight: 600;\n    line-height: 1.5em;\n    text-shadow: 0px 0px 2px #fff;\n    color: var(--d_text);\n  }\n\n  /* Entry Content Text Default Media */\n\n  .post_content h2,\n  .post_content h3,\n  .post_content h4,\n  .post_content h5,\n  .post_content h6 {\n    margin-top: 1.5em;\n    margin-bottom: 1em;\n    color: var(--l_blue);\n    font-weight: 600;\n    font-size: 32px;\n  }\n\n  .single_post_side_bar .post_content h3 {\n    font-size: 28px;\n  }\n\n  .single_post_side_bar .post_content h4 {\n    font-size: 24px;\n  }\n\n  .single_post_side_bar .post_content h5 {\n    font-size: 24px;\n  }\n\n  .single_post_side_bar .post_content h6 {\n    font-size: 24px;\n  }\n\n  .post_content .wp-block-image.aligncenter {\n    display: flex;\n    flex-direction: column;\n  }\n  .post_content .wp-block-image > * {\n    align-self: center;\n  }\n\n  .post_content .wp-block-image figcaption {\n    color: var(--d_text);\n    font-size: 17px;\n    text-align: left;\n    margin-top: 1em;\n    margin-bottom: 2em;\n    font-weight: 400;\n  }\n\n  .post_content .wp-block-quote {\n    background-color: rgba(0, 156, 222, 0.05);\n    padding-left: 15%;\n    padding-right: 20%;\n    border-left: 0;\n    padding-top: 60px;\n    padding-bottom: 90px;\n    margin-bottom: 60px;\n  }\n  .post_content .wp-block-quote p::before {\n    content: \"„\";\n    visibility: visible;\n  }\n  .post_content .wp-block-quote p::after {\n    content: \"“\";\n    visibility: visible;\n  }\n\n  .post_content .wp-block-quote p {\n    font-size: 38px;\n    font-style: italic;\n    font-weight: 400;\n    line-height: 1.2;\n    color: var(--l_blue);\n    margin: 0;\n  }\n\n  .post_content .wp-block-quote > cite {\n    margin-top: 25px;\n    display: block;\n    font-size: 18px;\n    font-weight: 400;\n  }\n\n  /* List */\n  .post_content > ul {\n    display: flex;\n    flex-direction: column;\n    gap: 0.6em;\n    font-size: 22px;\n    font-weight: 300;\n  }\n\n  .post_content > ul strong {\n    font-weight: 600;\n  }\n\n  .post_content li::marker {\n    color: var(--l_blue);\n    font-size: 16px;\n  }\n\n  #gform_confirmation_wrapper_4 {\n    position: fixed;\n    top: 50vh;\n    left: 50vw;\n    transform: translate(-50%, -50%);\n    padding: 2em;\n    background: #ffffff80;\n    margin: 0;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    font-size: 30px;\n    font-weight: 700;\n    animation: hide_confirmation 0s 3s forwards;\n  }\n\n  @keyframes hide_confirmation {\n    to {\n      visibility: hidden;\n    }\n  }\n\n  /* Media Querries */\n\n  @media screen and (max-width: 1650px) {\n    .entry_category p {\n      display: grid;\n      grid-template-columns: 30px auto;\n      grid-template-rows: min-content min-content;\n      margin: 0;\n      font-size: 18px;\n      padding-bottom: 1.2em;\n    }\n\n    .entry_category span {\n      grid-column: 1/3;\n      grid-row: 1/2;\n      padding-bottom: 0;\n    }\n\n    .entry_category img {\n      grid-column: 1/2;\n      grid-row: 2/3;\n    }\n\n    .entry_category b {\n      grid-column: 2/3;\n      grid-row: 2/3;\n      font-size: 18px;\n    }\n  }\n\n  @media screen and (max-width: 1350px) {\n    /* .single_post .menu.top ul{\n      grid-template-columns: auto min-content;\n    } */\n    body.kulturdatenbank.single_post .menu.top li:nth-child(2) {\n      left: 32%;\n    }\n    body.kulturdatenbank.single_post .menu.top li:nth-child(3) {\n      top: 50px;\n      left: 32%;\n    }\n    .single_post.kulturdatenbank\n      .leaflet-container\n      .leaflet-control-attribution {\n      max-width: 70%;\n    }\n  }\n\n  @media screen and (max-width: 980px) {\n    /*\n    .single_post_main_block.map_block,\n    .kulturdatenbank .menu.top,\n    .scrolldown.icon {\n  display: none;\n    }\n    */\n\n    .kulturdatenbank .sidebar {\n      padding: 20px 0;\n    }\n\n    .kulturdatenbank .post_content {\n      margin-top: 30px;\n    }\n\n    .post_content > * {\n      padding-left: 0;\n      padding-right: 0;\n    }\n\n    .post_content h1,\n    .post_content h2,\n    .post_content h3,\n    .post_content h4,\n    .post_content h5,\n    .post_content h6 {\n      overflow-wrap: break-word;\n      word-wrap: break-word;\n      -webkit-hyphens: auto;\n      -ms-hyphens: auto;\n      hyphens: auto;\n      -webkit-hyphenate-character: \"-\";\n      hyphenate-limit-chars: 6 4 4;\n      -webkit-hyphenate-limit-before: 4;\n      -webkit-hyphenate-limit-after: 4;\n      -ms-hyphenate-limit-chars: 6 4 4;\n      -moz-hyphenate-limit-chars: 6 4 4;\n    }\n\n    .post_content h1 {\n      font-size: 38px;\n    }\n\n    .button.share.desktop {\n      display: none;\n    }\n\n    .content_footer .button.share.mobile {\n      display: block;\n      min-width: 188px;\n      max-width: 188px;\n    }\n\n    .single_post.kulturdatenbank\n      .leaflet-container\n      .leaflet-control-attribution {\n      max-width: unset;\n    }\n    .single_post .menu.top {\n      height: unset;\n    }\n  }\n\n  @media screen and (max-width: 600px) {\n    .post_content {\n      margin-top: 20px;\n    }\n\n    .post_content h1 {\n      font-size: 28px;\n    }\n\n    .kulturdatenbank .sidebar p {\n      font-size: 18px;\n    }\n\n    .kulturdatenbank .post_content > *,\n    .post_content .wp-block-image {\n      margin-left: 5%;\n      margin-right: 10%;\n    }\n\n    .post_content .wp-block-image figcaption {\n      font-size: 15px;\n    }\n\n    .kulturdatenbank .post_content h2,\n    .kulturdatenbank .post_content h3,\n    .kulturdatenbank .post_content h4,\n    .kulturdatenbank .post_content h5,\n    .kulturdatenbank .post_content h6 {\n      font-size: 22px;\n      font-weight: 500;\n      line-height: 1.2em;\n    }\n\n    .kulturdatenbank .post_content .wp-block-quote {\n      margin: 0;\n      padding: 40px 5% 40px 10%;\n    }\n\n    .kulturdatenbank .post_content .wp-block-quote p {\n      font-size: 24px;\n      line-height: 1.5em;\n    }\n\n    .kulturdatenbank .post_content .wp-block-quote cite {\n      font-size: 18px;\n      line-height: 1.2em;\n    }\n\n    .post_content > ul {\n      padding-left: 5%;\n    }\n\n    .post_content li {\n      font-size: 18px;\n    }\n\n    .content_footer {\n      flex-direction: column;\n      align-items: flex-start;\n    }\n  }\n}\n",".popup_wrapper {\n  display: none;\n  font-weight: 600;\n  &.show {\n    height: 100%;\n    background-color: rgba(128, 128, 128, 0.8);\n    position: fixed;\n    z-index: 1010;\n    top: 0;\n    width: 100%;\n    height: 100%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n  .popup.info {\n    max-width: 1200px;\n    background-color: #fff;\n    display: block;\n    position: relative;\n    margin: 15%;\n    .before_content {\n      height: 150px;\n      img {\n        height: 100%;\n        width: 100%;\n        object-fit: cover;\n      }\n    }\n    .content_wrapper {\n      position: relative;\n      margin: 5%;\n      h2 {\n        font-size: 40px;\n        font-weight: inherit;\n      }\n    }\n    .popup_buttons {\n      display: flex;\n      font-size: 16px;\n      font-weight: inherit;\n    }\n  }\n  .close.d-button {\n    @include x_button_at_before(32px);\n    position: absolute;\n    top: 0px;\n    right: 0px;\n    transform: translate(40%, -40%);\n  }\n}\n","@mixin x_button_at_before($size: 24px) {\n  cursor: pointer;\n  height: fit-content;\n\n  &::before {\n    content: \"\";\n    width: $size;\n    height: $size;\n    background-image: url(\"#{$mapappAssets}static_icon_x.svg\");\n    display: flex;\n    background-position: center center;\n    background-size: 60%;\n    background-repeat: no-repeat;\n    position: relative;\n    left: 0px;\n    background-color: #fff;\n    border-radius: 50px;\n    box-shadow: 0 0 2px 1px gray;\n    &:hover,\n    &:active {\n      background-color: #808080;\n    }\n  }\n}\n"],"sourceRoot":""}]);
+1235 | // Exports
+1236 | /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+1237 | 
+ @ ./src/index.js 1:0-28
+
+webpack 5.101.0 compiled with 4 errors and 8 warnings in 1833 ms
+assets by path fonts/ 868 KiB
+  assets by path fonts/*.woff 476 KiB
+    asset fonts/barlow-v12-latin-italic.67e44ef4.woff 28 KiB [emitted] [immutable] [from: barlow-v12-latin/barlow-v12-latin-italic.woff] (auxiliary name: index)
+    asset fonts/barlow-v12-latin-700italic.3dc6bac1.woff 27.8 KiB [emitted] [immutable] [from: barlow-v12-latin/barlow-v12-latin-700italic.woff] (auxiliary name: index)
+    + 16 assets
+  assets by path fonts/*.woff2 391 KiB
+    asset fonts/barlow-v12-latin-italic.867dd68b.woff2 23 KiB [emitted] [immutable] [from: barlow-v12-latin/barlow-v12-latin-italic.woff2] (auxiliary name: index)
+    asset fonts/barlow-v12-latin-600italic.4f0eaff0.woff2 22.9 KiB [emitted] [immutable] [from: barlow-v12-latin/barlow-v12-latin-600italic.woff2] (auxiliary name: index)
+    + 16 assets
+assets by chunk 621 KiB (name: index)
+  asset index.js 621 KiB [emitted] (name: index) 1 related asset
+  asset index.asset.php 84 bytes [emitted] (name: index)
+assets by path ./*.css 69.1 KiB
+  asset ./style-index.css 34.6 KiB [emitted] (name: ./style-index) (id hint: style) 1 related asset
+  asset ./style-index-rtl.css 34.5 KiB [emitted] (name: ./style-index) (id hint: style)
+Entrypoint index 690 KiB (1.68 MiB) = ./style-index.css 34.6 KiB ./style-index-rtl.css 34.5 KiB index.js 621 KiB index.asset.php 84 bytes 38 auxiliary assets
+cached modules 612 KiB (javascript) 868 KiB (asset) 1.06 KiB (runtime) [cached] 51 modules
+runtime modules 3.36 KiB 6 modules
+orphan modules 112 KiB [orphan] 4 modules
+cacheable modules 2.37 KiB (javascript) 36.6 KiB (css/mini-extract)
+  ./src/index.js 2.32 KiB [code generated]
+  ./scss/style.scss 50 bytes [built] [code generated]
+  css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./scss/style.scss 36.6 KiB [built] [code generated]
+
+WARNING in ./scss/style.scss (./scss/style.scss.webpack[javascript/auto]!=!./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./scss/style.scss)
+Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///home/diane/Local%20Sites/ilek/app/public/wp-content/themes/community-map-theme/scss/style.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "base/path";
+
+
+scss/style.scss 1:9  root stylesheet
+ @ ./scss/style.scss
+ @ ./src/index.js 1:0-28
+
+WARNING in ./scss/style.scss (./scss/style.scss.webpack[javascript/auto]!=!./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./scss/style.scss)
+Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 1, column 8 of file:///home/diane/Local%20Sites/ilek/app/public/wp-content/themes/community-map-theme/scss/style.scss:1:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+1 | @import "base/typography";
+
+
+scss/style.scss 2:9  root stylesheet
+ @ ./scss/style.scss
+ @ ./src/index.js 1:0-28
+
+WARNING in ./scss/style.scss (./scss/style.scss.webpack[javascript/auto]!=!./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./scss/style.scss)
+Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 2, column 8 of file:///home/diane/Local%20Sites/ilek/app/public/wp-content/themes/community-map-theme/scss/style.scss:2:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+2 | @import "base/color";
+
+
+scss/style.scss 3:9  root stylesheet
+ @ ./scss/style.scss
+ @ ./src/index.js 1:0-28
+
+WARNING in ./scss/style.scss (./scss/style.scss.webpack[javascript/auto]!=!./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./scss/style.scss)
+Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 3, column 8 of file:///home/diane/Local%20Sites/ilek/app/public/wp-content/themes/community-map-theme/scss/style.scss:3:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+3 | @import "base/base";
+
+
+scss/style.scss 4:9  root stylesheet
+ @ ./scss/style.scss
+ @ ./src/index.js 1:0-28
+
+WARNING in ./scss/style.scss (./scss/style.scss.webpack[javascript/auto]!=!./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./scss/style.scss)
+Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 4, column 8 of file:///home/diane/Local%20Sites/ilek/app/public/wp-content/themes/community-map-theme/scss/style.scss:4:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+4 | @import "base/media_query";
+
+
+scss/style.scss 5:9  root stylesheet
+ @ ./scss/style.scss
+ @ ./src/index.js 1:0-28
+
+WARNING in ./scss/style.scss (./scss/style.scss.webpack[javascript/auto]!=!./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./scss/style.scss)
+Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 46, column 6 of file:///home/diane/Local%20Sites/ilek/app/public/wp-content/themes/community-map-theme/scss/template/_single-marker.scss:46:6:
+Sass's behavior for declarations that appear after nested
+rules will be changing to match the behavior specified by CSS in an upcoming
+version. To keep the existing behavior, move the declaration above the nested
+rule. To opt into the new behavior, wrap the declaration in `& {}`.
+
+More info: https://sass-lang.com/d/mixed-decls
+
+46 |       display: flex;
+
+
+scss/template/_single-marker.scss 47:7  @import
+scss/style.scss 19:9                    root stylesheet
+ @ ./scss/style.scss
+ @ ./src/index.js 1:0-28
+
+WARNING in ./scss/style.scss (./scss/style.scss.webpack[javascript/auto]!=!./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./scss/style.scss)
+Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 47, column 6 of file:///home/diane/Local%20Sites/ilek/app/public/wp-content/themes/community-map-theme/scss/template/_single-marker.scss:47:6:
+Sass's behavior for declarations that appear after nested
+rules will be changing to match the behavior specified by CSS in an upcoming
+version. To keep the existing behavior, move the declaration above the nested
+rule. To opt into the new behavior, wrap the declaration in `& {}`.
+
+More info: https://sass-lang.com/d/mixed-decls
+
+47 |       font-size: 22px;
+
+
+scss/template/_single-marker.scss 48:7  @import
+scss/style.scss 19:9                    root stylesheet
+ @ ./scss/style.scss
+ @ ./src/index.js 1:0-28
+
+WARNING in ./scss/style.scss (./scss/style.scss.webpack[javascript/auto]!=!./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./scss/style.scss)
+Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+13 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+ @ ./scss/style.scss
+ @ ./src/index.js 1:0-28
+
+webpack 5.101.0 compiled with 8 warnings in 675 ms

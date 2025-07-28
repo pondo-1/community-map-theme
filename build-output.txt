@@ -1,0 +1,190 @@
+
+> community-map-theme@1.0.0 build
+> wp-scripts build src/index.js --output-path=build && wp-scripts build src/admin.js --output-path=build --output-filename=admin.js
+
+assets by path fonts/ 868 KiB
+  assets by path fonts/*.woff 476 KiB
+    asset fonts/barlow-v12-latin-italic.67e44ef4.woff 28 KiB [emitted] [immutable] [from: barlow-v12-latin/barlow-v12-latin-italic.woff]
+    asset fonts/barlow-v12-latin-700italic.3dc6bac1.woff 27.8 KiB [emitted] [immutable] [from: barlow-v12-latin/barlow-v12-latin-700italic.woff]
+    + 16 assets
+  assets by path fonts/*.woff2 391 KiB
+    asset fonts/barlow-v12-latin-italic.867dd68b.woff2 23 KiB [emitted] [immutable] [from: barlow-v12-latin/barlow-v12-latin-italic.woff2]
+    asset fonts/barlow-v12-latin-600italic.4f0eaff0.woff2 22.9 KiB [emitted] [immutable] [from: barlow-v12-latin/barlow-v12-latin-600italic.woff2]
+    + 16 assets
+assets by chunk 262 KiB (name: index)
+  asset index.js 262 KiB [emitted] [minimized] [big] (name: index)
+  asset index.asset.php 84 bytes [emitted] (name: index)
+assets by path ./*.css 55.7 KiB
+  asset ./style-index.css 27.9 KiB [emitted] (name: ./style-index) (id hint: style)
+  asset ./style-index-rtl.css 27.9 KiB [emitted] (name: ./style-index) (id hint: style)
+Entrypoint index [big] 317 KiB = ./style-index.css 27.9 KiB ./style-index-rtl.css 27.9 KiB index.js 262 KiB index.asset.php 84 bytes
+orphan modules 56.1 KiB (javascript) 868 KiB (asset) 1.06 KiB (runtime) [orphan] 52 modules
+runtime modules 3.07 KiB 5 modules
+cacheable modules 609 KiB (javascript) 30.6 KiB (css/mini-extract)
+  modules by path ./node_modules/ 591 KiB
+    ./node_modules/leaflet/dist/leaflet-src.js 440 KiB [built] [code generated]
+    ./node_modules/leaflet.markercluster/dist/leaflet.markercluster-src.js 79.3 KiB [built] [code generated]
+    ./node_modules/leaflet.markercluster.layersupport/dist/leaflet.markercluster.l...(truncated) 6.47 KiB [built] [code generated]
+    ./node_modules/leaflet-draw/dist/leaflet.draw.js 65.9 KiB [built] [code generated]
+  ./src/index.js + 2 modules 17.3 KiB [built] [code generated]
+  css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./scss/style.scss 30.6 KiB [built] [code generated]
+
+WARNING in ./scss/style.scss (./scss/style.scss.webpack[javascript/auto]!=!./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./scss/style.scss)
+Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 0, column 8 of file:///home/diane/Local%20Sites/ilek/app/public/wp-content/themes/community-map-theme/scss/style.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "base/path";
+
+
+scss/style.scss 1:9  root stylesheet
+ @ ./scss/style.scss
+ @ ./src/index.js 1:0-28
+
+WARNING in ./scss/style.scss (./scss/style.scss.webpack[javascript/auto]!=!./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./scss/style.scss)
+Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 1, column 8 of file:///home/diane/Local%20Sites/ilek/app/public/wp-content/themes/community-map-theme/scss/style.scss:1:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+1 | @import "base/typography";
+
+
+scss/style.scss 2:9  root stylesheet
+ @ ./scss/style.scss
+ @ ./src/index.js 1:0-28
+
+WARNING in ./scss/style.scss (./scss/style.scss.webpack[javascript/auto]!=!./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./scss/style.scss)
+Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 2, column 8 of file:///home/diane/Local%20Sites/ilek/app/public/wp-content/themes/community-map-theme/scss/style.scss:2:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+2 | @import "base/color";
+
+
+scss/style.scss 3:9  root stylesheet
+ @ ./scss/style.scss
+ @ ./src/index.js 1:0-28
+
+WARNING in ./scss/style.scss (./scss/style.scss.webpack[javascript/auto]!=!./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./scss/style.scss)
+Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 3, column 8 of file:///home/diane/Local%20Sites/ilek/app/public/wp-content/themes/community-map-theme/scss/style.scss:3:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+3 | @import "base/base";
+
+
+scss/style.scss 4:9  root stylesheet
+ @ ./scss/style.scss
+ @ ./src/index.js 1:0-28
+
+WARNING in ./scss/style.scss (./scss/style.scss.webpack[javascript/auto]!=!./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./scss/style.scss)
+Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 4, column 8 of file:///home/diane/Local%20Sites/ilek/app/public/wp-content/themes/community-map-theme/scss/style.scss:4:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+4 | @import "base/media_query";
+
+
+scss/style.scss 5:9  root stylesheet
+ @ ./scss/style.scss
+ @ ./src/index.js 1:0-28
+
+WARNING in ./scss/style.scss (./scss/style.scss.webpack[javascript/auto]!=!./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./scss/style.scss)
+Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 46, column 6 of file:///home/diane/Local%20Sites/ilek/app/public/wp-content/themes/community-map-theme/scss/template/_single-marker.scss:46:6:
+Sass's behavior for declarations that appear after nested
+rules will be changing to match the behavior specified by CSS in an upcoming
+version. To keep the existing behavior, move the declaration above the nested
+rule. To opt into the new behavior, wrap the declaration in `& {}`.
+
+More info: https://sass-lang.com/d/mixed-decls
+
+46 |       display: flex;
+
+
+scss/template/_single-marker.scss 47:7  @import
+scss/style.scss 19:9                    root stylesheet
+ @ ./scss/style.scss
+ @ ./src/index.js 1:0-28
+
+WARNING in ./scss/style.scss (./scss/style.scss.webpack[javascript/auto]!=!./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./scss/style.scss)
+Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+Deprecation Warning on line 47, column 6 of file:///home/diane/Local%20Sites/ilek/app/public/wp-content/themes/community-map-theme/scss/template/_single-marker.scss:47:6:
+Sass's behavior for declarations that appear after nested
+rules will be changing to match the behavior specified by CSS in an upcoming
+version. To keep the existing behavior, move the declaration above the nested
+rule. To opt into the new behavior, wrap the declaration in `& {}`.
+
+More info: https://sass-lang.com/d/mixed-decls
+
+47 |       font-size: 22px;
+
+
+scss/template/_single-marker.scss 48:7  @import
+scss/style.scss 19:9                    root stylesheet
+ @ ./scss/style.scss
+ @ ./src/index.js 1:0-28
+
+WARNING in ./scss/style.scss (./scss/style.scss.webpack[javascript/auto]!=!./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./scss/style.scss)
+Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+13 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+ @ ./scss/style.scss
+ @ ./src/index.js 1:0-28
+
+WARNING in asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+This can impact web performance.
+Assets: 
+  index.js (262 KiB)
+
+WARNING in entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+Entrypoints:
+  index (317 KiB)
+      ./style-index.css
+      ./style-index-rtl.css
+      index.js
+      index.asset.php
+
+WARNING in webpack performance recommendations: 
+You can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.
+For more info visit https://webpack.js.org/guides/code-splitting/
+
+webpack 5.101.0 compiled with 11 warnings in 8708 ms
+asset admin.js 261 KiB [emitted] [minimized] [big] (name: admin)
+asset admin.asset.php 84 bytes [emitted] (name: admin)
+Entrypoint admin [big] 261 KiB = admin.js 261 KiB admin.asset.php 84 bytes
+runtime modules 663 bytes 3 modules
+orphan modules 15.6 KiB [orphan] 2 modules
+cacheable modules 609 KiB
+  ./src/admin.js + 2 modules 17.4 KiB [built] [code generated]
+  ./node_modules/leaflet/dist/leaflet-src.js 440 KiB [built] [code generated]
+  ./node_modules/leaflet.markercluster/dist/leaflet.markercluster-src.js 79.3 KiB [built] [code generated]
+  ./node_modules/leaflet.markercluster.layersupport/dist/leaflet.markercluster.l...(truncated) 6.47 KiB [built] [code generated]
+  ./node_modules/leaflet-draw/dist/leaflet.draw.js 65.9 KiB [built] [code generated]
+
+WARNING in asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+This can impact web performance.
+Assets: 
+  admin.js (261 KiB)
+
+WARNING in entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+Entrypoints:
+  admin (261 KiB)
+      admin.js
+      admin.asset.php
+
+WARNING in webpack performance recommendations: 
+You can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.
+For more info visit https://webpack.js.org/guides/code-splitting/
+
+webpack 5.101.0 compiled with 3 warnings in 6856 ms

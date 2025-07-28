@@ -13,21 +13,31 @@ class Admin_mapapp
 
   function enqueue_admin_script($hook)
   {
-    // Only enqueue on post edit pages
+    // Only enqueue on post edit pages for marker post type
     if (in_array($hook, ['post.php', 'post-new.php'])) {
-      wp_enqueue_script(
-        'Map-js',
-        get_template_directory_uri() . '/build/index.js',
-        array('jquery'),
-        null,
-        true
-      );
       global $post;
       $post_type = get_post_type($post);
 
-      wp_localize_script('admin_enqueue_scripts', 'MapAppData', [
-        'postType' => $post_type,
-      ]);
+      // Only enqueue for marker post type
+      if ($post_type === 'marker') {
+        $admin_js_path = get_template_directory() . '/build/admin.js';
+        $admin_js_version = file_exists($admin_js_path) ? filemtime($admin_js_path) : '1.0.0';
+
+        wp_enqueue_script(
+          'Map-admin-js',
+          get_template_directory_uri() . '/build/admin.js',
+          array('jquery'),
+          $admin_js_version, // Cache busting
+          true
+        );
+
+        wp_localize_script('Map-admin-js', 'MapAppData', [
+          'postType' => $post_type,
+          'isAdmin' => true,
+          'ajaxUrl' => admin_url('admin-ajax.php'),
+          'nonce' => wp_create_nonce('mapapp_nonce')
+        ]);
+      }
     }
   }
   function standort_boxes_display_callback($post)

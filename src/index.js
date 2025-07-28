@@ -10,8 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
     pageType = "home";
   } else if (document.body.classList.contains("single-marker")) {
     pageType = "single-marker";
-  } else if (document.body.classList.contains("wp-admin")) {
-    pageType = "wp_admin";
   }
 
   if (document.getElementById("mapapp_map")) {
@@ -63,19 +61,5 @@ document.addEventListener("DOMContentLoaded", () => {
       // Expose the mapApp instance globally
       window.mapApp = mapApp;
     }
-  }
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const isAdminEditPage =
-    document.body.classList.contains("wp-admin") &&
-    window.location.pathname.includes("post.php") &&
-    new URLSearchParams(window.location.search).get("action") === "edit";
-
-  if (isAdminEditPage && document.body.classList.contains("post-type-marker")) {
-    const mapApp = new MapApp("mapapp_map", null, {
-      pageType: "wp_admin",
-      editable: true,
-    });
-    // initialize leaflet map for editing here
   }
 });
