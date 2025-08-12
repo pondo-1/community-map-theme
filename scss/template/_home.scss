@@ -6,6 +6,50 @@
 
     grid-column: 2/3;
 
+    .timeline {
+      padding: 10px 45px;
+
+      h2 {
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .slider-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .label {
+          font-size: 20px;
+          font-weight: 600;
+          margin-bottom: 10px;
+          // visibility: visible;
+
+          // &.year {
+          //   visibility: hidden;
+          //   width: 1px;
+          // }
+        }
+
+        .input_wrapper {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+
+          .year {
+            flex-shrink: 1;
+            flex-grow: 0;
+            font-size: 18px;
+            padding: 0 5px;
+          }
+          .input {
+            flex-grow: 1;
+            flex-shrink: 0;
+          }
+        }
+      }
+    }
+
     .category_filter {
       padding: 30px 45px 15px 45px;
       margin: 0;

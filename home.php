@@ -15,21 +15,38 @@
   </div>
 
   <div class="content sidebar">
-    <div class="scrolldown_wrapper">
-      <a href="#checkboxes" aria-label="scrolldown">
-        <span class="scrolldown icon">
-        </span>
-      </a>
-    </div>
+    <div id="slider-container" class="timeline" style="display: none;">
+      <h2>Zeitstrahl</h2>
+      <div class="slider-wrapper">
+        <label class="label year" for="yearRange"><span id="yearValue" class="label value">2025</span></label>
+        <!--min & max shall be set dynamic using community map settings later  -->
 
+        <?php $min = "2018"; ?>
+        <?php $max = "2030"; ?>
+
+        <div class="input_wrapper">
+          <span class="year min>"><?php echo $min; ?></span>
+          <input class="input"
+            type="range"
+            id="yearRange"
+            name="yearRange"
+            min="<?php echo $min; ?>"
+            max="<?php echo $max; ?>"
+            value="2025"
+            step="1" />
+          <span class="year max>"><?php echo $max; ?></span>
+
+        </div>
+      </div>
+    </div>
     <div id="checkboxes" class="category_filter">
       <!--div id checkboxes  -->
       <div class="category_filter--title">
         Kategorie
       </div>
       <div class="category_filter--button">
-        <button class="all right_triangle">Select all</button>
-        <button class="none right_triangle">Deselect all</button>
+        <button class="all right_triangle">Alle auswählen</button>
+        <button class="none right_triangle">Auswahl aufheben</button>
       </div>
       <div class="category_filter--list">
 

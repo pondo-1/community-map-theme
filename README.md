@@ -1,11 +1,18 @@
-Internal Note:
+# Build frontend and admin scripts
 
-Theme for all upcomming ILEK Projects;
-First project used: wuerzburger-norden-online.de
-Fork of Plugin Kulturdatenbank Sinngrund
-Not used for older Ilek Projects, such as fraenkischer-sueden-online.de and grabfeld.page-effect.de
+npm run build
 
-Ignore Pattern for Deploy wit WP Migrate:
+# Start development for frontend
+
+npm run start
+
+# Start development for admin (if needed)
+
+npm run start:admin
+
+# For Pushing Theme/Updated Theme to Productive using WP Migrate
+
+Use Ignore Pattern
 
 .DS_Store
 .git
